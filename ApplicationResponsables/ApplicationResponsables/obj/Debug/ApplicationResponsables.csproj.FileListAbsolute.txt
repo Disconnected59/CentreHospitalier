@@ -1,1 +1,2 @@
 C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\bin\Debug\ApplicationResponsables.exe.config
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\bin\Debug\ApplicationResponsables.exe.config
