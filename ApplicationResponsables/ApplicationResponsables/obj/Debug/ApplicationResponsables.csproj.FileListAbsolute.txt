@@ -1,1 +1,10 @@
 C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\bin\Debug\ApplicationResponsables.exe.config
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\bin\Debug\ApplicationResponsables.exe.config
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\bin\Debug\ApplicationResponsables.exe
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\bin\Debug\ApplicationResponsables.pdb
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.csprojResolveAssemblyReference.cache
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Form1.resources
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Properties.Resources.resources
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.csproj.GenerateResource.Cache
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.exe
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.pdb
