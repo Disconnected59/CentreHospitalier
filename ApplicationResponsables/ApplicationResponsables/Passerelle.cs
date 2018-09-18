@@ -16,7 +16,7 @@ namespace ApplicationResponsables
 
 
         // ----- Fonction de connexion ------
-        private static bool seConnecter()
+        private static bool seConnecter() // Include la fonction pour se connecter a la BDD //Créer la commande avec la variable laConnection
         {
             if (laConnection == null)
             {
@@ -61,7 +61,54 @@ namespace ApplicationResponsables
         }
 
 
+        public static ArrayList getPatients() //Lecompte 18/09/2018 v1.0
+        {
+            ArrayList lesPatients = new ArrayList();
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT nom FROM Patients";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
 
+            while (unJeuResultat.Read())
+            {
+                String lePatient = (String)unJeuResultat["nom"];
+                lesPatients.Add(lePatient);
+
+            }
+            seDeconnecter();
+            return lesPatients;
+
+
+        }
+
+        public static ArrayList getServices()
+        {
+            ArrayList lesServices = new ArrayList();
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT libelle FROM Services";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                String leService = (String)unJeuResultat["libelle"];
+                lesServices.Add(leService);
+
+            }
+            seDeconnecter();
+            return lesServices;
+
+        }
+
+        public static void changerDateDebutHospitalisation(DateTime pDateDebut)
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "UPDATE Patients set dateArrivee"
+
+
+        }
 
     }
 }
