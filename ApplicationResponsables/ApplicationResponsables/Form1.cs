@@ -66,6 +66,20 @@ namespace ApplicationResponsables
 
         }
 
+        private void dtpDebut_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnValidChangerDebut_Click(object sender, EventArgs e)
+        {
+            DateTime dateDebutHospi = dtpDebut.Value;
+
+
+
+
+        }
+
        
        
       

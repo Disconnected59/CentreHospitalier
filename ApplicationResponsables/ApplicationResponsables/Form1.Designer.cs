@@ -78,6 +78,7 @@
             this.dtpDebut.Name = "dtpDebut";
             this.dtpDebut.Size = new System.Drawing.Size(256, 26);
             this.dtpDebut.TabIndex = 3;
+            this.dtpDebut.ValueChanged += new System.EventHandler(this.dtpDebut_ValueChanged);
             // 
             // groupBox1
             // 
@@ -105,6 +106,7 @@
             this.btnValidChangerDebut.TabIndex = 6;
             this.btnValidChangerDebut.Text = "Valider date de début";
             this.btnValidChangerDebut.UseVisualStyleBackColor = true;
+            this.btnValidChangerDebut.Click += new System.EventHandler(this.btnValidChangerDebut_Click);
             // 
             // label1
             // 

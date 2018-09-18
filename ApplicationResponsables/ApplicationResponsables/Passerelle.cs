@@ -82,7 +82,7 @@ namespace ApplicationResponsables
 
         }
 
-        public static ArrayList getServices()
+        public static ArrayList getServices() //Lecompte 18/09/2018 v1.0
         {
             ArrayList lesServices = new ArrayList();
             seConnecter();
@@ -101,12 +101,22 @@ namespace ApplicationResponsables
 
         }
 
-        public static void changerDateDebutHospitalisation(DateTime pDateDebut)
+        public static void changerDateDebutHospitalisation(DateTime pDateDebut) //Lecompte 18/09/2018 v1.0
         {
             seConnecter();
             SqlCommand maCommande;
-            String requete = "UPDATE Patients set dateArrivee"
+            String requete = "UPDATE Patients set dateArrivee='" + pDateDebut + "'";
+            maCommande = new SqlCommand(requete, laConnection);
+            Int32 nb = maCommande.ExecuteNonQuery();
+        }
 
+        public static void changerDateFinHospitalisation(DateTime pDateFin) //Lecompte 18/09/2018 v1.0
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "UPDATE Patients set dateDepart='" + pDateFin + "'";
+            maCommande = new SqlCommand(requete, laConnection);
+            Int32 nb = maCommande.ExecuteNonQuery();
 
         }
 
