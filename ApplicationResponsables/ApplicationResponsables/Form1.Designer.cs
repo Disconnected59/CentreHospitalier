@@ -56,7 +56,10 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblMdp = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
@@ -64,6 +67,9 @@
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
             this.btnValiderConnexion = new System.Windows.Forms.Button();
 >>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
+<<<<<<< HEAD
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+=======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -314,7 +320,10 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnValiderConnexion);
@@ -372,13 +381,20 @@
             this.btnValiderConnexion.UseVisualStyleBackColor = true;
             // 
 >>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
+<<<<<<< HEAD
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+=======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 <<<<<<< HEAD
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1184, 562);
+=======
+            this.ClientSize = new System.Drawing.Size(1101, 438);
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
 =======
             this.ClientSize = new System.Drawing.Size(1101, 438);
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
@@ -427,7 +443,10 @@
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtBoxMdp;
         private System.Windows.Forms.TextBox txtBoxLabel;
@@ -435,6 +454,9 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnValiderConnexion;
 >>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
+<<<<<<< HEAD
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+=======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
     }
 }

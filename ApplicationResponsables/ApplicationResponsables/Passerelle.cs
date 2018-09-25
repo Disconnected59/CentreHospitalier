@@ -133,6 +133,7 @@ namespace ApplicationResponsables
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         // ----- Fonction de connexion utilisateur IHM ------
         public bool connexionIhm()
         {
@@ -147,6 +148,8 @@ namespace ApplicationResponsables
             }
             return false;
         }
+=======
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
 =======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
 

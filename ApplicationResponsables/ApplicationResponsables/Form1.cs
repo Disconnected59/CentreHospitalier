@@ -81,9 +81,12 @@ namespace ApplicationResponsables
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         private void btnValidMoisService_Click(object sender, EventArgs e)
         {
 =======
+=======
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
         private void cmbMois_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -98,6 +101,9 @@ namespace ApplicationResponsables
 
 
 
+<<<<<<< HEAD
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+=======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
 
         }
