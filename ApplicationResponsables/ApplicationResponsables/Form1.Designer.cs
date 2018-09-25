@@ -53,15 +53,13 @@
             this.lblPeriode2 = new System.Windows.Forms.Label();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lbllService = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-=======
+
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblMdp = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
             this.btnValiderConnexion = new System.Windows.Forms.Button();
->>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -308,8 +306,7 @@
             this.lbllService.TabIndex = 0;
             this.lbllService.Text = "Service : ";
             // 
-<<<<<<< HEAD
-=======
+
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnValiderConnexion);
@@ -366,7 +363,7 @@
             this.btnValiderConnexion.Text = "Valider";
             this.btnValiderConnexion.UseVisualStyleBackColor = true;
             // 
->>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
+
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -414,15 +411,14 @@
         private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Button button1;
-<<<<<<< HEAD
-=======
+
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtBoxMdp;
         private System.Windows.Forms.TextBox txtBoxLabel;
         private System.Windows.Forms.Label lblMdp;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnValiderConnexion;
->>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
+
     }
 }
 
