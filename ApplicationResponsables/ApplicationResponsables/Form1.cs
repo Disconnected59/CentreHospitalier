@@ -80,6 +80,28 @@ namespace ApplicationResponsables
 
         }
 
+<<<<<<< HEAD
+        private void btnValidMoisService_Click(object sender, EventArgs e)
+        {
+=======
+        private void cmbMois_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnValidMoisService_Click(object sender, EventArgs e)
+        {
+            String serviceChoisi = (String)cmbServices.SelectedItem;
+            int moisChoisi = (int)cmbMois.SelectedIndex+1;
+
+            Passerelle.getTauxOccuMois(serviceChoisi, moisChoisi);
+
+
+
+>>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+
+        }
+
        
        
       
