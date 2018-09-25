@@ -54,23 +54,30 @@
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lbllService = new System.Windows.Forms.Label();
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+>>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.lblMdp = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
             this.btnValiderConnexion = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
 >>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
 <<<<<<< HEAD
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
 =======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+>>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -318,12 +325,16 @@
             this.lbllService.Text = "Service : ";
             // 
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+>>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnValiderConnexion);
@@ -380,11 +391,15 @@
             this.btnValiderConnexion.Text = "Valider";
             this.btnValiderConnexion.UseVisualStyleBackColor = true;
             // 
+<<<<<<< HEAD
+
+=======
 >>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
 <<<<<<< HEAD
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
 =======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+>>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,23 +456,31 @@
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Button button1;
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
 =======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+>>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtBoxMdp;
         private System.Windows.Forms.TextBox txtBoxLabel;
         private System.Windows.Forms.Label lblMdp;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnValiderConnexion;
+<<<<<<< HEAD
+
+=======
 >>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
 <<<<<<< HEAD
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
 =======
 >>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+>>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
     }
 }
 
