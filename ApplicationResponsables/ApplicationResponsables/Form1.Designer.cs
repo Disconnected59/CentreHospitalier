@@ -54,10 +54,11 @@
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lbllService = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtBoxLabel = new System.Windows.Forms.TextBox();
-            this.txtBoxMdp = new System.Windows.Forms.TextBox();
-            this.lblLogin = new System.Windows.Forms.Label();
             this.lblMdp = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.txtBoxMdp = new System.Windows.Forms.TextBox();
+            this.txtBoxLabel = new System.Windows.Forms.TextBox();
+            this.btnValiderConnexion = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -305,6 +306,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.btnValiderConnexion);
             this.groupBox4.Controls.Add(this.lblMdp);
             this.groupBox4.Controls.Add(this.lblLogin);
             this.groupBox4.Controls.Add(this.txtBoxMdp);
@@ -317,19 +319,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Vous êtes administrateur? Connectez vous !";
             // 
-            // txtBoxLabel
+            // lblMdp
             // 
-            this.txtBoxLabel.Location = new System.Drawing.Point(155, 22);
-            this.txtBoxLabel.Name = "txtBoxLabel";
-            this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxLabel.TabIndex = 0;
-            // 
-            // txtBoxMdp
-            // 
-            this.txtBoxMdp.Location = new System.Drawing.Point(155, 65);
-            this.txtBoxMdp.Name = "txtBoxMdp";
-            this.txtBoxMdp.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxMdp.TabIndex = 1;
+            this.lblMdp.AutoSize = true;
+            this.lblMdp.Location = new System.Drawing.Point(22, 65);
+            this.lblMdp.Name = "lblMdp";
+            this.lblMdp.Size = new System.Drawing.Size(94, 18);
+            this.lblMdp.TabIndex = 3;
+            this.lblMdp.Text = "Mot de passe :";
             // 
             // lblLogin
             // 
@@ -340,14 +337,28 @@
             this.lblLogin.TabIndex = 2;
             this.lblLogin.Text = "Login : ";
             // 
-            // lblMdp
+            // txtBoxMdp
             // 
-            this.lblMdp.AutoSize = true;
-            this.lblMdp.Location = new System.Drawing.Point(22, 65);
-            this.lblMdp.Name = "lblMdp";
-            this.lblMdp.Size = new System.Drawing.Size(94, 18);
-            this.lblMdp.TabIndex = 3;
-            this.lblMdp.Text = "Mot de passe :";
+            this.txtBoxMdp.Location = new System.Drawing.Point(155, 65);
+            this.txtBoxMdp.Name = "txtBoxMdp";
+            this.txtBoxMdp.Size = new System.Drawing.Size(100, 23);
+            this.txtBoxMdp.TabIndex = 1;
+            // 
+            // txtBoxLabel
+            // 
+            this.txtBoxLabel.Location = new System.Drawing.Point(155, 22);
+            this.txtBoxLabel.Name = "txtBoxLabel";
+            this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
+            this.txtBoxLabel.TabIndex = 0;
+            // 
+            // btnValiderConnexion
+            // 
+            this.btnValiderConnexion.Location = new System.Drawing.Point(305, 25);
+            this.btnValiderConnexion.Name = "btnValiderConnexion";
+            this.btnValiderConnexion.Size = new System.Drawing.Size(152, 45);
+            this.btnValiderConnexion.TabIndex = 10;
+            this.btnValiderConnexion.Text = "Valider";
+            this.btnValiderConnexion.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -404,6 +415,7 @@
         private System.Windows.Forms.TextBox txtBoxLabel;
         private System.Windows.Forms.Label lblMdp;
         private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.Button btnValiderConnexion;
     }
 }
 
