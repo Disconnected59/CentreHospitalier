@@ -53,34 +53,16 @@
             this.lblPeriode2 = new System.Windows.Forms.Label();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lbllService = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
->>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnValiderConnexion = new System.Windows.Forms.Button();
             this.lblMdp = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
-            this.btnValiderConnexion = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
->>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
-<<<<<<< HEAD
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
->>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDebut
@@ -121,7 +103,7 @@
             this.groupBox1.Size = new System.Drawing.Size(536, 543);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Changer la date d\'hospitalisation";
+            this.groupBox1.Text = "Taux d\'occupation total de l\'hopital";
             // 
             // button1
             // 
@@ -219,7 +201,6 @@
             this.btnValidMoisService.TabIndex = 7;
             this.btnValidMoisService.Text = "Valider";
             this.btnValidMoisService.UseVisualStyleBackColor = true;
-            this.btnValidMoisService.Click += new System.EventHandler(this.btnValidMoisService_Click);
             // 
             // label2
             // 
@@ -324,17 +305,6 @@
             this.lbllService.TabIndex = 0;
             this.lbllService.Text = "Service : ";
             // 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
->>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnValiderConnexion);
@@ -349,6 +319,15 @@
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Vous êtes administrateur? Connectez vous !";
+            // 
+            // btnValiderConnexion
+            // 
+            this.btnValiderConnexion.Location = new System.Drawing.Point(305, 25);
+            this.btnValiderConnexion.Name = "btnValiderConnexion";
+            this.btnValiderConnexion.Size = new System.Drawing.Size(152, 45);
+            this.btnValiderConnexion.TabIndex = 10;
+            this.btnValiderConnexion.Text = "Valider";
+            this.btnValiderConnexion.UseVisualStyleBackColor = true;
             // 
             // lblMdp
             // 
@@ -382,37 +361,11 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
-            // btnValiderConnexion
-            // 
-            this.btnValiderConnexion.Location = new System.Drawing.Point(305, 25);
-            this.btnValiderConnexion.Name = "btnValiderConnexion";
-            this.btnValiderConnexion.Size = new System.Drawing.Size(152, 45);
-            this.btnValiderConnexion.TabIndex = 10;
-            this.btnValiderConnexion.Text = "Valider";
-            this.btnValiderConnexion.UseVisualStyleBackColor = true;
-            // 
-<<<<<<< HEAD
-
-=======
->>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
-<<<<<<< HEAD
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
->>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1184, 562);
-=======
             this.ClientSize = new System.Drawing.Size(1101, 438);
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
-=======
-            this.ClientSize = new System.Drawing.Size(1101, 438);
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -425,6 +378,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -455,32 +410,12 @@
         private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Button button1;
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
->>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtBoxMdp;
         private System.Windows.Forms.TextBox txtBoxLabel;
         private System.Windows.Forms.Label lblMdp;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnValiderConnexion;
-<<<<<<< HEAD
-
-=======
->>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
-<<<<<<< HEAD
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
->>>>>>> 56607f7d58c9f908791fc461483b8669f4535222
     }
 }
 

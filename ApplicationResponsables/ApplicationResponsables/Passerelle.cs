@@ -123,17 +123,22 @@ namespace ApplicationResponsables
         }
 
 
-        public static void getTauxOccuMois(String pService, int pMois)
+        public static Double getTauxOccuMois(String pService, int pMois) //Lecompte 25/09/2018 v1.0
         {
+            Double tauxOccu=0;
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT COUNT(*) FROM Patients WHERE dateArrivee BETWEEN '1/"+pMois+"/%' AND '31/"+pMois+"/2018'";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteScalar();
 
 
+            return tauxOccu;
 
-
-
+            
         }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         // ----- Fonction de connexion utilisateur IHM ------
         public bool connexionIhm()
         {
@@ -148,10 +153,7 @@ namespace ApplicationResponsables
             }
             return false;
         }
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
+
 
     }
 }
