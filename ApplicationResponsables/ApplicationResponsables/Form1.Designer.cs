@@ -53,22 +53,16 @@
             this.lblPeriode2 = new System.Windows.Forms.Label();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lbllService = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.txtBoxLabel = new System.Windows.Forms.TextBox();
-            this.txtBoxMdp = new System.Windows.Forms.TextBox();
-            this.lblLogin = new System.Windows.Forms.Label();
-            this.lblMdp = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDebut
             // 
             this.lblDebut.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDebut.AutoSize = true;
-            this.lblDebut.Location = new System.Drawing.Point(278, 111);
+            this.lblDebut.Location = new System.Drawing.Point(278, 166);
             this.lblDebut.Name = "lblDebut";
             this.lblDebut.Size = new System.Drawing.Size(152, 22);
             this.lblDebut.TabIndex = 2;
@@ -78,7 +72,7 @@
             // dtpDebut
             // 
             this.dtpDebut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpDebut.Location = new System.Drawing.Point(0, 148);
+            this.dtpDebut.Location = new System.Drawing.Point(0, 203);
             this.dtpDebut.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpDebut.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpDebut.Name = "dtpDebut";
@@ -99,7 +93,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(608, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(536, 433);
+            this.groupBox1.Size = new System.Drawing.Size(536, 543);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Changer la date d\'hospitalisation";
@@ -135,7 +129,7 @@
             // 
             this.lblFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFin.AutoSize = true;
-            this.lblFin.Location = new System.Drawing.Point(6, 111);
+            this.lblFin.Location = new System.Drawing.Point(6, 166);
             this.lblFin.Name = "lblFin";
             this.lblFin.Size = new System.Drawing.Size(151, 22);
             this.lblFin.TabIndex = 4;
@@ -144,7 +138,7 @@
             // dtpFin
             // 
             this.dtpFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpFin.Location = new System.Drawing.Point(245, 148);
+            this.dtpFin.Location = new System.Drawing.Point(245, 203);
             this.dtpFin.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpFin.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpFin.Name = "dtpFin";
@@ -182,6 +176,7 @@
             this.cmbMois.Name = "cmbMois";
             this.cmbMois.Size = new System.Drawing.Size(143, 30);
             this.cmbMois.TabIndex = 9;
+            this.cmbMois.SelectedIndexChanged += new System.EventHandler(this.cmbMois_SelectedIndexChanged);
             // 
             // cmbServices
             // 
@@ -199,6 +194,7 @@
             this.btnValidMoisService.TabIndex = 7;
             this.btnValidMoisService.Text = "Valider";
             this.btnValidMoisService.UseVisualStyleBackColor = true;
+            this.btnValidMoisService.Click += new System.EventHandler(this.btnValidMoisService_Click);
             // 
             // label2
             // 
@@ -303,58 +299,11 @@
             this.lbllService.TabIndex = 0;
             this.lbllService.Text = "Service : ";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.lblMdp);
-            this.groupBox4.Controls.Add(this.lblLogin);
-            this.groupBox4.Controls.Add(this.txtBoxMdp);
-            this.groupBox4.Controls.Add(this.txtBoxLabel);
-            this.groupBox4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(608, 429);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(536, 116);
-            this.groupBox4.TabIndex = 9;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Vous êtes administrateur? Connectez vous !";
-            // 
-            // txtBoxLabel
-            // 
-            this.txtBoxLabel.Location = new System.Drawing.Point(155, 22);
-            this.txtBoxLabel.Name = "txtBoxLabel";
-            this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxLabel.TabIndex = 0;
-            // 
-            // txtBoxMdp
-            // 
-            this.txtBoxMdp.Location = new System.Drawing.Point(155, 65);
-            this.txtBoxMdp.Name = "txtBoxMdp";
-            this.txtBoxMdp.Size = new System.Drawing.Size(100, 23);
-            this.txtBoxMdp.TabIndex = 1;
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Location = new System.Drawing.Point(19, 22);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(53, 18);
-            this.lblLogin.TabIndex = 2;
-            this.lblLogin.Text = "Login : ";
-            // 
-            // lblMdp
-            // 
-            this.lblMdp.AutoSize = true;
-            this.lblMdp.Location = new System.Drawing.Point(22, 65);
-            this.lblMdp.Name = "lblMdp";
-            this.lblMdp.Size = new System.Drawing.Size(94, 18);
-            this.lblMdp.TabIndex = 3;
-            this.lblMdp.Text = "Mot de passe :";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 557);
-            this.Controls.Add(this.groupBox4);
+            this.ClientSize = new System.Drawing.Size(1101, 438);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -367,8 +316,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -399,11 +346,6 @@
         private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox txtBoxMdp;
-        private System.Windows.Forms.TextBox txtBoxLabel;
-        private System.Windows.Forms.Label lblMdp;
-        private System.Windows.Forms.Label lblLogin;
     }
 }
 

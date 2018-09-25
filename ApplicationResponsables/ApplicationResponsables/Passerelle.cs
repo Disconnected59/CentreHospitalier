@@ -108,6 +108,7 @@ namespace ApplicationResponsables
             String requete = "UPDATE Patients set dateArrivee='" + pDateDebut + "'";
             maCommande = new SqlCommand(requete, laConnection);
             Int32 nb = maCommande.ExecuteNonQuery();
+            seDeconnecter();
         }
 
         public static void changerDateFinHospitalisation(DateTime pDateFin) //Lecompte 18/09/2018 v1.0
@@ -117,8 +118,20 @@ namespace ApplicationResponsables
             String requete = "UPDATE Patients set dateDepart='" + pDateFin + "'";
             maCommande = new SqlCommand(requete, laConnection);
             Int32 nb = maCommande.ExecuteNonQuery();
+            seDeconnecter();
 
         }
+
+
+        public static void getTauxOccuMois(String pService, int pMois)
+        {
+
+
+
+
+
+        }
+
 
     }
 }
