@@ -108,7 +108,6 @@ namespace ApplicationResponsables
             String requete = "UPDATE Patients set dateArrivee='" + pDateDebut + "'";
             maCommande = new SqlCommand(requete, laConnection);
             Int32 nb = maCommande.ExecuteNonQuery();
-            seDeconnecter();
         }
 
         public static void changerDateFinHospitalisation(DateTime pDateFin) //Lecompte 18/09/2018 v1.0
@@ -118,40 +117,23 @@ namespace ApplicationResponsables
             String requete = "UPDATE Patients set dateDepart='" + pDateFin + "'";
             maCommande = new SqlCommand(requete, laConnection);
             Int32 nb = maCommande.ExecuteNonQuery();
-            seDeconnecter();
 
         }
 
-
-        public static void getTauxOccuMois(String pService, int pMois)
-        {
-
-
-
-
-
-        }
-
-<<<<<<< HEAD
-<<<<<<< HEAD
         // ----- Fonction de connexion utilisateur IHM ------
-        public bool connexionIhm()
+        public static bool connexionIhm()
         {
             seConnecter();
             SqlCommand maCommande;
             String requete = "SELECT id, password, typeUtilisateur FROM Utilisateur";
             maCommande = new SqlCommand(requete, laConnection);
-            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
-            while (unJeuResultat.Read())
+            //SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            /*while (unJeuResultat.Read())
             {
                 
-            }
-            return false;
+            }*/
+            return true;
         }
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
-=======
->>>>>>> 6f98f6cfea75126356c2924c5f23abcd64a23025
 
     }
 }
