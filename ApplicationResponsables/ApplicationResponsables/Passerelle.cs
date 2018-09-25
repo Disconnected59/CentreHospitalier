@@ -121,18 +121,24 @@ namespace ApplicationResponsables
         }
 
         // ----- Fonction de connexion utilisateur IHM ------
-        public static bool connexionIhm()
+        public static bool connexionIhm(string id, string mdp) //Aydogdu 25/09/2018 v0.1
         {
+            bool test = false;
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT id, password, typeUtilisateur FROM Utilisateur";
+            String requete = "SELECT id, password, typeUtilisateur FROM Utilisateurs";
             maCommande = new SqlCommand(requete, laConnection);
-            //SqlDataReader unJeuResultat = maCommande.ExecuteReader();
-            /*while (unJeuResultat.Read())
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
             {
-                
-            }*/
-            return true;
+                string idBdd = (string)unJeuResultat["id"];
+                string mdpBdd = (string)unJeuResultat["password"];
+                if(id == idBdd && mdp == mdpBdd)
+                {
+                    test = true;
+                }
+            }
+            return false;
         }
 
     }

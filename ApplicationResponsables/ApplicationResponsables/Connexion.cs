@@ -26,7 +26,7 @@ namespace ApplicationResponsables
         {
             string id = txtBoxLabel.Text;
             string mdp = txtBoxMdp.Text;
-            if (Passerelle.connexionIhm())
+            if (Passerelle.connexionIhm(id ,mdp))
             {
                 Form1 f1 = new Form1();
                 this.Hide();
