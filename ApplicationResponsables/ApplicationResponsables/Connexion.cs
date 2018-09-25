@@ -24,8 +24,14 @@ namespace ApplicationResponsables
 
         private void btnValiderConnexion_Click(object sender, EventArgs e)
         {
-            if(Passerelle.connexionIhm()){
-
+            string id = txtBoxLabel.Text;
+            string mdp = txtBoxMdp.Text;
+            if (Passerelle.connexionIhm())
+            {
+                Form1 f1 = new Form1();
+                this.Hide();
+                f1.ShowDialog();
+                this.Close();
             }
         }
     }
