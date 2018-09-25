@@ -53,6 +53,15 @@
             this.lblPeriode2 = new System.Windows.Forms.Label();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lbllService = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblMdp = new System.Windows.Forms.Label();
+            this.lblLogin = new System.Windows.Forms.Label();
+            this.txtBoxMdp = new System.Windows.Forms.TextBox();
+            this.txtBoxLabel = new System.Windows.Forms.TextBox();
+            this.btnValiderConnexion = new System.Windows.Forms.Button();
+>>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -299,6 +308,65 @@
             this.lbllService.TabIndex = 0;
             this.lbllService.Text = "Service : ";
             // 
+<<<<<<< HEAD
+=======
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btnValiderConnexion);
+            this.groupBox4.Controls.Add(this.lblMdp);
+            this.groupBox4.Controls.Add(this.lblLogin);
+            this.groupBox4.Controls.Add(this.txtBoxMdp);
+            this.groupBox4.Controls.Add(this.txtBoxLabel);
+            this.groupBox4.Font = new System.Drawing.Font("Trebuchet MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.Location = new System.Drawing.Point(608, 429);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(536, 116);
+            this.groupBox4.TabIndex = 9;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Vous êtes administrateur? Connectez vous !";
+            // 
+            // lblMdp
+            // 
+            this.lblMdp.AutoSize = true;
+            this.lblMdp.Location = new System.Drawing.Point(22, 65);
+            this.lblMdp.Name = "lblMdp";
+            this.lblMdp.Size = new System.Drawing.Size(94, 18);
+            this.lblMdp.TabIndex = 3;
+            this.lblMdp.Text = "Mot de passe :";
+            // 
+            // lblLogin
+            // 
+            this.lblLogin.AutoSize = true;
+            this.lblLogin.Location = new System.Drawing.Point(19, 22);
+            this.lblLogin.Name = "lblLogin";
+            this.lblLogin.Size = new System.Drawing.Size(53, 18);
+            this.lblLogin.TabIndex = 2;
+            this.lblLogin.Text = "Login : ";
+            // 
+            // txtBoxMdp
+            // 
+            this.txtBoxMdp.Location = new System.Drawing.Point(155, 65);
+            this.txtBoxMdp.Name = "txtBoxMdp";
+            this.txtBoxMdp.Size = new System.Drawing.Size(100, 23);
+            this.txtBoxMdp.TabIndex = 1;
+            // 
+            // txtBoxLabel
+            // 
+            this.txtBoxLabel.Location = new System.Drawing.Point(155, 22);
+            this.txtBoxLabel.Name = "txtBoxLabel";
+            this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
+            this.txtBoxLabel.TabIndex = 0;
+            // 
+            // btnValiderConnexion
+            // 
+            this.btnValiderConnexion.Location = new System.Drawing.Point(305, 25);
+            this.btnValiderConnexion.Name = "btnValiderConnexion";
+            this.btnValiderConnexion.Size = new System.Drawing.Size(152, 45);
+            this.btnValiderConnexion.TabIndex = 10;
+            this.btnValiderConnexion.Text = "Valider";
+            this.btnValiderConnexion.UseVisualStyleBackColor = true;
+            // 
+>>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -346,6 +414,15 @@
         private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.Button button1;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtBoxMdp;
+        private System.Windows.Forms.TextBox txtBoxLabel;
+        private System.Windows.Forms.Label lblMdp;
+        private System.Windows.Forms.Label lblLogin;
+        private System.Windows.Forms.Button btnValiderConnexion;
+>>>>>>> 615299d50013281c3d8d7846d8db42d3b4b7aff4
     }
 }
 
