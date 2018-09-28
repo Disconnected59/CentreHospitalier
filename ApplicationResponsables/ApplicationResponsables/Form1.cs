@@ -88,7 +88,7 @@ namespace ApplicationResponsables
 
         }
 
-        private void btnValidMoisService_Click(object sender, EventArgs e)
+        /*private void btnValidMoisService_Click(object sender, EventArgs e)
         {
             String serviceChoisi = (String)cmbServices.SelectedItem;
             int moisChoisi = (int)cmbMois.SelectedIndex+1;
@@ -97,7 +97,7 @@ namespace ApplicationResponsables
 
 
 
-        }
+        }*/
 
         }
 

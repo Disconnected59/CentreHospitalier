@@ -120,7 +120,7 @@ namespace ApplicationResponsables
 
         }
 
-        public static Double getTauxOccuMois(String pService, int pMois) //Lecompte 25/09/2018 v1.0
+        /*public static Double getTauxOccuMois(String pService, int pMois) //Lecompte 25/09/2018 v1.0
         {
             Double tauxOccu=0;
             seConnecter();
@@ -133,7 +133,7 @@ namespace ApplicationResponsables
             return tauxOccu;
 
             
-        }
+        }*/
 
         // ----- Fonction de connexion utilisateur IHM ------
         public static bool connexionIhm(string id, string mdp) //Aydogdu 25/09/2018 v0.1
@@ -153,6 +153,7 @@ namespace ApplicationResponsables
                     test = true;
                 }
             }
+            seDeconnecter();
             return test;
         }
     }
