@@ -59,10 +59,7 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
-<<<<<<< HEAD
-=======
             this.btnValiderConnexion = new System.Windows.Forms.Button();
->>>>>>> 61e56847444cd883461b8d5ececfe0a8e1ea6dd6
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
