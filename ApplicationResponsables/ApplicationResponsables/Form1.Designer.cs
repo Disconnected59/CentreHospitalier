@@ -320,15 +320,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Vous êtes administrateur? Connectez vous !";
             // 
-            // btnValiderConnexion
-            // 
-            this.btnValiderConnexion.Location = new System.Drawing.Point(305, 25);
-            this.btnValiderConnexion.Name = "btnValiderConnexion";
-            this.btnValiderConnexion.Size = new System.Drawing.Size(152, 45);
-            this.btnValiderConnexion.TabIndex = 10;
-            this.btnValiderConnexion.Text = "Valider";
-            this.btnValiderConnexion.UseVisualStyleBackColor = true;
-            // 
             // lblMdp
             // 
             this.lblMdp.AutoSize = true;
@@ -361,8 +352,6 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
-<<<<<<< HEAD
-=======
             // btnValiderConnexion
             // 
             this.btnValiderConnexion.Location = new System.Drawing.Point(305, 25);
@@ -372,18 +361,11 @@
             this.btnValiderConnexion.Text = "Valider";
             this.btnValiderConnexion.UseVisualStyleBackColor = true;
             // 
->>>>>>> 61e56847444cd883461b8d5ececfe0a8e1ea6dd6
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(1101, 438);
-=======
-            this.ClientSize = new System.Drawing.Size(1184, 562);
-            this.ClientSize = new System.Drawing.Size(1101, 438);
-            this.ClientSize = new System.Drawing.Size(1101, 438);
->>>>>>> 61e56847444cd883461b8d5ececfe0a8e1ea6dd6
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
