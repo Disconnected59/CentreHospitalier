@@ -79,8 +79,6 @@ namespace ApplicationResponsables
 
 
         }
-<<<<<<< HEAD
-
 
         private void btnValidMoisService_Click(object sender, EventArgs e)
         { }
@@ -106,7 +104,5 @@ namespace ApplicationResponsables
        
        
       
-=======
->>>>>>> 61e56847444cd883461b8d5ececfe0a8e1ea6dd6
     }
 

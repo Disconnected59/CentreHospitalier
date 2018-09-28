@@ -153,7 +153,7 @@ namespace ApplicationResponsables
                     test = true;
                 }
             }
-            return false;
+            return test;
         }
     }
 }
