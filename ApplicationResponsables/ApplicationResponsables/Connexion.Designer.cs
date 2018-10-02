@@ -35,12 +35,14 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
+            this.lblerror = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox4
             // 
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox4.Controls.Add(this.lblerror);
             this.groupBox4.Controls.Add(this.btnValiderConnexion);
             this.groupBox4.Controls.Add(this.lblMdp);
             this.groupBox4.Controls.Add(this.lblLogin);
@@ -98,6 +100,14 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
+            // lblerror
+            // 
+            this.lblerror.AutoSize = true;
+            this.lblerror.Location = new System.Drawing.Point(374, 83);
+            this.lblerror.Name = "lblerror";
+            this.lblerror.Size = new System.Drawing.Size(0, 18);
+            this.lblerror.TabIndex = 11;
+            // 
             // Connexion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,7 +115,10 @@
             this.BackgroundImage = global::ApplicationResponsables.Properties.Resources.secureFond;
             this.ClientSize = new System.Drawing.Size(584, 162);
             this.Controls.Add(this.groupBox4);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Connexion";
             this.Text = "Connexion";
             this.Load += new System.EventHandler(this.Connexion_Load);
@@ -123,5 +136,6 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.TextBox txtBoxMdp;
         private System.Windows.Forms.TextBox txtBoxLabel;
+        private System.Windows.Forms.Label lblerror;
     }
 }
