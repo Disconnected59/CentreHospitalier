@@ -90,12 +90,17 @@ namespace ApplicationResponsables
 
         private void btnValidPeriodeService_Click(object sender, EventArgs e)
         {
+            DateTime dateDebut = dtDebutPeriode.Value;
+            DateTime dateFin = dtFinPeriode.Value;
+            int serviceChoisi = (int)cmbServices2.SelectedIndex + 1;
 
+            double taux = Passerelle.tauxOccupationPeriodeService(dateDebut, dateFin, serviceChoisi);
 
+            String[] X = new String[] {taux+"", "Taux occuppé"};
 
+            String[] y = new String[] {100-taux+"", "Taux restant"};
 
-
-
+            
         }
 
         /*private void btnValidMoisService_Click(object sender, EventArgs e)

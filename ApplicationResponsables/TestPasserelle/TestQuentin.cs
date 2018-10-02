@@ -47,6 +47,7 @@ namespace TestPasserelle
 
              Double taux = Passerelle.tauxOccupationPeriodeService(debutPeriode, finPeriode, service);
 
+             Assert.AreEqual(attendu, taux);
 
          }
 
