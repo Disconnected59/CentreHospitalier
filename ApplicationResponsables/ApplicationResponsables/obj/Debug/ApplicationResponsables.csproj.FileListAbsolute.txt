@@ -17,3 +17,5 @@ C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\Appl
 C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Properties.Resources.resources
 C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.csproj.GenerateResource.Cache
 F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Connexion.resources
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Connexion.resources
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.TauxOccuPeriodeService.resources
