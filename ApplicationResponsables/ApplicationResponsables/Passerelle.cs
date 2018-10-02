@@ -135,7 +135,7 @@ namespace ApplicationResponsables
         }*/
 
         // ----- Fonction de connexion utilisateur IHM ------
-        public static bool connexionIhm(string id, string mdp) //Aydogdu 25/09/2018 v0.1
+        public static bool connexionIhm(string id, string mdp) //Bekir 25/09/2018 v0.1
         {
             bool test = false;
             seConnecter();

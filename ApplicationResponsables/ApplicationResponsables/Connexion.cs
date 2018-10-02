@@ -28,10 +28,14 @@ namespace ApplicationResponsables
             string mdp = txtBoxMdp.Text;
             if (Passerelle.connexionIhm(id ,mdp))
             {
-                Form1 f1 = new Form1();
+                Form2 f1 = new Form2();
                 this.Hide();
                 f1.ShowDialog();
                 this.Close();
+            }
+            else
+            {
+                lblerror.Text = "Le nom de compte ou mot de passe saisi est incorrect.";
             }
         }
     }
