@@ -1,0 +1,7 @@
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\TestPasserelle\obj\Debug\TestPasserelle.csprojResolveAssemblyReference.cache
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\TestPasserelle\bin\Debug\TestPasserelle.dll
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\TestPasserelle\bin\Debug\TestPasserelle.pdb
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\TestPasserelle\bin\Debug\ApplicationResponsables.exe
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\TestPasserelle\bin\Debug\ApplicationResponsables.pdb
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\TestPasserelle\obj\Debug\TestPasserelle.dll
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\TestPasserelle\obj\Debug\TestPasserelle.pdb

@@ -103,9 +103,11 @@
             // lblerror
             // 
             this.lblerror.AutoSize = true;
-            this.lblerror.Location = new System.Drawing.Point(374, 83);
+            this.lblerror.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblerror.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblerror.Location = new System.Drawing.Point(264, 83);
             this.lblerror.Name = "lblerror";
-            this.lblerror.Size = new System.Drawing.Size(0, 18);
+            this.lblerror.Size = new System.Drawing.Size(0, 13);
             this.lblerror.TabIndex = 11;
             // 
             // Connexion

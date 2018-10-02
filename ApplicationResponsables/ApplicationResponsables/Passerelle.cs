@@ -9,7 +9,7 @@ using System.Data;
 
 namespace ApplicationResponsables
 {
-    class Passerelle
+    public class Passerelle
     {
         //Quentin Lecompte le 11/09/2018
         private static SqlConnection laConnection = null;
@@ -52,35 +52,34 @@ namespace ApplicationResponsables
 
 
         // ----- Fonction récupérant la capacité d'accueil maximale du service -----
-        public static bool recupCapacitéMax(String pService)
+        public static int recupCapacitéMax(int pService) //Lecompte 02/10/18
         {
-            bool verif=false;
-
-
-            return verif;
-        }
-
-
-        public static ArrayList getPatients() //Lecompte 18/09/2018 v1.0
-        {
-            ArrayList lesPatients = new ArrayList();
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT nom FROM Patients";
+            String requete = "SELECT capacite FROM Services WHERE id='" + pService + "'";
             maCommande = new SqlCommand(requete, laConnection);
-            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
-
-            while (unJeuResultat.Read())
-            {
-                String lePatient = (String)unJeuResultat["nom"];
-                lesPatients.Add(lePatient);
-
-            }
-            seDeconnecter();
-            return lesPatients;
+            int Resultat = (int)maCommande.ExecuteScalar();
+             seDeconnecter();
+            return Resultat;
+           
 
 
         }
+
+
+      public static int nbOccupantsServiceParPeriode(DateTime pDebutPeriode, DateTime pFinPeriode, int pService) //Lecompte 02/10/18
+      {
+          int Resultat;
+          seConnecter();
+          SqlCommand maCommande;
+          String requete = "SELECT COUNT(*) FROM Patients WHERE numeroService='"+pService+"' AND dateArrivee BETWEEN '"+pDebutPeriode+"' AND '"+pFinPeriode+"'";
+          maCommande = new SqlCommand(requete,laConnection);
+          Resultat=(int)maCommande.ExecuteScalar();
+          seDeconnecter();
+          return Resultat;
+
+
+      }
 
         public static ArrayList getServices() //Lecompte 18/09/2018 v1.0
         {
@@ -136,7 +135,7 @@ namespace ApplicationResponsables
         }*/
 
         // ----- Fonction de connexion utilisateur IHM ------
-        public static bool connexionIhm(string id, string mdp) //Aydogdu 25/09/2018 v0.1
+        public static bool connexionIhm(string id, string mdp) //Bekir 25/09/2018 v0.1
         {
             bool test = false;
             seConnecter();
@@ -156,5 +155,21 @@ namespace ApplicationResponsables
             seDeconnecter();
             return test;
         }
+
+
+        public static Double tauxOccupationPeriodeService(DateTime pDebutPeriode, DateTime pFinPeriode, int pService)
+        {
+            Double taux = 0;
+            int nbOccu = Passerelle.nbOccupantsServiceParPeriode(pDebutPeriode, pFinPeriode, pService);
+            int nbOccuMaxService = Passerelle.recupCapacitéMax(pService);
+            taux = nbOccuMaxService / nbOccu;
+            Math.Round(taux, 2);
+
+
+            return taux;
+
+
+        }
+
     }
 }

@@ -33,6 +33,10 @@ namespace ApplicationResponsables
                 f1.ShowDialog();
                 this.Close();
             }
+            else
+            {
+                lblerror.Text = "Le nom de compte ou mot de passe saisi est incorrect.";
+            }
         }
     }
 }
