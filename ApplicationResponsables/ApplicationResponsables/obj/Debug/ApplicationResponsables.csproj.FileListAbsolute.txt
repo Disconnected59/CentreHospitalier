@@ -22,3 +22,7 @@ C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\Appl
 C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Form2.resources
 F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Form2.resources
 F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.TauxOccuPeriodeService.resources
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Connexion.resources
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.TauxOccuPeriodeService.resources
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Form2.resources
+C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.Connexion.resources

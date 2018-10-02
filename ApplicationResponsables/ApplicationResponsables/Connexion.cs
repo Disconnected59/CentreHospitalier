@@ -28,7 +28,7 @@ namespace ApplicationResponsables
             string mdp = txtBoxMdp.Text;
             if (Passerelle.connexionIhm(id ,mdp))
             {
-                Form1 f1 = new Form1();
+                Form2 f1 = new Form2();
                 this.Hide();
                 f1.ShowDialog();
                 this.Close();
