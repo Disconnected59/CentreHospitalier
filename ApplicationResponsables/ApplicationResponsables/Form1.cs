@@ -44,8 +44,8 @@ namespace ApplicationResponsables
             lesMois.Add(leMois);
             cmbMois.DataSource = lesMois;
 
-            ArrayList lesPatients = Passerelle.getPatients();
-            cmbPatients.DataSource = lesPatients;
+            
+        
             ArrayList lesServices = Passerelle.getServices();
             cmbServices.DataSource = lesServices;
             cmbServices2.DataSource = lesServices;
@@ -85,6 +85,16 @@ namespace ApplicationResponsables
 
         private void cmbMois_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnValidPeriodeService_Click(object sender, EventArgs e)
+        {
+
+
+
+
+
 
         }
 

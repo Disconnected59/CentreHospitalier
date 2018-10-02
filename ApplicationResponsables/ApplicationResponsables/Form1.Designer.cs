@@ -253,6 +253,7 @@
             this.btnValidPeriodeService.TabIndex = 7;
             this.btnValidPeriodeService.Text = "Valider";
             this.btnValidPeriodeService.UseVisualStyleBackColor = true;
+            this.btnValidPeriodeService.Click += new System.EventHandler(this.btnValidPeriodeService_Click);
             // 
             // dtFinPeriode
             // 
@@ -319,6 +320,15 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Vous êtes administrateur? Connectez vous !";
             // 
+            // btnValiderConnexion
+            // 
+            this.btnValiderConnexion.Location = new System.Drawing.Point(305, 25);
+            this.btnValiderConnexion.Name = "btnValiderConnexion";
+            this.btnValiderConnexion.Size = new System.Drawing.Size(152, 45);
+            this.btnValiderConnexion.TabIndex = 10;
+            this.btnValiderConnexion.Text = "Valider";
+            this.btnValiderConnexion.UseVisualStyleBackColor = true;
+            // 
             // lblMdp
             // 
             this.lblMdp.AutoSize = true;
@@ -350,15 +360,6 @@
             this.txtBoxLabel.Name = "txtBoxLabel";
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
-            // 
-            // btnValiderConnexion
-            // 
-            this.btnValiderConnexion.Location = new System.Drawing.Point(305, 25);
-            this.btnValiderConnexion.Name = "btnValiderConnexion";
-            this.btnValiderConnexion.Size = new System.Drawing.Size(152, 45);
-            this.btnValiderConnexion.TabIndex = 10;
-            this.btnValiderConnexion.Text = "Valider";
-            this.btnValiderConnexion.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
