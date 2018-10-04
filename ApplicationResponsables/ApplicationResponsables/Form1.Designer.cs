@@ -32,12 +32,10 @@
             this.lblDebut = new System.Windows.Forms.Label();
             this.dtpDebut = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cmbPatients = new System.Windows.Forms.ComboBox();
+            this.btnBascule1 = new System.Windows.Forms.Button();
             this.btnValidChangerDebut = new System.Windows.Forms.Button();
             this.lblFin = new System.Windows.Forms.Label();
             this.dtpFin = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cmbMois = new System.Windows.Forms.ComboBox();
             this.cmbServices = new System.Windows.Forms.ComboBox();
@@ -69,7 +67,7 @@
             // 
             this.lblDebut.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblDebut.AutoSize = true;
-            this.lblDebut.Location = new System.Drawing.Point(278, 166);
+            this.lblDebut.Location = new System.Drawing.Point(258, 87);
             this.lblDebut.Name = "lblDebut";
             this.lblDebut.Size = new System.Drawing.Size(152, 22);
             this.lblDebut.TabIndex = 2;
@@ -79,7 +77,7 @@
             // dtpDebut
             // 
             this.dtpDebut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpDebut.Location = new System.Drawing.Point(0, 203);
+            this.dtpDebut.Location = new System.Drawing.Point(-9, 128);
             this.dtpDebut.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpDebut.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpDebut.Name = "dtpDebut";
@@ -89,46 +87,37 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.cmbPatients);
+            this.groupBox1.Controls.Add(this.btnBascule1);
             this.groupBox1.Controls.Add(this.btnValidChangerDebut);
             this.groupBox1.Controls.Add(this.lblFin);
             this.groupBox1.Controls.Add(this.dtpFin);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.dtpDebut);
             this.groupBox1.Controls.Add(this.lblDebut);
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(608, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(536, 543);
+            this.groupBox1.Size = new System.Drawing.Size(536, 568);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Taux d\'occupation total de l\'hopital";
             // 
-            // button1
+            // btnBascule1
             // 
-            this.button1.Location = new System.Drawing.Point(304, 328);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(169, 62);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Valider date de fin";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cmbPatients
-            // 
-            this.cmbPatients.FormattingEnabled = true;
-            this.cmbPatients.Location = new System.Drawing.Point(180, 47);
-            this.cmbPatients.Name = "cmbPatients";
-            this.cmbPatients.Size = new System.Drawing.Size(140, 30);
-            this.cmbPatients.TabIndex = 7;
+            this.btnBascule1.Location = new System.Drawing.Point(141, 331);
+            this.btnBascule1.Name = "btnBascule1";
+            this.btnBascule1.Size = new System.Drawing.Size(159, 45);
+            this.btnBascule1.TabIndex = 9;
+            this.btnBascule1.Text = "Page suivante >";
+            this.btnBascule1.UseVisualStyleBackColor = true;
+            this.btnBascule1.Click += new System.EventHandler(this.btnBascule1_Click);
             // 
             // btnValidChangerDebut
             // 
-            this.btnValidChangerDebut.Location = new System.Drawing.Point(42, 328);
+            this.btnValidChangerDebut.Location = new System.Drawing.Point(131, 241);
             this.btnValidChangerDebut.Name = "btnValidChangerDebut";
             this.btnValidChangerDebut.Size = new System.Drawing.Size(169, 62);
             this.btnValidChangerDebut.TabIndex = 6;
-            this.btnValidChangerDebut.Text = "Valider date de début";
+            this.btnValidChangerDebut.Text = "Valider";
             this.btnValidChangerDebut.UseVisualStyleBackColor = true;
             this.btnValidChangerDebut.Click += new System.EventHandler(this.btnValidChangerDebut_Click);
             // 
@@ -136,7 +125,7 @@
             // 
             this.lblFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblFin.AutoSize = true;
-            this.lblFin.Location = new System.Drawing.Point(6, 166);
+            this.lblFin.Location = new System.Drawing.Point(6, 87);
             this.lblFin.Name = "lblFin";
             this.lblFin.Size = new System.Drawing.Size(151, 22);
             this.lblFin.TabIndex = 4;
@@ -145,21 +134,12 @@
             // dtpFin
             // 
             this.dtpFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpFin.Location = new System.Drawing.Point(245, 203);
+            this.dtpFin.Location = new System.Drawing.Point(225, 128);
             this.dtpFin.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
             this.dtpFin.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.dtpFin.Name = "dtpFin";
             this.dtpFin.Size = new System.Drawing.Size(228, 26);
             this.dtpFin.TabIndex = 5;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Patient : ";
             // 
             // groupBox2
             // 
@@ -194,12 +174,13 @@
             // 
             // btnValidMoisService
             // 
-            this.btnValidMoisService.Location = new System.Drawing.Point(89, 368);
+            this.btnValidMoisService.Location = new System.Drawing.Point(70, 290);
             this.btnValidMoisService.Name = "btnValidMoisService";
             this.btnValidMoisService.Size = new System.Drawing.Size(152, 45);
             this.btnValidMoisService.TabIndex = 7;
             this.btnValidMoisService.Text = "Valider";
             this.btnValidMoisService.UseVisualStyleBackColor = true;
+            this.btnValidMoisService.Click += new System.EventHandler(this.btnValidMoisService_Click_1);
             // 
             // label2
             // 
@@ -389,7 +370,6 @@
         private System.Windows.Forms.Label lblDebut;
         private System.Windows.Forms.DateTimePicker dtpDebut;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnValidChangerDebut;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
@@ -403,19 +383,18 @@
         private System.Windows.Forms.Label lblPeriode2;
         private System.Windows.Forms.Label lblPeriode;
         private System.Windows.Forms.Label lbllService;
-        private System.Windows.Forms.ComboBox cmbPatients;
         private System.Windows.Forms.ComboBox cmbServices;
         private System.Windows.Forms.ComboBox cmbMois;
         private System.Windows.Forms.ComboBox cmbServices2;
         private System.Windows.Forms.Label lblFin;
         private System.Windows.Forms.DateTimePicker dtpFin;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtBoxMdp;
         private System.Windows.Forms.TextBox txtBoxLabel;
         private System.Windows.Forms.Label lblMdp;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnValiderConnexion;
+        private System.Windows.Forms.Button btnBascule1;
     }
 }
 

@@ -66,6 +66,17 @@ namespace ApplicationResponsables
 
         }
 
+        public static int capaciteMaxHopital() //Lecompte 04/10/18
+        {
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT SUM capacite FROM Services";
+            maCommande = new SqlCommand(requete, laConnection);
+            int Resultat = (int)maCommande.ExecuteScalar();
+            seDeconnecter();
+            return Resultat;
+        }
+
 
       public static int nbOccupantsServiceParPeriode(DateTime pDebutPeriode, DateTime pFinPeriode, int pService) //Lecompte 02/10/18
       {
@@ -80,6 +91,29 @@ namespace ApplicationResponsables
 
 
       }
+
+    public static int nbOcuppantsServiceParMois(int pMois, int pService) //Lecompte 04/10/18
+      {
+          seConnecter();
+          SqlCommand maCommande;
+        String requete = "";
+        if(pMois!=2)
+        {
+            requete = "SELECT COUNT(*) FROM Patiens WHERE numeroService='" + pService + "' AND dateArrivee BETWEEN '01/" + pMois + "/18 AND '31/" + pMois + "/18";
+        }
+        else
+        {
+            requete = "SELECT COUNT(*) FROM Patiens WHERE numeroService='" + pService + "' AND dateArrivee BETWEEN '01/" + pMois + "/18 AND '29/" + pMois + "/18";
+
+        }
+        maCommande = new SqlCommand(requete, laConnection);
+        int Resultat = (int)maCommande.ExecuteScalar();
+        seDeconnecter();
+        return Resultat;
+
+      }
+
+
 
         public static ArrayList getServices() //Lecompte 18/09/2018 v1.0
         {
@@ -119,21 +153,6 @@ namespace ApplicationResponsables
 
         }
 
-        /*public static Double getTauxOccuMois(String pService, int pMois) //Lecompte 25/09/2018 v1.0
-        {
-            Double tauxOccu=0;
-            seConnecter();
-            SqlCommand maCommande;
-            String requete = "SELECT COUNT(*) FROM Patients WHERE dateArrivee BETWEEN '1/"+pMois+"/%' AND '31/"+pMois+"/2018'";
-            maCommande = new SqlCommand(requete, laConnection);
-            SqlDataReader unJeuResultat = maCommande.ExecuteScalar();
-
-
-            return tauxOccu;
-
-            
-        }*/
-
         // ----- Fonction de connexion utilisateur IHM ------
         public static bool connexionIhm(string id, string mdp) //Bekir 25/09/2018 v0.1
         {
@@ -157,19 +176,34 @@ namespace ApplicationResponsables
         }
 
 
-        public static Double tauxOccupationPeriodeService(DateTime pDebutPeriode, DateTime pFinPeriode, int pService)
+        public static Double tauxOccupationPeriodeService(DateTime pDebutPeriode, DateTime pFinPeriode, int pService)// Lecompte 02/10/18
         {
             Double taux = 0;
             int nbOccu = Passerelle.nbOccupantsServiceParPeriode(pDebutPeriode, pFinPeriode, pService);
-            int nbOccuMaxService = Passerelle.recupCapacitéMax(pService);
-            taux = nbOccuMaxService / nbOccu;
-            Math.Round(taux, 2);
-
+            if (nbOccu != 0)
+            {
+                int nbOccuMaxService = Passerelle.recupCapacitéMax(pService);
+                taux = nbOccuMaxService / nbOccu;
+                Math.Round(taux, 2);
+            }
 
             return taux;
 
 
         }
+
+        public static Double tauxOccuMoisService(int pMois, int pService)
+        {
+            int nbOccuMois = Passerelle.nbOcuppantsServiceParMois(pMois, pService);
+            int nbPlacesService = Passerelle.recupCapacitéMax(pService);
+
+            Double taux = nbOccuMois / nbPlacesService;
+            return taux;
+
+
+        }
+
+
 
     }
 }

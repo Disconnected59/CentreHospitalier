@@ -30,22 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.dureemoy = new System.Windows.Forms.GroupBox();
+            this.btnValiderMois = new System.Windows.Forms.Button();
+            this.lblau = new System.Windows.Forms.Label();
+            this.dtpfin = new System.Windows.Forms.DateTimePicker();
+            this.dtpdebut = new System.Windows.Forms.DateTimePicker();
+            this.lblduree = new System.Windows.Forms.Label();
             this.btnvalider = new System.Windows.Forms.Button();
             this.cbboxService = new System.Windows.Forms.ComboBox();
             this.cbboxMois = new System.Windows.Forms.ComboBox();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lblMois = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
-            this.lblduree = new System.Windows.Forms.Label();
-            this.dtpdebut = new System.Windows.Forms.DateTimePicker();
-            this.dtpfin = new System.Windows.Forms.DateTimePicker();
-            this.lblau = new System.Windows.Forms.Label();
-            this.btnValiderMois = new System.Windows.Forms.Button();
+            this.btnBascule2 = new System.Windows.Forms.Button();
             this.dureemoy.SuspendLayout();
             this.SuspendLayout();
             // 
             // dureemoy
             // 
+            this.dureemoy.Controls.Add(this.btnBascule2);
             this.dureemoy.Controls.Add(this.btnValiderMois);
             this.dureemoy.Controls.Add(this.lblau);
             this.dureemoy.Controls.Add(this.dtpfin);
@@ -65,6 +67,49 @@
             this.dureemoy.TabStop = false;
             this.dureemoy.Text = "Durée moyenne de séjour";
             this.dureemoy.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnValiderMois
+            // 
+            this.btnValiderMois.Location = new System.Drawing.Point(264, 146);
+            this.btnValiderMois.Name = "btnValiderMois";
+            this.btnValiderMois.Size = new System.Drawing.Size(137, 29);
+            this.btnValiderMois.TabIndex = 12;
+            this.btnValiderMois.Text = "Valider Mois";
+            this.btnValiderMois.UseVisualStyleBackColor = true;
+            this.btnValiderMois.Click += new System.EventHandler(this.btnValiderMois_Click);
+            // 
+            // lblau
+            // 
+            this.lblau.AutoSize = true;
+            this.lblau.Location = new System.Drawing.Point(83, 291);
+            this.lblau.Name = "lblau";
+            this.lblau.Size = new System.Drawing.Size(26, 22);
+            this.lblau.TabIndex = 11;
+            this.lblau.Text = "au";
+            // 
+            // dtpfin
+            // 
+            this.dtpfin.Location = new System.Drawing.Point(107, 287);
+            this.dtpfin.Name = "dtpfin";
+            this.dtpfin.Size = new System.Drawing.Size(245, 26);
+            this.dtpfin.TabIndex = 10;
+            // 
+            // dtpdebut
+            // 
+            this.dtpdebut.Location = new System.Drawing.Point(107, 230);
+            this.dtpdebut.Name = "dtpdebut";
+            this.dtpdebut.Size = new System.Drawing.Size(245, 26);
+            this.dtpdebut.TabIndex = 9;
+            // 
+            // lblduree
+            // 
+            this.lblduree.AutoSize = true;
+            this.lblduree.Location = new System.Drawing.Point(6, 192);
+            this.lblduree.Name = "lblduree";
+            this.lblduree.Size = new System.Drawing.Size(574, 22);
+            this.lblduree.TabIndex = 8;
+            this.lblduree.Text = "Veuillez valider le mois avec le bouton \"valider mois\" avant d\'entrer la période";
+            this.lblduree.Click += new System.EventHandler(this.lblduree_Click);
             // 
             // btnvalider
             // 
@@ -120,48 +165,15 @@
             this.lblService.Text = "Service";
             this.lblService.Click += new System.EventHandler(this.label1_Click);
             // 
-            // lblduree
+            // btnBascule2
             // 
-            this.lblduree.AutoSize = true;
-            this.lblduree.Location = new System.Drawing.Point(6, 192);
-            this.lblduree.Name = "lblduree";
-            this.lblduree.Size = new System.Drawing.Size(574, 22);
-            this.lblduree.TabIndex = 8;
-            this.lblduree.Text = "Veuillez valider le mois avec le bouton \"valider mois\" avant d\'entrer la période";
-            this.lblduree.Click += new System.EventHandler(this.lblduree_Click);
-            // 
-            // dtpdebut
-            // 
-            this.dtpdebut.Location = new System.Drawing.Point(107, 230);
-            this.dtpdebut.Name = "dtpdebut";
-            this.dtpdebut.Size = new System.Drawing.Size(245, 26);
-            this.dtpdebut.TabIndex = 9;
-            // 
-            // dtpfin
-            // 
-            this.dtpfin.Location = new System.Drawing.Point(107, 287);
-            this.dtpfin.Name = "dtpfin";
-            this.dtpfin.Size = new System.Drawing.Size(245, 26);
-            this.dtpfin.TabIndex = 10;
-            // 
-            // lblau
-            // 
-            this.lblau.AutoSize = true;
-            this.lblau.Location = new System.Drawing.Point(83, 291);
-            this.lblau.Name = "lblau";
-            this.lblau.Size = new System.Drawing.Size(26, 22);
-            this.lblau.TabIndex = 11;
-            this.lblau.Text = "au";
-            // 
-            // btnValiderMois
-            // 
-            this.btnValiderMois.Location = new System.Drawing.Point(264, 146);
-            this.btnValiderMois.Name = "btnValiderMois";
-            this.btnValiderMois.Size = new System.Drawing.Size(137, 29);
-            this.btnValiderMois.TabIndex = 12;
-            this.btnValiderMois.Text = "Valider Mois";
-            this.btnValiderMois.UseVisualStyleBackColor = true;
-            this.btnValiderMois.Click += new System.EventHandler(this.btnValiderMois_Click);
+            this.btnBascule2.Location = new System.Drawing.Point(550, 332);
+            this.btnBascule2.Name = "btnBascule2";
+            this.btnBascule2.Size = new System.Drawing.Size(149, 56);
+            this.btnBascule2.TabIndex = 13;
+            this.btnBascule2.Text = " < Page Précedente";
+            this.btnBascule2.UseVisualStyleBackColor = true;
+            this.btnBascule2.Click += new System.EventHandler(this.btnBascule2_Click);
             // 
             // Form2
             // 
@@ -193,5 +205,6 @@
         private System.Windows.Forms.DateTimePicker dtpfin;
         private System.Windows.Forms.DateTimePicker dtpdebut;
         private System.Windows.Forms.Button btnValiderMois;
+        private System.Windows.Forms.Button btnBascule2;
     }
 }

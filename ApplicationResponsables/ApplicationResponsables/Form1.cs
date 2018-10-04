@@ -88,31 +88,70 @@ namespace ApplicationResponsables
 
         }
 
-        private void btnValidPeriodeService_Click(object sender, EventArgs e)
+        public void btnValidPeriodeService_Click(object sender, EventArgs e)
         {
             DateTime dateDebut = dtDebutPeriode.Value;
             DateTime dateFin = dtFinPeriode.Value;
             int serviceChoisi = (int)cmbServices2.SelectedIndex + 1;
+            String intituService="";
+            if(serviceChoisi == 1)
+            {
+                intituService = "cardiologie";
+            }
+            else if(serviceChoisi==2)
+            {
+                intituService = "neurologie";
+            }
+            else if(serviceChoisi==3)
+            {
+                intituService = "pediatrie";
+            }
+            else if(serviceChoisi==4)
+            {
+                intituService = "chirurgie vasculaire";
+            }
+            else if(serviceChoisi==5)
+            {
+                intituService = "psychiatrie";
+            }
 
             double taux = Passerelle.tauxOccupationPeriodeService(dateDebut, dateFin, serviceChoisi);
+            if (taux == 0)
+            {
+                MessageBox.Show("Il n'y a eu personne durant cette période pour ce service, veuillez resélectionner");
 
-            String[] X = new String[] {taux+"", "Taux occuppé"};
-
-            String[] y = new String[] {100-taux+"", "Taux restant"};
-
+            }
+            else
+            {
+                TauxOccuPeriodeService t1 = new TauxOccuPeriodeService(taux,dateDebut,dateFin, intituService);
+                t1.ShowDialog();
+            }
+            
             
         }
 
-        /*private void btnValidMoisService_Click(object sender, EventArgs e)
+        private void btnBascule1_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            this.Hide();
+            f2.ShowDialog();
+            this.Close();
+        }
+
+        private void btnValidMoisService_Click_1(object sender, EventArgs e)
         {
             String serviceChoisi = (String)cmbServices.SelectedItem;
-            int moisChoisi = (int)cmbMois.SelectedIndex+1;
+            int moisChoisi = (int)cmbMois.SelectedIndex + 1;
 
             Passerelle.getTauxOccuMois(serviceChoisi, moisChoisi);
 
+        }
+
+        
+           
 
 
-        }*/
+        
 
         }
 
