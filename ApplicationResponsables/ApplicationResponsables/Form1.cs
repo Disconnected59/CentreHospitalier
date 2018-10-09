@@ -99,23 +99,7 @@ namespace ApplicationResponsables
         {
             ArrayList lesSejours = new ArrayList();
             int serviceChoisi = (int)cmbServices.SelectedIndex + 1;
-            String intituService="";
-            if(serviceChoisi == 1)
-            {
-                intituService = "Cardiologie";
-            }
-            else if(serviceChoisi==2)
-            {
-                intituService = "Psychiatrie";
-            }
-            else if(serviceChoisi==3)
-            {
-                intituService = "Chirurgie cardiaque";
-            }
-            else if(serviceChoisi==4)
-            {
-                intituService = "Reeducation";
-            }
+           
 
             int moisDebut = (int)cmbMois2.SelectedIndex+1;
             int moisFin = (int)cmbMois3.SelectedIndex+1;
@@ -124,7 +108,7 @@ namespace ApplicationResponsables
             int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
             lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
 
-            TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours);
+            TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours, moisDebut, moisFin);
             T1.ShowDialog();
 
           

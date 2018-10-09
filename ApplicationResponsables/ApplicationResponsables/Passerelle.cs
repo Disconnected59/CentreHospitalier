@@ -170,24 +170,6 @@ namespace ApplicationResponsables
             seDeconnecter();
             return test;
         }
-
-
-        public static Double tauxOccupationPeriodeService(DateTime pDebutPeriode, DateTime pFinPeriode, int pService)// Lecompte 02/10/18
-        {
-            Double taux = 0;
-            int nbOccu = Passerelle.nbOccupantsServiceParPeriode(pDebutPeriode, pFinPeriode, pService);
-            if (nbOccu != 0)
-            {
-                int nbOccuMaxService = Passerelle.recupCapacitéMax(pService);
-                taux = nbOccuMaxService / nbOccu;
-                Math.Round(taux, 2);
-            }
-
-            return taux;
-
-
-        }
-
         public static Double tauxOccuMoisService(int pMois, int pService)
         {
             int nbOccuMois = Passerelle.nbOcuppantsServiceParMois(pMois, pService);
