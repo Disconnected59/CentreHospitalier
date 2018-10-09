@@ -30,29 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.dureemoy = new System.Windows.Forms.GroupBox();
-            this.btnValiderMois = new System.Windows.Forms.Button();
+            this.cbbfinperiode = new System.Windows.Forms.ComboBox();
+            this.cbbdebutperiode = new System.Windows.Forms.ComboBox();
+            this.btnBascule2 = new System.Windows.Forms.Button();
             this.lblau = new System.Windows.Forms.Label();
-            this.dtpfin = new System.Windows.Forms.DateTimePicker();
-            this.dtpdebut = new System.Windows.Forms.DateTimePicker();
-            this.lblduree = new System.Windows.Forms.Label();
             this.btnvalider = new System.Windows.Forms.Button();
             this.cbboxService = new System.Windows.Forms.ComboBox();
             this.cbboxMois = new System.Windows.Forms.ComboBox();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lblMois = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
-            this.btnBascule2 = new System.Windows.Forms.Button();
             this.dureemoy.SuspendLayout();
             this.SuspendLayout();
             // 
             // dureemoy
             // 
+            this.dureemoy.Controls.Add(this.cbbfinperiode);
+            this.dureemoy.Controls.Add(this.cbbdebutperiode);
             this.dureemoy.Controls.Add(this.btnBascule2);
-            this.dureemoy.Controls.Add(this.btnValiderMois);
             this.dureemoy.Controls.Add(this.lblau);
-            this.dureemoy.Controls.Add(this.dtpfin);
-            this.dureemoy.Controls.Add(this.dtpdebut);
-            this.dureemoy.Controls.Add(this.lblduree);
             this.dureemoy.Controls.Add(this.btnvalider);
             this.dureemoy.Controls.Add(this.cbboxService);
             this.dureemoy.Controls.Add(this.cbboxMois);
@@ -60,60 +56,52 @@
             this.dureemoy.Controls.Add(this.lblMois);
             this.dureemoy.Controls.Add(this.lblService);
             this.dureemoy.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.dureemoy.Location = new System.Drawing.Point(-1, -1);
+            this.dureemoy.Location = new System.Drawing.Point(105, 3);
             this.dureemoy.Name = "dureemoy";
-            this.dureemoy.Size = new System.Drawing.Size(950, 469);
+            this.dureemoy.Size = new System.Drawing.Size(723, 455);
             this.dureemoy.TabIndex = 0;
             this.dureemoy.TabStop = false;
             this.dureemoy.Text = "Durée moyenne de séjour";
             this.dureemoy.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // btnValiderMois
+            // cbbfinperiode
             // 
-            this.btnValiderMois.Location = new System.Drawing.Point(264, 146);
-            this.btnValiderMois.Name = "btnValiderMois";
-            this.btnValiderMois.Size = new System.Drawing.Size(137, 29);
-            this.btnValiderMois.TabIndex = 12;
-            this.btnValiderMois.Text = "Valider Mois";
-            this.btnValiderMois.UseVisualStyleBackColor = true;
-            this.btnValiderMois.Click += new System.EventHandler(this.btnValiderMois_Click);
+            this.cbbfinperiode.FormattingEnabled = true;
+            this.cbbfinperiode.Location = new System.Drawing.Point(308, 266);
+            this.cbbfinperiode.Name = "cbbfinperiode";
+            this.cbbfinperiode.Size = new System.Drawing.Size(121, 30);
+            this.cbbfinperiode.TabIndex = 15;
+            // 
+            // cbbdebutperiode
+            // 
+            this.cbbdebutperiode.FormattingEnabled = true;
+            this.cbbdebutperiode.Location = new System.Drawing.Point(308, 208);
+            this.cbbdebutperiode.Name = "cbbdebutperiode";
+            this.cbbdebutperiode.Size = new System.Drawing.Size(121, 30);
+            this.cbbdebutperiode.TabIndex = 14;
+            // 
+            // btnBascule2
+            // 
+            this.btnBascule2.Location = new System.Drawing.Point(526, 377);
+            this.btnBascule2.Name = "btnBascule2";
+            this.btnBascule2.Size = new System.Drawing.Size(149, 56);
+            this.btnBascule2.TabIndex = 13;
+            this.btnBascule2.Text = " < Page Précedente";
+            this.btnBascule2.UseVisualStyleBackColor = true;
+            this.btnBascule2.Click += new System.EventHandler(this.btnBascule2_Click);
             // 
             // lblau
             // 
             this.lblau.AutoSize = true;
-            this.lblau.Location = new System.Drawing.Point(83, 291);
+            this.lblau.Location = new System.Drawing.Point(196, 274);
             this.lblau.Name = "lblau";
             this.lblau.Size = new System.Drawing.Size(26, 22);
             this.lblau.TabIndex = 11;
             this.lblau.Text = "au";
             // 
-            // dtpfin
-            // 
-            this.dtpfin.Location = new System.Drawing.Point(107, 287);
-            this.dtpfin.Name = "dtpfin";
-            this.dtpfin.Size = new System.Drawing.Size(245, 26);
-            this.dtpfin.TabIndex = 10;
-            // 
-            // dtpdebut
-            // 
-            this.dtpdebut.Location = new System.Drawing.Point(107, 230);
-            this.dtpdebut.Name = "dtpdebut";
-            this.dtpdebut.Size = new System.Drawing.Size(245, 26);
-            this.dtpdebut.TabIndex = 9;
-            // 
-            // lblduree
-            // 
-            this.lblduree.AutoSize = true;
-            this.lblduree.Location = new System.Drawing.Point(6, 192);
-            this.lblduree.Name = "lblduree";
-            this.lblduree.Size = new System.Drawing.Size(574, 22);
-            this.lblduree.TabIndex = 8;
-            this.lblduree.Text = "Veuillez valider le mois avec le bouton \"valider mois\" avant d\'entrer la période";
-            this.lblduree.Click += new System.EventHandler(this.lblduree_Click);
-            // 
             // btnvalider
             // 
-            this.btnvalider.Location = new System.Drawing.Point(107, 332);
+            this.btnvalider.Location = new System.Drawing.Point(56, 377);
             this.btnvalider.Name = "btnvalider";
             this.btnvalider.Size = new System.Drawing.Size(149, 56);
             this.btnvalider.TabIndex = 6;
@@ -124,7 +112,7 @@
             // cbboxService
             // 
             this.cbboxService.FormattingEnabled = true;
-            this.cbboxService.Location = new System.Drawing.Point(107, 76);
+            this.cbboxService.Location = new System.Drawing.Point(308, 76);
             this.cbboxService.Name = "cbboxService";
             this.cbboxService.Size = new System.Drawing.Size(121, 30);
             this.cbboxService.TabIndex = 5;
@@ -132,7 +120,7 @@
             // cbboxMois
             // 
             this.cbboxMois.FormattingEnabled = true;
-            this.cbboxMois.Location = new System.Drawing.Point(107, 145);
+            this.cbboxMois.Location = new System.Drawing.Point(308, 145);
             this.cbboxMois.Name = "cbboxMois";
             this.cbboxMois.Size = new System.Drawing.Size(121, 30);
             this.cbboxMois.TabIndex = 3;
@@ -140,16 +128,17 @@
             // lblPeriode
             // 
             this.lblPeriode.AutoSize = true;
-            this.lblPeriode.Location = new System.Drawing.Point(15, 234);
+            this.lblPeriode.Location = new System.Drawing.Point(196, 216);
             this.lblPeriode.Name = "lblPeriode";
             this.lblPeriode.Size = new System.Drawing.Size(94, 22);
             this.lblPeriode.TabIndex = 2;
             this.lblPeriode.Text = "Période: du";
+            this.lblPeriode.Click += new System.EventHandler(this.lblPeriode_Click);
             // 
             // lblMois
             // 
             this.lblMois.AutoSize = true;
-            this.lblMois.Location = new System.Drawing.Point(15, 153);
+            this.lblMois.Location = new System.Drawing.Point(196, 153);
             this.lblMois.Name = "lblMois";
             this.lblMois.Size = new System.Drawing.Size(41, 22);
             this.lblMois.TabIndex = 1;
@@ -158,28 +147,18 @@
             // lblService
             // 
             this.lblService.AutoSize = true;
-            this.lblService.Location = new System.Drawing.Point(15, 84);
+            this.lblService.Location = new System.Drawing.Point(196, 84);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(64, 22);
             this.lblService.TabIndex = 0;
             this.lblService.Text = "Service";
             this.lblService.Click += new System.EventHandler(this.label1_Click);
             // 
-            // btnBascule2
-            // 
-            this.btnBascule2.Location = new System.Drawing.Point(550, 332);
-            this.btnBascule2.Name = "btnBascule2";
-            this.btnBascule2.Size = new System.Drawing.Size(149, 56);
-            this.btnBascule2.TabIndex = 13;
-            this.btnBascule2.Text = " < Page Précedente";
-            this.btnBascule2.UseVisualStyleBackColor = true;
-            this.btnBascule2.Click += new System.EventHandler(this.btnBascule2_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 466);
+            this.ClientSize = new System.Drawing.Size(950, 470);
             this.Controls.Add(this.dureemoy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
@@ -200,11 +179,9 @@
         private System.Windows.Forms.Label lblMois;
         private System.Windows.Forms.ComboBox cbboxService;
         private System.Windows.Forms.Button btnvalider;
-        private System.Windows.Forms.Label lblduree;
         private System.Windows.Forms.Label lblau;
-        private System.Windows.Forms.DateTimePicker dtpfin;
-        private System.Windows.Forms.DateTimePicker dtpdebut;
-        private System.Windows.Forms.Button btnValiderMois;
         private System.Windows.Forms.Button btnBascule2;
+        private System.Windows.Forms.ComboBox cbbfinperiode;
+        private System.Windows.Forms.ComboBox cbbdebutperiode;
     }
 }
