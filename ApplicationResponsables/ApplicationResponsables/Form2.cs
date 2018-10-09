@@ -189,5 +189,10 @@ namespace ApplicationResponsables
             f1.ShowDialog();
             this.Close();
         }
+
+        private void lblPeriode_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

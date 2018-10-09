@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dureeMoyDiagramme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dureeMoyDiagramme.Designer.cs">
+      <DependentUpon>dureeMoyDiagramme.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,13 +72,15 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sejour.cs" />
     <Compile Include="TauxOccuPeriodeService.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TauxOccuPeriodeService.Designer.cs">
       <DependentUpon>TauxOccuPeriodeService.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="dureeMoyDiagramme.resx">
+      <DependentUpon>dureeMoyDiagramme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
