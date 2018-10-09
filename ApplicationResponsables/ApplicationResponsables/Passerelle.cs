@@ -78,16 +78,31 @@ namespace ApplicationResponsables
         }
 
 
-      public static int nbOccupantsServiceParPeriode(DateTime pDebutPeriode, DateTime pFinPeriode, int pService) //Lecompte 02/10/18
+      public static ArrayList SejoursServiceParPeriode(int pMoisDebut, int pMoisFin, int pService) //Lecompte 09/10/18
       {
-          int Resultat;
+          ArrayList lesSejours = new ArrayList();
+          int id; String moisSejour; int annee; int nbPatient; int idService; int dureeMoy;
           seConnecter();
           SqlCommand maCommande;
-          String requete = "SELECT COUNT(*) FROM Patients WHERE numeroService='"+pService+"' AND dateArrivee BETWEEN '"+pDebutPeriode+"' AND '"+pFinPeriode+"'";
+          String requete = "SELECT * FROM Sejours WHERE idService = "+pService+" AND id BETWEEN "+pMoisDebut+"AND "+pMoisFin;
           maCommande = new SqlCommand(requete,laConnection);
-          Resultat=(int)maCommande.ExecuteScalar();
-          seDeconnecter();
-          return Resultat;
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                id = (int)unJeuResultat["id"];
+                moisSejour = (string)unJeuResultat["MoisSejour"];
+                annee = (int)unJeuResultat["AnnéeSejour"];
+                nbPatient = (int)unJeuResultat["nbPatients"];
+                idService = (int)unJeuResultat["idService"];
+                dureeMoy = (int)unJeuResultat["dureeMoyenne"];
+
+                Sejour unSejour = new Sejour(id, moisSejour, annee, nbPatient, idService, dureeMoy);
+                lesSejours.Add(unSejour);
+            }
+            seDeconnecter();
+            return lesSejours;
+          
+          
 
 
       }

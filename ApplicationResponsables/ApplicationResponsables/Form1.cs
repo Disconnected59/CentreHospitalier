@@ -97,6 +97,7 @@ namespace ApplicationResponsables
 
         public void btnValidPeriodeService_Click(object sender, EventArgs e)
         {
+            ArrayList lesSejours = new ArrayList();
             int serviceChoisi = (int)cmbServices.SelectedIndex + 1;
             String intituService="";
             if(serviceChoisi == 1)
@@ -115,10 +116,18 @@ namespace ApplicationResponsables
             {
                 intituService = "Reeducation";
             }
-            String moisDebut = (String)cmbMois2.SelectedValue;
-            String moisFin = (String)cmbMois3.SelectedValue;
 
-            MessageBox.Show("Mois début : " + moisDebut + "\n Mois fin : " + moisFin);
+            int moisDebut = (int)cmbMois2.SelectedIndex+1;
+            int moisFin = (int)cmbMois3.SelectedIndex+1;
+
+
+            int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
+            lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
+
+            TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours);
+            T1.ShowDialog();
+
+          
 
 
 
@@ -148,6 +157,11 @@ namespace ApplicationResponsables
         }
 
         private void cmbMois3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

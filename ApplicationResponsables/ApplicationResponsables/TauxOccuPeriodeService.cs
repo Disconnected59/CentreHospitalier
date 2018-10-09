@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
-using System.Data.SqlClient; //import pie chart
-using System.Configuration; //import pie chart
-using System.Windows.Forms.DataVisualization.Charting; //import pie chart
 
 namespace ApplicationResponsables
 {
     public partial class TauxOccuPeriodeService : Form
     {
-        public TauxOccuPeriodeService(Double taux, DateTime pDateDebut, DateTime pDateFin, String pServiceChoisi)
+        public TauxOccuPeriodeService(int pCapaMax, ArrayList pSejour)
         {
             InitializeComponent();
             Double innocupé = 100 - taux;
