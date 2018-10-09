@@ -21,7 +21,7 @@ namespace ApplicationResponsables
             if (laConnection == null)
             {
                 laConnection = new SqlConnection();
-                laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019BearezPpeBearez;User ID=bearez;Password=bearez";
+                laConnection.ConnectionString = "Data Source=WIN-921C8FKTGAE;Initial Catalog=slam2019TableauDeBordABL;User ID=lecompte;Password=lecompte";
                 //laConnection.ConnectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=slam2019HopitalPharmacie;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                 laConnection.Open();
                 System.Diagnostics.Debug.WriteLine("instanciation connexion");
@@ -134,32 +134,13 @@ namespace ApplicationResponsables
 
         }
 
-        public static void changerDateDebutHospitalisation(DateTime pDateDebut) //Lecompte 18/09/2018 v1.0
-        {
-            seConnecter();
-            SqlCommand maCommande;
-            String requete = "UPDATE Patients set dateArrivee='" + pDateDebut + "'";
-            maCommande = new SqlCommand(requete, laConnection);
-            Int32 nb = maCommande.ExecuteNonQuery();
-        }
-
-        public static void changerDateFinHospitalisation(DateTime pDateFin) //Lecompte 18/09/2018 v1.0
-        {
-            seConnecter();
-            SqlCommand maCommande;
-            String requete = "UPDATE Patients set dateDepart='" + pDateFin + "'";
-            maCommande = new SqlCommand(requete, laConnection);
-            Int32 nb = maCommande.ExecuteNonQuery();
-
-        }
-
         // ----- Fonction de connexion utilisateur IHM ------
         public static bool connexionIhm(string id, string mdp) //Bekir 25/09/2018 v0.1
         {
             bool test = false;
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT id, password, typeUtilisateur FROM Utilisateurs";
+            String requete = "SELECT id, password FROM Utilisateurs";
             maCommande = new SqlCommand(requete, laConnection);
             SqlDataReader unJeuResultat = maCommande.ExecuteReader();
             while (unJeuResultat.Read())
