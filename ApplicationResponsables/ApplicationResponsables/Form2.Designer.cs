@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.dureemoy = new System.Windows.Forms.GroupBox();
+            this.cbbfinperiode = new System.Windows.Forms.ComboBox();
+            this.cbbdebutperiode = new System.Windows.Forms.ComboBox();
             this.btnBascule2 = new System.Windows.Forms.Button();
             this.lblau = new System.Windows.Forms.Label();
             this.btnvalider = new System.Windows.Forms.Button();
@@ -38,8 +40,6 @@
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lblMois = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
-            this.cbbdebutperiode = new System.Windows.Forms.ComboBox();
-            this.cbbfinperiode = new System.Windows.Forms.ComboBox();
             this.dureemoy.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,17 +56,33 @@
             this.dureemoy.Controls.Add(this.lblMois);
             this.dureemoy.Controls.Add(this.lblService);
             this.dureemoy.Font = new System.Drawing.Font("Trebuchet MS", 12F);
-            this.dureemoy.Location = new System.Drawing.Point(-1, -1);
+            this.dureemoy.Location = new System.Drawing.Point(105, 3);
             this.dureemoy.Name = "dureemoy";
-            this.dureemoy.Size = new System.Drawing.Size(950, 469);
+            this.dureemoy.Size = new System.Drawing.Size(723, 455);
             this.dureemoy.TabIndex = 0;
             this.dureemoy.TabStop = false;
             this.dureemoy.Text = "Durée moyenne de séjour";
             this.dureemoy.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // cbbfinperiode
+            // 
+            this.cbbfinperiode.FormattingEnabled = true;
+            this.cbbfinperiode.Location = new System.Drawing.Point(308, 266);
+            this.cbbfinperiode.Name = "cbbfinperiode";
+            this.cbbfinperiode.Size = new System.Drawing.Size(121, 30);
+            this.cbbfinperiode.TabIndex = 15;
+            // 
+            // cbbdebutperiode
+            // 
+            this.cbbdebutperiode.FormattingEnabled = true;
+            this.cbbdebutperiode.Location = new System.Drawing.Point(308, 208);
+            this.cbbdebutperiode.Name = "cbbdebutperiode";
+            this.cbbdebutperiode.Size = new System.Drawing.Size(121, 30);
+            this.cbbdebutperiode.TabIndex = 14;
+            // 
             // btnBascule2
             // 
-            this.btnBascule2.Location = new System.Drawing.Point(550, 332);
+            this.btnBascule2.Location = new System.Drawing.Point(526, 377);
             this.btnBascule2.Name = "btnBascule2";
             this.btnBascule2.Size = new System.Drawing.Size(149, 56);
             this.btnBascule2.TabIndex = 13;
@@ -77,7 +93,7 @@
             // lblau
             // 
             this.lblau.AutoSize = true;
-            this.lblau.Location = new System.Drawing.Point(74, 291);
+            this.lblau.Location = new System.Drawing.Point(196, 274);
             this.lblau.Name = "lblau";
             this.lblau.Size = new System.Drawing.Size(26, 22);
             this.lblau.TabIndex = 11;
@@ -85,7 +101,7 @@
             // 
             // btnvalider
             // 
-            this.btnvalider.Location = new System.Drawing.Point(107, 332);
+            this.btnvalider.Location = new System.Drawing.Point(56, 377);
             this.btnvalider.Name = "btnvalider";
             this.btnvalider.Size = new System.Drawing.Size(149, 56);
             this.btnvalider.TabIndex = 6;
@@ -96,7 +112,7 @@
             // cbboxService
             // 
             this.cbboxService.FormattingEnabled = true;
-            this.cbboxService.Location = new System.Drawing.Point(107, 76);
+            this.cbboxService.Location = new System.Drawing.Point(308, 76);
             this.cbboxService.Name = "cbboxService";
             this.cbboxService.Size = new System.Drawing.Size(121, 30);
             this.cbboxService.TabIndex = 5;
@@ -104,7 +120,7 @@
             // cbboxMois
             // 
             this.cbboxMois.FormattingEnabled = true;
-            this.cbboxMois.Location = new System.Drawing.Point(107, 145);
+            this.cbboxMois.Location = new System.Drawing.Point(308, 145);
             this.cbboxMois.Name = "cbboxMois";
             this.cbboxMois.Size = new System.Drawing.Size(121, 30);
             this.cbboxMois.TabIndex = 3;
@@ -112,7 +128,7 @@
             // lblPeriode
             // 
             this.lblPeriode.AutoSize = true;
-            this.lblPeriode.Location = new System.Drawing.Point(6, 234);
+            this.lblPeriode.Location = new System.Drawing.Point(196, 216);
             this.lblPeriode.Name = "lblPeriode";
             this.lblPeriode.Size = new System.Drawing.Size(94, 22);
             this.lblPeriode.TabIndex = 2;
@@ -122,7 +138,7 @@
             // lblMois
             // 
             this.lblMois.AutoSize = true;
-            this.lblMois.Location = new System.Drawing.Point(15, 153);
+            this.lblMois.Location = new System.Drawing.Point(196, 153);
             this.lblMois.Name = "lblMois";
             this.lblMois.Size = new System.Drawing.Size(41, 22);
             this.lblMois.TabIndex = 1;
@@ -131,34 +147,18 @@
             // lblService
             // 
             this.lblService.AutoSize = true;
-            this.lblService.Location = new System.Drawing.Point(15, 84);
+            this.lblService.Location = new System.Drawing.Point(196, 84);
             this.lblService.Name = "lblService";
             this.lblService.Size = new System.Drawing.Size(64, 22);
             this.lblService.TabIndex = 0;
             this.lblService.Text = "Service";
             this.lblService.Click += new System.EventHandler(this.label1_Click);
             // 
-            // cbbdebutperiode
-            // 
-            this.cbbdebutperiode.FormattingEnabled = true;
-            this.cbbdebutperiode.Location = new System.Drawing.Point(107, 226);
-            this.cbbdebutperiode.Name = "cbbdebutperiode";
-            this.cbbdebutperiode.Size = new System.Drawing.Size(121, 30);
-            this.cbbdebutperiode.TabIndex = 14;
-            // 
-            // cbbfinperiode
-            // 
-            this.cbbfinperiode.FormattingEnabled = true;
-            this.cbbfinperiode.Location = new System.Drawing.Point(107, 283);
-            this.cbbfinperiode.Name = "cbbfinperiode";
-            this.cbbfinperiode.Size = new System.Drawing.Size(121, 30);
-            this.cbbfinperiode.TabIndex = 15;
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 466);
+            this.ClientSize = new System.Drawing.Size(950, 470);
             this.Controls.Add(this.dureemoy);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form2";
