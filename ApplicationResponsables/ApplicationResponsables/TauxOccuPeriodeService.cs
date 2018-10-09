@@ -23,10 +23,6 @@ namespace ApplicationResponsables
 
 
 
-            chartTauxOccuPeriodeService.Titles.Add("Taux d'occupation du service "+pServiceChoisi+" pour la période du "+pDateDebut+" au "+pDateFin);
-            chartTauxOccuPeriodeService.Series["Series1"].IsValueShownAsLabel = true;
-            chartTauxOccuPeriodeService.Series["Series1"].Points.AddXY("Occuppé", taux);
-            chartTauxOccuPeriodeService.Series["Series1"].Points.AddXY("Innocuppé", innocupé);
 
 
         }

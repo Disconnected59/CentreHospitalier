@@ -29,25 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.lblDebut = new System.Windows.Forms.Label();
-            this.dtpDebut = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbl5 = new System.Windows.Forms.Label();
             this.btnBascule1 = new System.Windows.Forms.Button();
             this.btnValidChangerDebut = new System.Windows.Forms.Button();
-            this.lblFin = new System.Windows.Forms.Label();
-            this.dtpFin = new System.Windows.Forms.DateTimePicker();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cmbMois = new System.Windows.Forms.ComboBox();
-            this.cmbServices = new System.Windows.Forms.ComboBox();
-            this.btnValidMoisService = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblService = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.cmbServices2 = new System.Windows.Forms.ComboBox();
+            this.lbldate2 = new System.Windows.Forms.Label();
+            this.lbldate1 = new System.Windows.Forms.Label();
+            this.cmbMois2 = new System.Windows.Forms.ComboBox();
+            this.cmbServices = new System.Windows.Forms.ComboBox();
             this.btnValidPeriodeService = new System.Windows.Forms.Button();
-            this.dtFinPeriode = new System.Windows.Forms.DateTimePicker();
             this.lblPeriod3 = new System.Windows.Forms.Label();
-            this.dtDebutPeriode = new System.Windows.Forms.DateTimePicker();
             this.lblPeriode2 = new System.Windows.Forms.Label();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lbllService = new System.Windows.Forms.Label();
@@ -57,53 +49,37 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
+            this.cmbMois3 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblDebut
-            // 
-            this.lblDebut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblDebut.AutoSize = true;
-            this.lblDebut.Location = new System.Drawing.Point(258, 87);
-            this.lblDebut.Name = "lblDebut";
-            this.lblDebut.Size = new System.Drawing.Size(152, 22);
-            this.lblDebut.TabIndex = 2;
-            this.lblDebut.Text = "Changer date de fin";
-            this.lblDebut.Click += new System.EventHandler(this.lblDebut_Click);
-            // 
-            // dtpDebut
-            // 
-            this.dtpDebut.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpDebut.Location = new System.Drawing.Point(-9, 128);
-            this.dtpDebut.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtpDebut.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpDebut.Name = "dtpDebut";
-            this.dtpDebut.Size = new System.Drawing.Size(228, 26);
-            this.dtpDebut.TabIndex = 3;
-            this.dtpDebut.ValueChanged += new System.EventHandler(this.dtpDebut_ValueChanged);
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lbl5);
             this.groupBox1.Controls.Add(this.btnBascule1);
             this.groupBox1.Controls.Add(this.btnValidChangerDebut);
-            this.groupBox1.Controls.Add(this.lblFin);
-            this.groupBox1.Controls.Add(this.dtpFin);
-            this.groupBox1.Controls.Add(this.dtpDebut);
-            this.groupBox1.Controls.Add(this.lblDebut);
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(608, 2);
+            this.groupBox1.Location = new System.Drawing.Point(539, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(536, 568);
+            this.groupBox1.Size = new System.Drawing.Size(605, 424);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Taux d\'occupation total de l\'hopital";
             // 
+            // lbl5
+            // 
+            this.lbl5.AutoSize = true;
+            this.lbl5.Location = new System.Drawing.Point(181, 143);
+            this.lbl5.Name = "lbl5";
+            this.lbl5.Size = new System.Drawing.Size(149, 22);
+            this.lbl5.TabIndex = 10;
+            this.lbl5.Text = "Pour l\'année 2018 : ";
+            // 
             // btnBascule1
             // 
-            this.btnBascule1.Location = new System.Drawing.Point(141, 331);
+            this.btnBascule1.Location = new System.Drawing.Point(171, 379);
             this.btnBascule1.Name = "btnBascule1";
             this.btnBascule1.Size = new System.Drawing.Size(159, 45);
             this.btnBascule1.TabIndex = 9;
@@ -113,122 +89,71 @@
             // 
             // btnValidChangerDebut
             // 
-            this.btnValidChangerDebut.Location = new System.Drawing.Point(131, 241);
+            this.btnValidChangerDebut.Location = new System.Drawing.Point(171, 191);
             this.btnValidChangerDebut.Name = "btnValidChangerDebut";
             this.btnValidChangerDebut.Size = new System.Drawing.Size(169, 62);
             this.btnValidChangerDebut.TabIndex = 6;
             this.btnValidChangerDebut.Text = "Valider";
             this.btnValidChangerDebut.UseVisualStyleBackColor = true;
-            this.btnValidChangerDebut.Click += new System.EventHandler(this.btnValidChangerDebut_Click);
-            // 
-            // lblFin
-            // 
-            this.lblFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblFin.AutoSize = true;
-            this.lblFin.Location = new System.Drawing.Point(6, 87);
-            this.lblFin.Name = "lblFin";
-            this.lblFin.Size = new System.Drawing.Size(151, 22);
-            this.lblFin.TabIndex = 4;
-            this.lblFin.Text = "Changer date début";
-            // 
-            // dtpFin
-            // 
-            this.dtpFin.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dtpFin.Location = new System.Drawing.Point(225, 128);
-            this.dtpFin.MaxDate = new System.DateTime(2100, 12, 31, 0, 0, 0, 0);
-            this.dtpFin.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
-            this.dtpFin.Name = "dtpFin";
-            this.dtpFin.Size = new System.Drawing.Size(228, 26);
-            this.dtpFin.TabIndex = 5;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.cmbMois);
-            this.groupBox2.Controls.Add(this.cmbServices);
-            this.groupBox2.Controls.Add(this.btnValidMoisService);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.lblService);
-            this.groupBox2.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(300, 2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(308, 543);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Taux d\'occupation des lits par mois pour un service choisi";
-            // 
-            // cmbMois
-            // 
-            this.cmbMois.FormattingEnabled = true;
-            this.cmbMois.Location = new System.Drawing.Point(135, 144);
-            this.cmbMois.Name = "cmbMois";
-            this.cmbMois.Size = new System.Drawing.Size(143, 30);
-            this.cmbMois.TabIndex = 9;
-            // 
-            // cmbServices
-            // 
-            this.cmbServices.FormattingEnabled = true;
-            this.cmbServices.Location = new System.Drawing.Point(135, 103);
-            this.cmbServices.Name = "cmbServices";
-            this.cmbServices.Size = new System.Drawing.Size(143, 30);
-            this.cmbServices.TabIndex = 8;
-            // 
-            // btnValidMoisService
-            // 
-            this.btnValidMoisService.Location = new System.Drawing.Point(70, 290);
-            this.btnValidMoisService.Name = "btnValidMoisService";
-            this.btnValidMoisService.Size = new System.Drawing.Size(152, 45);
-            this.btnValidMoisService.TabIndex = 7;
-            this.btnValidMoisService.Text = "Valider";
-            this.btnValidMoisService.UseVisualStyleBackColor = true;
-            this.btnValidMoisService.Click += new System.EventHandler(this.btnValidMoisService_Click_1);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 22);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Mois : ";
-            // 
-            // lblService
-            // 
-            this.lblService.AutoSize = true;
-            this.lblService.Location = new System.Drawing.Point(7, 101);
-            this.lblService.Name = "lblService";
-            this.lblService.Size = new System.Drawing.Size(80, 22);
-            this.lblService.TabIndex = 1;
-            this.lblService.Text = "Service : ";
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.cmbServices2);
+            this.groupBox3.Controls.Add(this.cmbMois3);
+            this.groupBox3.Controls.Add(this.lbldate2);
+            this.groupBox3.Controls.Add(this.lbldate1);
+            this.groupBox3.Controls.Add(this.cmbMois2);
+            this.groupBox3.Controls.Add(this.cmbServices);
             this.groupBox3.Controls.Add(this.btnValidPeriodeService);
-            this.groupBox3.Controls.Add(this.dtFinPeriode);
             this.groupBox3.Controls.Add(this.lblPeriod3);
-            this.groupBox3.Controls.Add(this.dtDebutPeriode);
             this.groupBox3.Controls.Add(this.lblPeriode2);
             this.groupBox3.Controls.Add(this.lblPeriode);
             this.groupBox3.Controls.Add(this.lbllService);
             this.groupBox3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(2, 2);
+            this.groupBox3.Location = new System.Drawing.Point(26, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(292, 543);
+            this.groupBox3.Size = new System.Drawing.Size(507, 437);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Taux d\'occupation des lits par période et service choisi";
             // 
-            // cmbServices2
+            // lbldate2
             // 
-            this.cmbServices2.FormattingEnabled = true;
-            this.cmbServices2.Location = new System.Drawing.Point(88, 101);
-            this.cmbServices2.Name = "cmbServices2";
-            this.cmbServices2.Size = new System.Drawing.Size(166, 30);
-            this.cmbServices2.TabIndex = 9;
+            this.lbldate2.AutoSize = true;
+            this.lbldate2.Location = new System.Drawing.Point(295, 319);
+            this.lbldate2.Name = "lbldate2";
+            this.lbldate2.Size = new System.Drawing.Size(42, 22);
+            this.lbldate2.TabIndex = 13;
+            this.lbldate2.Text = "2018";
+            // 
+            // lbldate1
+            // 
+            this.lbldate1.AutoSize = true;
+            this.lbldate1.Location = new System.Drawing.Point(295, 223);
+            this.lbldate1.Name = "lbldate1";
+            this.lbldate1.Size = new System.Drawing.Size(42, 22);
+            this.lbldate1.TabIndex = 12;
+            this.lbldate1.Text = "2018";
+            // 
+            // cmbMois2
+            // 
+            this.cmbMois2.FormattingEnabled = true;
+            this.cmbMois2.Location = new System.Drawing.Point(61, 220);
+            this.cmbMois2.Name = "cmbMois2";
+            this.cmbMois2.Size = new System.Drawing.Size(143, 30);
+            this.cmbMois2.TabIndex = 10;
+            this.cmbMois2.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // cmbServices
+            // 
+            this.cmbServices.FormattingEnabled = true;
+            this.cmbServices.Location = new System.Drawing.Point(171, 101);
+            this.cmbServices.Name = "cmbServices";
+            this.cmbServices.Size = new System.Drawing.Size(166, 30);
+            this.cmbServices.TabIndex = 9;
             // 
             // btnValidPeriodeService
             // 
-            this.btnValidPeriodeService.Location = new System.Drawing.Point(52, 368);
+            this.btnValidPeriodeService.Location = new System.Drawing.Point(147, 371);
             this.btnValidPeriodeService.Name = "btnValidPeriodeService";
             this.btnValidPeriodeService.Size = new System.Drawing.Size(152, 45);
             this.btnValidPeriodeService.TabIndex = 7;
@@ -236,33 +161,19 @@
             this.btnValidPeriodeService.UseVisualStyleBackColor = true;
             this.btnValidPeriodeService.Click += new System.EventHandler(this.btnValidPeriodeService_Click);
             // 
-            // dtFinPeriode
-            // 
-            this.dtFinPeriode.Location = new System.Drawing.Point(6, 306);
-            this.dtFinPeriode.Name = "dtFinPeriode";
-            this.dtFinPeriode.Size = new System.Drawing.Size(248, 26);
-            this.dtFinPeriode.TabIndex = 6;
-            // 
             // lblPeriod3
             // 
             this.lblPeriod3.AutoSize = true;
-            this.lblPeriod3.Location = new System.Drawing.Point(84, 281);
+            this.lblPeriod3.Location = new System.Drawing.Point(210, 275);
             this.lblPeriod3.Name = "lblPeriod3";
             this.lblPeriod3.Size = new System.Drawing.Size(43, 22);
             this.lblPeriod3.TabIndex = 5;
             this.lblPeriod3.Text = "Au : ";
             // 
-            // dtDebutPeriode
-            // 
-            this.dtDebutPeriode.Location = new System.Drawing.Point(11, 235);
-            this.dtDebutPeriode.Name = "dtDebutPeriode";
-            this.dtDebutPeriode.Size = new System.Drawing.Size(248, 26);
-            this.dtDebutPeriode.TabIndex = 4;
-            // 
             // lblPeriode2
             // 
             this.lblPeriode2.AutoSize = true;
-            this.lblPeriode2.Location = new System.Drawing.Point(89, 198);
+            this.lblPeriode2.Location = new System.Drawing.Point(210, 191);
             this.lblPeriode2.Name = "lblPeriode2";
             this.lblPeriode2.Size = new System.Drawing.Size(44, 22);
             this.lblPeriode2.TabIndex = 3;
@@ -271,7 +182,7 @@
             // lblPeriode
             // 
             this.lblPeriode.AutoSize = true;
-            this.lblPeriode.Location = new System.Drawing.Point(48, 166);
+            this.lblPeriode.Location = new System.Drawing.Point(146, 169);
             this.lblPeriode.Name = "lblPeriode";
             this.lblPeriode.Size = new System.Drawing.Size(153, 22);
             this.lblPeriode.TabIndex = 2;
@@ -280,7 +191,7 @@
             // lbllService
             // 
             this.lbllService.AutoSize = true;
-            this.lbllService.Location = new System.Drawing.Point(7, 101);
+            this.lbllService.Location = new System.Drawing.Point(57, 104);
             this.lbllService.Name = "lbllService";
             this.lbllService.Size = new System.Drawing.Size(80, 22);
             this.lbllService.TabIndex = 0;
@@ -342,21 +253,27 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
+            // cmbMois3
+            // 
+            this.cmbMois3.FormattingEnabled = true;
+            this.cmbMois3.Location = new System.Drawing.Point(61, 319);
+            this.cmbMois3.Name = "cmbMois3";
+            this.cmbMois3.Size = new System.Drawing.Size(143, 30);
+            this.cmbMois3.TabIndex = 14;
+            this.cmbMois3.SelectedIndexChanged += new System.EventHandler(this.cmbMois3_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1101, 438);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Tableau de bord";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -367,27 +284,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblDebut;
-        private System.Windows.Forms.DateTimePicker dtpDebut;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnValidChangerDebut;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblService;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button btnValidMoisService;
         private System.Windows.Forms.Button btnValidPeriodeService;
-        private System.Windows.Forms.DateTimePicker dtFinPeriode;
         private System.Windows.Forms.Label lblPeriod3;
-        private System.Windows.Forms.DateTimePicker dtDebutPeriode;
         private System.Windows.Forms.Label lblPeriode2;
         private System.Windows.Forms.Label lblPeriode;
         private System.Windows.Forms.Label lbllService;
         private System.Windows.Forms.ComboBox cmbServices;
-        private System.Windows.Forms.ComboBox cmbMois;
-        private System.Windows.Forms.ComboBox cmbServices2;
-        private System.Windows.Forms.Label lblFin;
-        private System.Windows.Forms.DateTimePicker dtpFin;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox txtBoxMdp;
         private System.Windows.Forms.TextBox txtBoxLabel;
@@ -395,6 +300,11 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnValiderConnexion;
         private System.Windows.Forms.Button btnBascule1;
+        private System.Windows.Forms.Label lbldate2;
+        private System.Windows.Forms.Label lbldate1;
+        private System.Windows.Forms.ComboBox cmbMois2;
+        private System.Windows.Forms.Label lbl5;
+        private System.Windows.Forms.ComboBox cmbMois3;
     }
 }
 

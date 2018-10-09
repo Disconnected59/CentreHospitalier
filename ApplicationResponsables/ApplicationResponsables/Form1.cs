@@ -18,37 +18,51 @@ namespace ApplicationResponsables
            
             InitializeComponent();
             ArrayList lesMois = new ArrayList(); // Liste des mois pour la listBox des mois de l'IHM  //Lecompte 18/09/2018
+            ArrayList lesMois2 = new ArrayList();
             String leMois = "Janvier";
             lesMois.Add(leMois);
+            lesMois2.Add(leMois);
             leMois = "Février";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Mars";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Avril";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Mai";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Juin";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Juillet";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Aout";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Septembre";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Octobre";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Novembre";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Decembre";
             lesMois.Add(leMois);
-            cmbMois.DataSource = lesMois;
+            lesMois2.Add(leMois);
 
+            cmbMois2.DataSource = lesMois;
+            cmbMois3.DataSource = lesMois2;
             
         
             ArrayList lesServices = Passerelle.getServices();
             cmbServices.DataSource = lesServices;
-            cmbServices2.DataSource = lesServices;
+            
 
 
            
@@ -71,14 +85,7 @@ namespace ApplicationResponsables
 
         }
 
-        private void btnValidChangerDebut_Click(object sender, EventArgs e)
-        {
-            DateTime dateDebutHospi = dtpDebut.Value;
-
-
-
-
-        }
+     
 
         private void btnValidMoisService_Click(object sender, EventArgs e)
         { }
@@ -90,44 +97,32 @@ namespace ApplicationResponsables
 
         public void btnValidPeriodeService_Click(object sender, EventArgs e)
         {
-            DateTime dateDebut = dtDebutPeriode.Value;
-            DateTime dateFin = dtFinPeriode.Value;
-            int serviceChoisi = (int)cmbServices2.SelectedIndex + 1;
+            int serviceChoisi = (int)cmbServices.SelectedIndex + 1;
             String intituService="";
             if(serviceChoisi == 1)
             {
-                intituService = "cardiologie";
+                intituService = "Cardiologie";
             }
             else if(serviceChoisi==2)
             {
-                intituService = "neurologie";
+                intituService = "Psychiatrie";
             }
             else if(serviceChoisi==3)
             {
-                intituService = "pediatrie";
+                intituService = "Chirurgie cardiaque";
             }
             else if(serviceChoisi==4)
             {
-                intituService = "chirurgie vasculaire";
+                intituService = "Reeducation";
             }
-            else if(serviceChoisi==5)
-            {
-                intituService = "psychiatrie";
-            }
+            String moisDebut = (String)cmbMois2.SelectedValue;
+            String moisFin = (String)cmbMois3.SelectedValue;
 
-            double taux = Passerelle.tauxOccupationPeriodeService(dateDebut, dateFin, serviceChoisi);
-            if (taux == 0)
-            {
-                MessageBox.Show("Il n'y a eu personne durant cette période pour ce service, veuillez resélectionner");
+            MessageBox.Show("Mois début : " + moisDebut + "\n Mois fin : " + moisFin);
 
-            }
-            else
-            {
-                TauxOccuPeriodeService t1 = new TauxOccuPeriodeService(taux,dateDebut,dateFin, intituService);
-                t1.ShowDialog();
-            }
-            
-            
+
+
+
         }
 
         private void btnBascule1_Click(object sender, EventArgs e)
@@ -139,11 +134,21 @@ namespace ApplicationResponsables
         }
 
         private void btnValidMoisService_Click_1(object sender, EventArgs e)
-        {
+        {/*
             String serviceChoisi = (String)cmbServices.SelectedItem;
             int moisChoisi = (int)cmbMois.SelectedIndex + 1;
 
-            Passerelle.getTauxOccuMois(serviceChoisi, moisChoisi);
+            Passerelle.getTauxOccuMois(serviceChoisi, moisChoisi);*/
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbMois3_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
 
