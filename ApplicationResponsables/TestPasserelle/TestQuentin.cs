@@ -38,7 +38,6 @@ namespace TestPasserelle
         public void testOccupantsHopitalParMois()
         {
             int attendu = 59;
-
             int actuel = Passerelle.getOccupantsHopitalParMois(1);
 
             Assert.AreEqual(attendu, actuel);
