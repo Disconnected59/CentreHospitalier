@@ -129,10 +129,17 @@ namespace ApplicationResponsables
             int serviceChoisi = (int)cmbServices.SelectedIndex + 1;
             int moisDebut = (int)cmbMois2.SelectedIndex+1;
             int moisFin = (int)cmbMois3.SelectedIndex+1;
-            int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
-            lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
-            TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours, moisDebut, moisFin);
-            T1.ShowDialog();
+            if (moisDebut > moisFin)
+            {
+                MessageBox.Show("La période selectionnée est incorrecte, veuillez resélectionner");
+            }
+            else
+            {
+                int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
+                lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
+                TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours, moisDebut, moisFin);
+                T1.ShowDialog();
+            }
         }
 
         private void btnBascule1_Click(object sender, EventArgs e)
@@ -171,11 +178,15 @@ namespace ApplicationResponsables
         {
             int moisDebut = (int)cmbMoisTot1.SelectedIndex + 1;
             int moisFin = (int)cmbMoisTot2.SelectedIndex + 1;
-
-
-            TauxOccuGlobalParAn T1 = new TauxOccuGlobalParAn();
-            T1.ShowDialog();
-
+            if (moisDebut > moisFin)
+            {
+                MessageBox.Show("La période selectionnée est incorrecte, veuillez resélectionner");
+            }
+            else
+            {
+                TauxOccuGlobalParAn T1 = new TauxOccuGlobalParAn();
+                T1.ShowDialog();
+            }
           
 
 
