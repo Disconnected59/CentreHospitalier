@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dureeMoyDiagramme));
             this.chartdureemoy = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.chartdureemoy)).BeginInit();
@@ -38,19 +39,21 @@
             // 
             // chartdureemoy
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chartdureemoy.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartdureemoy.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chartdureemoy.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartdureemoy.Legends.Add(legend1);
             this.chartdureemoy.Location = new System.Drawing.Point(99, 51);
             this.chartdureemoy.Name = "chartdureemoy";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartdureemoy.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Durée Moyenne";
+            this.chartdureemoy.Series.Add(series1);
             this.chartdureemoy.Size = new System.Drawing.Size(618, 383);
             this.chartdureemoy.TabIndex = 0;
             this.chartdureemoy.Text = "chart1";
+            title1.Name = "Title1";
+            this.chartdureemoy.Titles.Add(title1);
             // 
             // dureeMoyDiagramme
             // 
