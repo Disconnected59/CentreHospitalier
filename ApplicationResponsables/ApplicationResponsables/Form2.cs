@@ -94,11 +94,17 @@ namespace ApplicationResponsables
             int moisDebut = (int)cbbdebutperiode.SelectedIndex + 1;
             int moisFin = (int)cbbfinperiode.SelectedIndex + 1;
 
-
-            int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
-            lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
-            dureeMoyDiagramme T1 = new dureeMoyDiagramme(lesSejours, moisDebut, moisFin);
-            T1.ShowDialog();
+            if (moisDebut > moisFin)
+            {
+                MessageBox.Show("La période selectionnée est incorrecte, veuillez resélectionner");
+            }
+            else
+            {
+                int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
+                lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
+                dureeMoyDiagramme T1 = new dureeMoyDiagramme(lesSejours, moisDebut, moisFin);
+                T1.ShowDialog();
+            }
         }
 
         private void lblduree_Click(object sender, EventArgs e)
