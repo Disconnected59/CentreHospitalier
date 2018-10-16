@@ -41,9 +41,6 @@ namespace ApplicationResponsables
 
             
             chartdureemoy.Titles["Title1"].Text = "Durée moyenne d'occupation du service : " + intituService + " de " + getIntituleMois(pMoisDebut) + " 2018 à " + getIntituleMois(pMoisFin) + " 2018";
-            
-            /*chartdureemoy.ChartAreas[0].AxisY.Maximum = 100;
-            chartdureemoy.ChartAreas[0].AxisY.Minimum = 0;*/
 
 
             foreach (Sejour leSejour in pSejour )
