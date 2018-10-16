@@ -19,45 +19,73 @@ namespace ApplicationResponsables
             InitializeComponent();
             ArrayList lesMois = new ArrayList(); // Liste des mois pour la listBox des mois de l'IHM  //Lecompte 18/09/2018
             ArrayList lesMois2 = new ArrayList();
+            ArrayList lesMois3 = new ArrayList();
+            ArrayList lesMois4 = new ArrayList();
             String leMois = "Janvier";
             lesMois.Add(leMois);
             lesMois2.Add(leMois);
+            lesMois3.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Février";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Mars";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Avril";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Mai";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Juin";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Juillet";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Aout";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Septembre";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Octobre";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Novembre";
+            lesMois3.Add(leMois);
             lesMois2.Add(leMois);
             lesMois.Add(leMois);
+            lesMois4.Add(leMois);
             leMois = "Decembre";
+            lesMois3.Add(leMois);
             lesMois.Add(leMois);
             lesMois2.Add(leMois);
+            lesMois4.Add(leMois);
 
             cmbMois2.DataSource = lesMois;
             cmbMois3.DataSource = lesMois2;
+            cmbMoisTot1.DataSource = lesMois3;
+            cmbMoisTot2.DataSource = lesMois4;
             
         
             ArrayList lesServices = Passerelle.getServices();
@@ -99,23 +127,12 @@ namespace ApplicationResponsables
         {
             ArrayList lesSejours = new ArrayList();
             int serviceChoisi = (int)cmbServices.SelectedIndex + 1;
-           
-
             int moisDebut = (int)cmbMois2.SelectedIndex+1;
             int moisFin = (int)cmbMois3.SelectedIndex+1;
-
-
             int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
             lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
-            MessageBox.Show("" + capaMax +"\n"+ lesSejours +"\n"+ moisDebut+"\n" + moisFin);
             TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours, moisDebut, moisFin);
             T1.ShowDialog();
-
-          
-
-
-
-
         }
 
         private void btnBascule1_Click(object sender, EventArgs e)
@@ -147,6 +164,21 @@ namespace ApplicationResponsables
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnValidChangerDebut_Click(object sender, EventArgs e)
+        {
+            int moisDebut = (int)cmbMoisTot1.SelectedIndex + 1;
+            int moisFin = (int)cmbMoisTot2.SelectedIndex + 1;
+
+
+            TauxOccuGlobalParAn T1 = new TauxOccuGlobalParAn();
+            T1.ShowDialog();
+
+          
+
+
 
         }
 
