@@ -70,7 +70,7 @@ namespace ApplicationResponsables
         {
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT SUM capacite FROM Services";
+            String requete = "SELECT SUM(capacite) FROM Services";
             maCommande = new SqlCommand(requete, laConnection);
             int Resultat = (int)maCommande.ExecuteScalar();
             seDeconnecter();
@@ -168,27 +168,30 @@ namespace ApplicationResponsables
 
         }
 
-        public static Double moyPatientsAneeParService(int pService) //Lecompte 16/10/18
+       
+
+
+        public static int getOccupantsHopitalParMois(int pMois) //Lecompte 16/10/18
         {
-            Double moyenne=0;
+            int nbOccupants = 0;
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT nbPatients FROM Sejours WHERE idService =" + pService + " AND  AnnéeSejour=2018";
+            String requete = "SELECT SUM(nbPatients) FROM Sejours WHERE id=" + pMois;
             maCommande = new SqlCommand(requete, laConnection);
-            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
-            while(unJeuResultat.Read())
-            {
-                moyenne += (int)unJeuResultat["nbPatients"];
-            }
-            moyenne = moyenne / 12;
+            nbOccupants = (int)maCommande.ExecuteScalar();
             seDeconnecter();
-            int capaMaxService = Passerelle.recupCapacitéMax(pService);
-
-            moyenne = moyenne*100 / capaMaxService;
-            return moyenne;
-            
+            return nbOccupants;
         }
 
+        public static Double tauxOccupationParMois(int pMois)
+        {
+            Double taux = 0;
+            seConnecter();
+            SqlCommand maCommande;
+            int capaMax = Passerelle.capaciteMaxHopital();
+            taux = Passerelle.getOccupantsHopitalParMois(pMois)*100 / capaMax;
+            return taux;
+        }
 
 
 

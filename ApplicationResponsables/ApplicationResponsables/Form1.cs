@@ -184,13 +184,9 @@ namespace ApplicationResponsables
             }
             else
             {
-                TauxOccuGlobalParAn T1 = new TauxOccuGlobalParAn();
+                TauxOccuGlobalParAn T1 = new TauxOccuGlobalParAn(moisDebut,moisFin);
                 T1.ShowDialog();
             }
-          
-
-
-
         }
 
         
