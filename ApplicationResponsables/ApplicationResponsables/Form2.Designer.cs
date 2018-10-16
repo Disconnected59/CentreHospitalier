@@ -36,9 +36,7 @@
             this.lblau = new System.Windows.Forms.Label();
             this.btnvalider = new System.Windows.Forms.Button();
             this.cbboxService = new System.Windows.Forms.ComboBox();
-            this.cbboxMois = new System.Windows.Forms.ComboBox();
             this.lblPeriode = new System.Windows.Forms.Label();
-            this.lblMois = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
             this.dureemoy.SuspendLayout();
             this.SuspendLayout();
@@ -51,9 +49,7 @@
             this.dureemoy.Controls.Add(this.lblau);
             this.dureemoy.Controls.Add(this.btnvalider);
             this.dureemoy.Controls.Add(this.cbboxService);
-            this.dureemoy.Controls.Add(this.cbboxMois);
             this.dureemoy.Controls.Add(this.lblPeriode);
-            this.dureemoy.Controls.Add(this.lblMois);
             this.dureemoy.Controls.Add(this.lblService);
             this.dureemoy.Font = new System.Drawing.Font("Trebuchet MS", 12F);
             this.dureemoy.Location = new System.Drawing.Point(105, 3);
@@ -67,7 +63,7 @@
             // cbbfinperiode
             // 
             this.cbbfinperiode.FormattingEnabled = true;
-            this.cbbfinperiode.Location = new System.Drawing.Point(308, 266);
+            this.cbbfinperiode.Location = new System.Drawing.Point(308, 242);
             this.cbbfinperiode.Name = "cbbfinperiode";
             this.cbbfinperiode.Size = new System.Drawing.Size(121, 30);
             this.cbbfinperiode.TabIndex = 15;
@@ -75,7 +71,7 @@
             // cbbdebutperiode
             // 
             this.cbbdebutperiode.FormattingEnabled = true;
-            this.cbbdebutperiode.Location = new System.Drawing.Point(308, 208);
+            this.cbbdebutperiode.Location = new System.Drawing.Point(308, 163);
             this.cbbdebutperiode.Name = "cbbdebutperiode";
             this.cbbdebutperiode.Size = new System.Drawing.Size(121, 30);
             this.cbbdebutperiode.TabIndex = 14;
@@ -93,7 +89,7 @@
             // lblau
             // 
             this.lblau.AutoSize = true;
-            this.lblau.Location = new System.Drawing.Point(196, 274);
+            this.lblau.Location = new System.Drawing.Point(205, 245);
             this.lblau.Name = "lblau";
             this.lblau.Size = new System.Drawing.Size(26, 22);
             this.lblau.TabIndex = 11;
@@ -117,32 +113,15 @@
             this.cbboxService.Size = new System.Drawing.Size(121, 30);
             this.cbboxService.TabIndex = 5;
             // 
-            // cbboxMois
-            // 
-            this.cbboxMois.FormattingEnabled = true;
-            this.cbboxMois.Location = new System.Drawing.Point(308, 145);
-            this.cbboxMois.Name = "cbboxMois";
-            this.cbboxMois.Size = new System.Drawing.Size(121, 30);
-            this.cbboxMois.TabIndex = 3;
-            // 
             // lblPeriode
             // 
             this.lblPeriode.AutoSize = true;
-            this.lblPeriode.Location = new System.Drawing.Point(196, 216);
+            this.lblPeriode.Location = new System.Drawing.Point(196, 166);
             this.lblPeriode.Name = "lblPeriode";
             this.lblPeriode.Size = new System.Drawing.Size(94, 22);
             this.lblPeriode.TabIndex = 2;
             this.lblPeriode.Text = "Période: du";
             this.lblPeriode.Click += new System.EventHandler(this.lblPeriode_Click);
-            // 
-            // lblMois
-            // 
-            this.lblMois.AutoSize = true;
-            this.lblMois.Location = new System.Drawing.Point(196, 153);
-            this.lblMois.Name = "lblMois";
-            this.lblMois.Size = new System.Drawing.Size(41, 22);
-            this.lblMois.TabIndex = 1;
-            this.lblMois.Text = "Mois";
             // 
             // lblService
             // 
@@ -174,9 +153,7 @@
 
         private System.Windows.Forms.GroupBox dureemoy;
         private System.Windows.Forms.Label lblService;
-        private System.Windows.Forms.ComboBox cbboxMois;
         private System.Windows.Forms.Label lblPeriode;
-        private System.Windows.Forms.Label lblMois;
         private System.Windows.Forms.ComboBox cbboxService;
         private System.Windows.Forms.Button btnvalider;
         private System.Windows.Forms.Label lblau;

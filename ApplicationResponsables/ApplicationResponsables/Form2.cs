@@ -16,32 +16,47 @@ namespace ApplicationResponsables
         public Form2()
         {
             InitializeComponent();
-            ArrayList lesMois = new ArrayList(); // Liste des mois pour la comboBox
+            ArrayList lesMois = new ArrayList(); // Liste des mois pour la listBox des mois de l'IHM  //Lecompte 18/09/2018
+            ArrayList lesMois2 = new ArrayList();
             String leMois = "Janvier";
             lesMois.Add(leMois);
+            lesMois2.Add(leMois);
             leMois = "Février";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Mars";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Avril";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Mai";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Juin";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Juillet";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Aout";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Septembre";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Octobre";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Novembre";
+            lesMois2.Add(leMois);
             lesMois.Add(leMois);
             leMois = "Decembre";
             lesMois.Add(leMois);
-            cbboxMois.DataSource = lesMois;
+            lesMois2.Add(leMois);
+
+            cbbdebutperiode.DataSource = lesMois;
+            cbbfinperiode.DataSource = lesMois2;
 
             ArrayList lesServices = Passerelle.getServices();
             cbboxService.DataSource = lesServices;
@@ -72,11 +87,18 @@ namespace ApplicationResponsables
 
         private void btnvalider_Click(object sender, EventArgs e)
         {
-            /*String serviceChoisi = (String)cbboxService.SelectedItem;
-            int moisChoisi = (int)cbboxMois.SelectedIndex + 1;
+            ArrayList lesSejours = new ArrayList();
+            int serviceChoisi = (int)cbboxService.SelectedIndex + 1;
 
-            Passerelle.getdureemoyenne(serviceChoisi, moisChoisi);
-            lblduree.Text = "La durée moyenne est ";*/
+
+            int moisDebut = (int)cbbdebutperiode.SelectedIndex + 1;
+            int moisFin = (int)cbbfinperiode.SelectedIndex + 1;
+
+
+            int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
+            lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
+            dureeMoyDiagramme T1 = new dureeMoyDiagramme(lesSejours, moisDebut, moisFin);
+            T1.ShowDialog();
         }
 
         private void lblduree_Click(object sender, EventArgs e)
