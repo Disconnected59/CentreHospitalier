@@ -14,33 +14,24 @@ namespace ApplicationResponsables
 {
     public partial class TauxOccuGlobalParAn : Form
     {
-        public TauxOccuGlobalParAn()
+        public TauxOccuGlobalParAn(int pMoisDebut, int pMoisFin)
         {
             InitializeComponent();
 
             chartTauxOccuGlobalParAn.Titles["Title1"].Text = "Taux d'occupation en pourcent pour l'ensemble de l'hopital, pour l'année 2018 ";
             chartTauxOccuGlobalParAn.ChartAreas[0].AxisY.Maximum = 100;
             chartTauxOccuGlobalParAn.ChartAreas[0].AxisY.Minimum = 0;
+            int i=0;
 
-            Dictionary<int, String> serviceParID = new Dictionary<int, string>();
-            int i = 1;
-            ArrayList lesServices = Passerelle.getServices();
-            foreach (String unService in lesServices)
+            for (i = pMoisDebut; i < pMoisFin ; i++)
             {
-                serviceParID.Add(i, unService);
-                i++;
+                String mois = getIntituleMois(i);
+                Double taux = Passerelle.tauxOccupationParMois(i);
+                MessageBox.Show("" + taux);
+                chartTauxOccuGlobalParAn.Series["Taux"].Points.AddXY(mois, taux);                 
+
 
             }
-
-            Double taux = 0;
-            foreach (int unService in serviceParID.Keys)
-            {
-                Double moyenne = Passerelle.moyPatientsAneeParService(unService);
-                taux+=moyenne;
-            }
-            taux = taux/4;
-
-
 
         }
 
@@ -48,6 +39,28 @@ namespace ApplicationResponsables
         {
 
 
+
+        }
+
+        private static String getIntituleMois(int pMois)
+        {
+            String intitule;
+            String[] lesMois = new String[12];
+            lesMois[0] = "Janvier";
+            lesMois[1] = "Février";
+            lesMois[2] = "Mars";
+            lesMois[3] = "Avril";
+            lesMois[4] = "Mai";
+            lesMois[5] = "Juin";
+            lesMois[6] = "Juillet";
+            lesMois[7] = "Aout";
+            lesMois[8] = "Septembre";
+            lesMois[9] = "Octobre";
+            lesMois[10] = "Novembre";
+            lesMois[11] = "Descembre";
+
+            intitule = lesMois[pMois - 1];
+            return intitule;
 
         }
     }
