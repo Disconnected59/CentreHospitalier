@@ -73,6 +73,12 @@
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
     <Compile Include="Sejour.cs" />
+    <Compile Include="TauxOccuGlobalParAn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TauxOccuGlobalParAn.Designer.cs">
+      <DependentUpon>TauxOccuGlobalParAn.cs</DependentUpon>
+    </Compile>
     <Compile Include="TauxOccuPeriodeService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TauxOccuGlobalParAn.resx">
+      <DependentUpon>TauxOccuGlobalParAn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TauxOccuPeriodeService.resx">
       <DependentUpon>TauxOccuPeriodeService.cs</DependentUpon>

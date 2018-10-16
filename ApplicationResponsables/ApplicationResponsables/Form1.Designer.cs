@@ -34,6 +34,7 @@
             this.btnBascule1 = new System.Windows.Forms.Button();
             this.btnValidChangerDebut = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.cmbMois3 = new System.Windows.Forms.ComboBox();
             this.lbldate2 = new System.Windows.Forms.Label();
             this.lbldate1 = new System.Windows.Forms.Label();
             this.cmbMois2 = new System.Windows.Forms.ComboBox();
@@ -49,7 +50,8 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
-            this.cmbMois3 = new System.Windows.Forms.ComboBox();
+            this.cmbMoisTot1 = new System.Windows.Forms.ComboBox();
+            this.cmbMoisTot2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -57,6 +59,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbMoisTot2);
+            this.groupBox1.Controls.Add(this.cmbMoisTot1);
             this.groupBox1.Controls.Add(this.lbl5);
             this.groupBox1.Controls.Add(this.btnBascule1);
             this.groupBox1.Controls.Add(this.btnValidChangerDebut);
@@ -71,7 +75,7 @@
             // lbl5
             // 
             this.lbl5.AutoSize = true;
-            this.lbl5.Location = new System.Drawing.Point(181, 143);
+            this.lbl5.Location = new System.Drawing.Point(167, 45);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(149, 22);
             this.lbl5.TabIndex = 10;
@@ -95,6 +99,7 @@
             this.btnValidChangerDebut.TabIndex = 6;
             this.btnValidChangerDebut.Text = "Valider";
             this.btnValidChangerDebut.UseVisualStyleBackColor = true;
+            this.btnValidChangerDebut.Click += new System.EventHandler(this.btnValidChangerDebut_Click);
             // 
             // groupBox3
             // 
@@ -115,6 +120,15 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Taux d\'occupation des lits par période et service choisi";
+            // 
+            // cmbMois3
+            // 
+            this.cmbMois3.FormattingEnabled = true;
+            this.cmbMois3.Location = new System.Drawing.Point(61, 319);
+            this.cmbMois3.Name = "cmbMois3";
+            this.cmbMois3.Size = new System.Drawing.Size(143, 30);
+            this.cmbMois3.TabIndex = 14;
+            this.cmbMois3.SelectedIndexChanged += new System.EventHandler(this.cmbMois3_SelectedIndexChanged);
             // 
             // lbldate2
             // 
@@ -253,14 +267,21 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
-            // cmbMois3
+            // cmbMoisTot1
             // 
-            this.cmbMois3.FormattingEnabled = true;
-            this.cmbMois3.Location = new System.Drawing.Point(61, 319);
-            this.cmbMois3.Name = "cmbMois3";
-            this.cmbMois3.Size = new System.Drawing.Size(143, 30);
-            this.cmbMois3.TabIndex = 14;
-            this.cmbMois3.SelectedIndexChanged += new System.EventHandler(this.cmbMois3_SelectedIndexChanged);
+            this.cmbMoisTot1.FormattingEnabled = true;
+            this.cmbMoisTot1.Location = new System.Drawing.Point(33, 101);
+            this.cmbMoisTot1.Name = "cmbMoisTot1";
+            this.cmbMoisTot1.Size = new System.Drawing.Size(143, 30);
+            this.cmbMoisTot1.TabIndex = 11;
+            // 
+            // cmbMoisTot2
+            // 
+            this.cmbMoisTot2.FormattingEnabled = true;
+            this.cmbMoisTot2.Location = new System.Drawing.Point(296, 101);
+            this.cmbMoisTot2.Name = "cmbMoisTot2";
+            this.cmbMoisTot2.Size = new System.Drawing.Size(143, 30);
+            this.cmbMoisTot2.TabIndex = 12;
             // 
             // Form1
             // 
@@ -306,6 +327,8 @@
         private System.Windows.Forms.ComboBox cmbMois2;
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.ComboBox cmbMois3;
+        private System.Windows.Forms.ComboBox cmbMoisTot2;
+        private System.Windows.Forms.ComboBox cmbMoisTot1;
     }
 }
 

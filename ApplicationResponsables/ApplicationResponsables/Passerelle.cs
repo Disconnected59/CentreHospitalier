@@ -157,7 +157,7 @@ namespace ApplicationResponsables
             seDeconnecter();
             return test;
         }
-        public static Double tauxOccuMoisService(int pMois, int pService)
+        public static Double tauxOccuMoisService(int pMois, int pService) //Lecompte 16/10/18
         {
             int nbOccuMois = Passerelle.nbOcuppantsServiceParMois(pMois, pService);
             int nbPlacesService = Passerelle.recupCapacitéMax(pService);
@@ -167,6 +167,29 @@ namespace ApplicationResponsables
 
 
         }
+
+        public static Double moyPatientsAneeParService(int pService) //Lecompte 16/10/18
+        {
+            Double moyenne=0;
+            seConnecter();
+            SqlCommand maCommande;
+            String requete = "SELECT nbPatients FROM Sejours WHERE idService =" + pService + " AND  AnnéeSejour=2018";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while(unJeuResultat.Read())
+            {
+                moyenne += (int)unJeuResultat["nbPatients"];
+            }
+            moyenne = moyenne / 12;
+            seDeconnecter();
+            int capaMaxService = Passerelle.recupCapacitéMax(pService);
+
+            moyenne = moyenne*100 / capaMaxService;
+            return moyenne;
+            
+        }
+
+
 
 
 
