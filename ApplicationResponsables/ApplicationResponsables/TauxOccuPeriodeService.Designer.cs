@@ -45,9 +45,10 @@
             this.chartTauxOccuPeriodeService.Legends.Add(legend1);
             this.chartTauxOccuPeriodeService.Location = new System.Drawing.Point(62, 26);
             this.chartTauxOccuPeriodeService.Name = "chartTauxOccuPeriodeService";
+            this.chartTauxOccuPeriodeService.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
-            series1.Name = "Series2";
+            series1.Name = "Taux";
             this.chartTauxOccuPeriodeService.Series.Add(series1);
             this.chartTauxOccuPeriodeService.Size = new System.Drawing.Size(629, 464);
             this.chartTauxOccuPeriodeService.TabIndex = 0;

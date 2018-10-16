@@ -8,23 +8,7 @@ namespace TestPasserelle
     [TestClass]
     public class TestQuentin
     {
-        [TestMethod]
-        public void TestnbOccupantsServicePeriode()
-        {
-            int attendu = 5;
-
-           int service = 1;
-
-            DateTime debutPeriode = new DateTime(2018,01,01);
-            DateTime finPeriode = new DateTime(2018,12,31);
-
-            int actuel = Passerelle.nbOccupantsServiceParPeriode(debutPeriode,finPeriode, service);
-
-            Assert.AreEqual(attendu, actuel);
-
-        }
-
-
+ 
          [TestMethod]
         public void TestrecupCapaMax()
         {
@@ -38,18 +22,19 @@ namespace TestPasserelle
         }
 
         [TestMethod]
-        public void testTauxOccupationPeriodeService()
+        public void testTauxOccupationMoisService()
          {
-             int attendu = 10;
-             DateTime debutPeriode = new DateTime(2018, 01, 01);
-             DateTime finPeriode = new DateTime(2018, 12, 31);
+             int attendu = 60;
+
+             int mois = 1;
              int service = 1;
 
-             Double taux = Passerelle.tauxOccupationPeriodeService(debutPeriode, finPeriode, service);
+             Double tauxRecup = Passerelle.tauxOccuMoisService(mois, service);
 
-             Assert.AreEqual(attendu, taux);
-
+             Assert.AreEqual(attendu, tauxRecup);
          }
+
+
 
 
     }

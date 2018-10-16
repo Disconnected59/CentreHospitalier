@@ -111,26 +111,13 @@ namespace ApplicationResponsables
       {
           seConnecter();
           SqlCommand maCommande;
-        String requete = "";
-        if(pMois!=2)
-        {
-            requete = "SELECT COUNT(*) FROM Patiens WHERE numeroService='" + pService + "' AND dateArrivee BETWEEN '01/" + pMois + "/18 AND '31/" + pMois + "/18";
-        }
-        else
-        {
-            requete = "SELECT COUNT(*) FROM Patiens WHERE numeroService='" + pService + "' AND dateArrivee BETWEEN '01/" + pMois + "/18 AND '29/" + pMois + "/18";
-
-        }
+        String requete = "SELECT nbPatients FROM Sejours WHERE id="+pMois;                
         maCommande = new SqlCommand(requete, laConnection);
         int Resultat = (int)maCommande.ExecuteScalar();
         seDeconnecter();
         return Resultat;
-
       }
-
-
-
-        public static ArrayList getServices() //Lecompte 18/09/2018 v1.0
+                public static ArrayList getServices() //Lecompte 18/09/2018 v1.0
         {
             ArrayList lesServices = new ArrayList();
             seConnecter();
@@ -175,7 +162,7 @@ namespace ApplicationResponsables
             int nbOccuMois = Passerelle.nbOcuppantsServiceParMois(pMois, pService);
             int nbPlacesService = Passerelle.recupCapacitéMax(pService);
 
-            Double taux = nbOccuMois / nbPlacesService;
+            Double taux = (nbOccuMois*100 / nbPlacesService);
             return taux;
 
 

@@ -72,6 +72,7 @@
     <Compile Include="Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sejour.cs" />
     <Compile Include="TauxOccuPeriodeService.cs">
       <SubType>Form</SubType>
     </Compile>

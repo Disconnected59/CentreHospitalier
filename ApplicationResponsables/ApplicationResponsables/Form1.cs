@@ -107,7 +107,7 @@ namespace ApplicationResponsables
 
             int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
             lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
-
+            MessageBox.Show("" + capaMax +"\n"+ lesSejours +"\n"+ moisDebut+"\n" + moisFin);
             TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours, moisDebut, moisFin);
             T1.ShowDialog();
 

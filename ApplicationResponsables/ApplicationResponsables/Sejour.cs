@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ApplicationResponsables
 {
+
     class Sejour
     {
         int id;
@@ -54,3 +55,4 @@ namespace ApplicationResponsables
     }
 
 }
+

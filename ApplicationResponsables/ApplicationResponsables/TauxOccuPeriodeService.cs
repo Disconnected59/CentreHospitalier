@@ -16,6 +16,7 @@ namespace ApplicationResponsables
     {
         public TauxOccuPeriodeService(int pCapaMax, ArrayList pSejour, int pMoisDebut, int pMoisFin)
         {
+           
             InitializeComponent();
            Sejour unSejour = (Sejour)pSejour[1];
 
@@ -41,16 +42,20 @@ namespace ApplicationResponsables
 
             
             chartTauxOccuPeriodeService.Titles["Title1"].Text = "Taux d'occupation du service : " + intituService + " de " + getIntituleMois(pMoisDebut) + " 2018 à " + getIntituleMois(pMoisFin) + " 2018";
-           
+            
+            chartTauxOccuPeriodeService.ChartAreas[0].AxisY.Maximum = 100;
+            chartTauxOccuPeriodeService.ChartAreas[0].AxisY.Minimum = 0;
+
 
             foreach (Sejour leSejour in pSejour )
              {
-                 int nbPatients = leSejour.getNbPatient();
-                 double taux = nbPatients/pCapaMax;
-                 
+                
+                 Double nbPatients = leSejour.getNbPatient();
+                
+                 Double taux = nbPatients*100/pCapaMax;
+               
                  String leMois = leSejour.getMoisSejour();
-
-                 chartTauxOccuPeriodeService.Series["Series2"].Points.AddXY(leMois,taux);
+                 chartTauxOccuPeriodeService.Series["Taux"].Points.AddXY(leMois,taux);
                  
              }
 
