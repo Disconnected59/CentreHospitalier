@@ -30,10 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbMoisTot2 = new System.Windows.Forms.ComboBox();
+            this.cmbMoisTot1 = new System.Windows.Forms.ComboBox();
             this.lbl5 = new System.Windows.Forms.Label();
             this.btnBascule1 = new System.Windows.Forms.Button();
             this.btnValidChangerDebut = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbMois3 = new System.Windows.Forms.ComboBox();
             this.lbldate2 = new System.Windows.Forms.Label();
             this.lbldate1 = new System.Windows.Forms.Label();
@@ -50,15 +53,16 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
-            this.cmbMoisTot1 = new System.Windows.Forms.ComboBox();
-            this.cmbMoisTot2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.cmbMoisTot2);
             this.groupBox1.Controls.Add(this.cmbMoisTot1);
             this.groupBox1.Controls.Add(this.lbl5);
@@ -67,14 +71,31 @@
             this.groupBox1.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(539, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(605, 424);
+            this.groupBox1.Size = new System.Drawing.Size(458, 424);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Taux d\'occupation total de l\'hopital";
             // 
+            // cmbMoisTot2
+            // 
+            this.cmbMoisTot2.FormattingEnabled = true;
+            this.cmbMoisTot2.Location = new System.Drawing.Point(296, 101);
+            this.cmbMoisTot2.Name = "cmbMoisTot2";
+            this.cmbMoisTot2.Size = new System.Drawing.Size(143, 30);
+            this.cmbMoisTot2.TabIndex = 12;
+            // 
+            // cmbMoisTot1
+            // 
+            this.cmbMoisTot1.FormattingEnabled = true;
+            this.cmbMoisTot1.Location = new System.Drawing.Point(33, 101);
+            this.cmbMoisTot1.Name = "cmbMoisTot1";
+            this.cmbMoisTot1.Size = new System.Drawing.Size(143, 30);
+            this.cmbMoisTot1.TabIndex = 11;
+            // 
             // lbl5
             // 
             this.lbl5.AutoSize = true;
+            this.lbl5.BackColor = System.Drawing.Color.White;
             this.lbl5.Location = new System.Drawing.Point(167, 45);
             this.lbl5.Name = "lbl5";
             this.lbl5.Size = new System.Drawing.Size(149, 22);
@@ -83,7 +104,7 @@
             // 
             // btnBascule1
             // 
-            this.btnBascule1.Location = new System.Drawing.Point(171, 379);
+            this.btnBascule1.Location = new System.Drawing.Point(17, 371);
             this.btnBascule1.Name = "btnBascule1";
             this.btnBascule1.Size = new System.Drawing.Size(159, 45);
             this.btnBascule1.TabIndex = 9;
@@ -103,6 +124,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.cmbMois3);
             this.groupBox3.Controls.Add(this.lbldate2);
             this.groupBox3.Controls.Add(this.lbldate1);
@@ -116,10 +138,20 @@
             this.groupBox3.Font = new System.Drawing.Font("Trebuchet MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(26, 2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(507, 437);
+            this.groupBox3.Size = new System.Drawing.Size(507, 424);
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Taux d\'occupation des lits par période et service choisi";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::ApplicationResponsables.Properties.Resources.telephone;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(314, 319);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 104);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
             // 
             // cmbMois3
             // 
@@ -133,6 +165,7 @@
             // lbldate2
             // 
             this.lbldate2.AutoSize = true;
+            this.lbldate2.BackColor = System.Drawing.Color.White;
             this.lbldate2.Location = new System.Drawing.Point(295, 319);
             this.lbldate2.Name = "lbldate2";
             this.lbldate2.Size = new System.Drawing.Size(42, 22);
@@ -142,6 +175,7 @@
             // lbldate1
             // 
             this.lbldate1.AutoSize = true;
+            this.lbldate1.BackColor = System.Drawing.Color.White;
             this.lbldate1.Location = new System.Drawing.Point(295, 223);
             this.lbldate1.Name = "lbldate1";
             this.lbldate1.Size = new System.Drawing.Size(42, 22);
@@ -178,6 +212,7 @@
             // lblPeriod3
             // 
             this.lblPeriod3.AutoSize = true;
+            this.lblPeriod3.BackColor = System.Drawing.Color.White;
             this.lblPeriod3.Location = new System.Drawing.Point(210, 275);
             this.lblPeriod3.Name = "lblPeriod3";
             this.lblPeriod3.Size = new System.Drawing.Size(43, 22);
@@ -187,6 +222,7 @@
             // lblPeriode2
             // 
             this.lblPeriode2.AutoSize = true;
+            this.lblPeriode2.BackColor = System.Drawing.Color.White;
             this.lblPeriode2.Location = new System.Drawing.Point(210, 191);
             this.lblPeriode2.Name = "lblPeriode2";
             this.lblPeriode2.Size = new System.Drawing.Size(44, 22);
@@ -196,6 +232,7 @@
             // lblPeriode
             // 
             this.lblPeriode.AutoSize = true;
+            this.lblPeriode.BackColor = System.Drawing.Color.White;
             this.lblPeriode.Location = new System.Drawing.Point(146, 169);
             this.lblPeriode.Name = "lblPeriode";
             this.lblPeriode.Size = new System.Drawing.Size(153, 22);
@@ -205,6 +242,7 @@
             // lbllService
             // 
             this.lbllService.AutoSize = true;
+            this.lbllService.BackColor = System.Drawing.Color.White;
             this.lbllService.Location = new System.Drawing.Point(57, 104);
             this.lbllService.Name = "lbllService";
             this.lbllService.Size = new System.Drawing.Size(80, 22);
@@ -267,27 +305,13 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
-            // cmbMoisTot1
-            // 
-            this.cmbMoisTot1.FormattingEnabled = true;
-            this.cmbMoisTot1.Location = new System.Drawing.Point(33, 101);
-            this.cmbMoisTot1.Name = "cmbMoisTot1";
-            this.cmbMoisTot1.Size = new System.Drawing.Size(143, 30);
-            this.cmbMoisTot1.TabIndex = 11;
-            // 
-            // cmbMoisTot2
-            // 
-            this.cmbMoisTot2.FormattingEnabled = true;
-            this.cmbMoisTot2.Location = new System.Drawing.Point(296, 101);
-            this.cmbMoisTot2.Name = "cmbMoisTot2";
-            this.cmbMoisTot2.Size = new System.Drawing.Size(143, 30);
-            this.cmbMoisTot2.TabIndex = 12;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 438);
+            this.BackgroundImage = global::ApplicationResponsables.Properties.Resources.hopital;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1009, 438);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -298,6 +322,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -329,6 +354,7 @@
         private System.Windows.Forms.ComboBox cmbMois3;
         private System.Windows.Forms.ComboBox cmbMoisTot2;
         private System.Windows.Forms.ComboBox cmbMoisTot1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
