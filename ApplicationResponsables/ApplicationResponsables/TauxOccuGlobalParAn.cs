@@ -27,7 +27,7 @@ namespace ApplicationResponsables
             {
                 String mois = getIntituleMois(i);
                 Double taux = Passerelle.tauxOccupationParMois(i);
-                MessageBox.Show("" + taux);
+            
                 chartTauxOccuGlobalParAn.Series["Taux"].Points.AddXY(mois, taux);                 
 
 
