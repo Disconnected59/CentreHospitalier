@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbMoisTot2 = new System.Windows.Forms.ComboBox();
             this.cmbMoisTot1 = new System.Windows.Forms.ComboBox();
             this.lbl5 = new System.Windows.Forms.Label();
             this.btnBascule1 = new System.Windows.Forms.Button();
             this.btnValidChangerDebut = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbMois3 = new System.Windows.Forms.ComboBox();
             this.lbldate2 = new System.Windows.Forms.Label();
             this.lbldate1 = new System.Windows.Forms.Label();
@@ -53,15 +53,21 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbAnnee = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.cmbAnnee);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.cmbMoisTot2);
             this.groupBox1.Controls.Add(this.cmbMoisTot1);
@@ -76,10 +82,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Taux d\'occupation total de l\'hopital";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::ApplicationResponsables.Properties.Resources.telephone;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Location = new System.Drawing.Point(314, 319);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(144, 104);
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // cmbMoisTot2
             // 
             this.cmbMoisTot2.FormattingEnabled = true;
-            this.cmbMoisTot2.Location = new System.Drawing.Point(296, 101);
+            this.cmbMoisTot2.Location = new System.Drawing.Point(300, 110);
             this.cmbMoisTot2.Name = "cmbMoisTot2";
             this.cmbMoisTot2.Size = new System.Drawing.Size(143, 30);
             this.cmbMoisTot2.TabIndex = 12;
@@ -87,7 +103,7 @@
             // cmbMoisTot1
             // 
             this.cmbMoisTot1.FormattingEnabled = true;
-            this.cmbMoisTot1.Location = new System.Drawing.Point(33, 101);
+            this.cmbMoisTot1.Location = new System.Drawing.Point(44, 110);
             this.cmbMoisTot1.Name = "cmbMoisTot1";
             this.cmbMoisTot1.Size = new System.Drawing.Size(143, 30);
             this.cmbMoisTot1.TabIndex = 11;
@@ -96,11 +112,11 @@
             // 
             this.lbl5.AutoSize = true;
             this.lbl5.BackColor = System.Drawing.Color.White;
-            this.lbl5.Location = new System.Drawing.Point(167, 45);
+            this.lbl5.Location = new System.Drawing.Point(87, 43);
             this.lbl5.Name = "lbl5";
-            this.lbl5.Size = new System.Drawing.Size(149, 22);
+            this.lbl5.Size = new System.Drawing.Size(117, 22);
             this.lbl5.TabIndex = 10;
-            this.lbl5.Text = "Pour l\'année 2018 : ";
+            this.lbl5.Text = "Pour l\'année  : ";
             // 
             // btnBascule1
             // 
@@ -142,16 +158,6 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Taux d\'occupation des lits par période et service choisi";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::ApplicationResponsables.Properties.Resources.telephone;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Location = new System.Drawing.Point(314, 319);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(144, 104);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
             // 
             // cmbMois3
             // 
@@ -305,6 +311,34 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(40, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 22);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Mois de départ :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(296, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 22);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Mois de fin : ";
+            // 
+            // cmbAnnee
+            // 
+            this.cmbAnnee.FormattingEnabled = true;
+            this.cmbAnnee.Location = new System.Drawing.Point(210, 40);
+            this.cmbAnnee.Name = "cmbAnnee";
+            this.cmbAnnee.Size = new System.Drawing.Size(121, 30);
+            this.cmbAnnee.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -320,9 +354,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
@@ -355,6 +389,9 @@
         private System.Windows.Forms.ComboBox cmbMoisTot2;
         private System.Windows.Forms.ComboBox cmbMoisTot1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ComboBox cmbAnnee;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

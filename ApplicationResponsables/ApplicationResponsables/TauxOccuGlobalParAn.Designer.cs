@@ -53,6 +53,7 @@
             this.chartTauxOccuGlobalParAn.Text = "chart1";
             title1.Name = "Title1";
             this.chartTauxOccuGlobalParAn.Titles.Add(title1);
+            this.chartTauxOccuGlobalParAn.Click += new System.EventHandler(this.chartTauxOccuGlobalParAn_Click);
             // 
             // TauxOccuGlobalParAn
             // 

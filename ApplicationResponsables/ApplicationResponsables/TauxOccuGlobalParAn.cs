@@ -14,11 +14,11 @@ namespace ApplicationResponsables
 {
     public partial class TauxOccuGlobalParAn : Form
     {
-        public TauxOccuGlobalParAn(int pMoisDebut, int pMoisFin)
+        public TauxOccuGlobalParAn(int pMoisDebut, int pMoisFin, int pAnneeChoisie)
         {
             InitializeComponent();
 
-            chartTauxOccuGlobalParAn.Titles["Title1"].Text = "Taux d'occupation en pourcent pour l'ensemble de l'hopital, pour l'année 2018 ";
+            chartTauxOccuGlobalParAn.Titles["Title1"].Text = "Taux d'occupation en pourcent pour l'ensemble de l'hopital, pour l'année "+pAnneeChoisie;
             chartTauxOccuGlobalParAn.ChartAreas[0].AxisY.Maximum = 100;
             chartTauxOccuGlobalParAn.ChartAreas[0].AxisY.Minimum = 0;
             int i=0;
@@ -26,7 +26,7 @@ namespace ApplicationResponsables
             for (i = pMoisDebut; i < pMoisFin ; i++)
             {
                 String mois = getIntituleMois(i);
-                Double taux = Passerelle.tauxOccupationParMois(i);
+                Double taux = Passerelle.tauxOccupationParMois(i,pAnneeChoisie);
                 chartTauxOccuGlobalParAn.Series["Taux"].Points.AddXY(mois, taux);              
 
 
@@ -54,6 +54,11 @@ namespace ApplicationResponsables
 
             intitule = lesMois[pMois - 1];
             return intitule;
+
+        }
+
+        private void chartTauxOccuGlobalParAn_Click(object sender, EventArgs e)
+        {
 
         }
     }
