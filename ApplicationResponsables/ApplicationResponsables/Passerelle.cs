@@ -66,6 +66,14 @@ namespace ApplicationResponsables
 
         }
 
+        public static getAnnee(String date) //Lecompte 09/11/18
+        {
+            seConnecter();
+
+
+
+        }
+
         public static int capaciteMaxHopital() //Lecompte 04/10/18
         {
             seConnecter();
