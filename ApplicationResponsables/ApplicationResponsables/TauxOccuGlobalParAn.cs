@@ -27,20 +27,13 @@ namespace ApplicationResponsables
             {
                 String mois = getIntituleMois(i);
                 Double taux = Passerelle.tauxOccupationParMois(i);
-            
-                chartTauxOccuGlobalParAn.Series["Taux"].Points.AddXY(mois, taux);                 
+                chartTauxOccuGlobalParAn.Series["Taux"].Points.AddXY(mois, taux);              
 
 
             }
 
         }
 
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-
-
-        }
 
         private static String getIntituleMois(int pMois)
         {
