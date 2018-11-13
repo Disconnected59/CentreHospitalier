@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbAnnee = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmbMoisTot2 = new System.Windows.Forms.ComboBox();
             this.cmbMoisTot1 = new System.Windows.Forms.ComboBox();
@@ -53,9 +56,6 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbAnnee = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -81,6 +81,34 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Taux d\'occupation total de l\'hopital";
+            // 
+            // cmbAnnee
+            // 
+            this.cmbAnnee.FormattingEnabled = true;
+            this.cmbAnnee.Location = new System.Drawing.Point(210, 40);
+            this.cmbAnnee.Name = "cmbAnnee";
+            this.cmbAnnee.Size = new System.Drawing.Size(121, 30);
+            this.cmbAnnee.TabIndex = 18;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(296, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(104, 22);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Mois de fin : ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(40, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(127, 22);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Mois de départ :";
             // 
             // pictureBox1
             // 
@@ -204,6 +232,7 @@
             this.cmbServices.Name = "cmbServices";
             this.cmbServices.Size = new System.Drawing.Size(166, 30);
             this.cmbServices.TabIndex = 9;
+            this.cmbServices.SelectedIndexChanged += new System.EventHandler(this.cmbServices_SelectedIndexChanged);
             // 
             // btnValidPeriodeService
             // 
@@ -310,34 +339,6 @@
             this.txtBoxLabel.Name = "txtBoxLabel";
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 85);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 22);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Mois de départ :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(296, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 22);
-            this.label2.TabIndex = 17;
-            this.label2.Text = "Mois de fin : ";
-            // 
-            // cmbAnnee
-            // 
-            this.cmbAnnee.FormattingEnabled = true;
-            this.cmbAnnee.Location = new System.Drawing.Point(210, 40);
-            this.cmbAnnee.Name = "cmbAnnee";
-            this.cmbAnnee.Size = new System.Drawing.Size(121, 30);
-            this.cmbAnnee.TabIndex = 18;
             // 
             // Form1
             // 
