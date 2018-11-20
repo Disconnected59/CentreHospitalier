@@ -21,6 +21,7 @@ namespace ApplicationResponsables
             ArrayList lesMois2 = new ArrayList();
             ArrayList lesMois3 = new ArrayList();
             ArrayList lesMois4 = new ArrayList();
+            ArrayList lesAnnees = Passerelle.getAnnees();
             String leMois = "Janvier";
             lesMois.Add(leMois);
             lesMois2.Add(leMois);
@@ -90,7 +91,7 @@ namespace ApplicationResponsables
         
             ArrayList lesServices = Passerelle.getServices();
             cmbServices.DataSource = lesServices;
-            
+            cmbAnnee.DataSource = lesAnnees;
 
 
            
@@ -178,15 +179,21 @@ namespace ApplicationResponsables
         {
             int moisDebut = (int)cmbMoisTot1.SelectedIndex + 1;
             int moisFin = (int)cmbMoisTot2.SelectedIndex + 1;
+            int anneeChoisie = (int)cmbAnnee.SelectedItem;
             if (moisDebut > moisFin)
             {
                 MessageBox.Show("La période selectionnée est incorrecte, veuillez resélectionner");
             }
             else
             {
-                TauxOccuGlobalParAn T1 = new TauxOccuGlobalParAn(moisDebut,moisFin);
+                TauxOccuGlobalParAn T1 = new TauxOccuGlobalParAn(moisDebut,moisFin,anneeChoisie);
                 T1.ShowDialog();
             }
+        }
+
+        private void cmbServices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         

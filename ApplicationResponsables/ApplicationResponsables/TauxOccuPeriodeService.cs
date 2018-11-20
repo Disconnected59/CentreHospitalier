@@ -38,11 +38,7 @@ namespace ApplicationResponsables
             {
                 intituService = "Reeducation";
             }
-
-
-            
-            chartTauxOccuPeriodeService.Titles["Title1"].Text = "Taux d'occupation en pourcents du service : " + intituService + " de " + getIntituleMois(pMoisDebut) + " 2018 à " + getIntituleMois(pMoisFin) + " 2018 ";
-            
+            chartTauxOccuPeriodeService.Titles["Title1"].Text = "Taux d'occupation en pourcents du service : " + intituService + " de " + getIntituleMois(pMoisDebut) + " 2018 à " + getIntituleMois(pMoisFin) + " 2018 ";           
             chartTauxOccuPeriodeService.ChartAreas[0].AxisY.Maximum = 100;
             chartTauxOccuPeriodeService.ChartAreas[0].AxisY.Minimum = 0;
 

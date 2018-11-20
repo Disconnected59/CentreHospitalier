@@ -66,6 +66,27 @@ namespace ApplicationResponsables
 
         }
 
+        public static ArrayList getAnnees() //Lecompte 09/11/18
+        {
+            seConnecter();
+            ArrayList lesAnnees= new ArrayList();
+            int annee;
+            SqlCommand maCommande;
+            String requete = "SELECT DISTINCT AnnéeSejour FROM Sejours";
+            maCommande = new SqlCommand(requete, laConnection);
+            SqlDataReader unJeuResultat = maCommande.ExecuteReader();
+            while (unJeuResultat.Read())
+            {
+                annee = (int)unJeuResultat["AnnéeSejour"];
+                lesAnnees.Add(annee);
+            }
+            seDeconnecter();
+            return lesAnnees;
+            
+
+
+        }
+
         public static int capaciteMaxHopital() //Lecompte 04/10/18
         {
             seConnecter();
@@ -171,25 +192,25 @@ namespace ApplicationResponsables
        
 
 
-        public static int getOccupantsHopitalParMois(int pMois) //Lecompte 16/10/18
+        public static int getOccupantsHopitalParMois(int pMois, int pAnnee) //Lecompte 09/11/18
         {
             int nbOccupants = 0;
             seConnecter();
             SqlCommand maCommande;
-            String requete = "SELECT SUM(nbPatients) FROM Sejours WHERE id=" + pMois;
+            String requete = "SELECT SUM(nbPatients) FROM Sejours WHERE id=" + pMois + " AND AnnéeSejour ="+pAnnee;
             maCommande = new SqlCommand(requete, laConnection);
             nbOccupants = (int)maCommande.ExecuteScalar();
             seDeconnecter();
             return nbOccupants;
         }
 
-        public static Double tauxOccupationParMois(int pMois)
+        public static Double tauxOccupationParMois(int pMois, int pAnnee)
         {
             Double taux = 0;
             seConnecter();
             SqlCommand maCommande;
             int capaMax = Passerelle.capaciteMaxHopital();
-            taux = Passerelle.getOccupantsHopitalParMois(pMois)*100 / capaMax;
+            taux = Passerelle.getOccupantsHopitalParMois(pMois, pAnnee)*100 / capaMax;
             return taux;
         }
 

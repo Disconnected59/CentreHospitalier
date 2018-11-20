@@ -53,12 +53,14 @@
             this.chartTauxOccuGlobalParAn.Text = "chart1";
             title1.Name = "Title1";
             this.chartTauxOccuGlobalParAn.Titles.Add(title1);
-            this.chartTauxOccuGlobalParAn.Click += new System.EventHandler(this.chart1_Click);
+            this.chartTauxOccuGlobalParAn.Click += new System.EventHandler(this.chartTauxOccuGlobalParAn_Click);
             // 
             // TauxOccuGlobalParAn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::ApplicationResponsables.Properties.Resources.hopital;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(922, 607);
             this.Controls.Add(this.chartTauxOccuGlobalParAn);
             this.Name = "TauxOccuGlobalParAn";

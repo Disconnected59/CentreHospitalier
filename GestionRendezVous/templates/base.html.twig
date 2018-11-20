@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+		
+			 <style>
+		 #header {
+			background: rgb(0,141,231);
+			color: #d5d5d5;
+			cursor: default;
+			height: 4em;
+			left: 0;
+			line-height: 5em;
+			/*	position: fixed; */
+			text-align: center;
+			top: 0;
+			width: 100%;
+			z-index: 10001;
+			/* max-width: 65em; */
+			/*width: calc(100% - 6em); */
+			margin: 0 auto;
+			/* position: relative; */
+	}
+
+			@media screen and (max-width: 480px) {
+
+				#header .inner {
+					max-width: 90%;
+					width: 90%;
+				}
+
+			}
+			
+			#header a {
+			-moz-transition: color 0.2s ease-in-out;
+			-webkit-transition: color 0.2s ease-in-out;
+			-ms-transition: color 0.2s ease-in-out;
+			transition: color 0.2s ease-in-out;
+			/* display: inline-block; */
+			padding: 0 2em;
+			color: #ffffff;
+			text-decoration: none;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: .85em;
+		}
+
+			#header a:hover {
+				color: rgba(255, 255, 255, 0.75);
+			}
+
+			#header a:last-child {
+				/*padding-right: 0em; */
+			}
+
+			@media screen and (max-width: 736px) {
+
+				#header a {
+					padding: 0 0.5em;
+				}
+
+			}
+			
+			.sidebar {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    bottom: 0;
+    z-index: 90;
+    width: 250px;
+    background: #fff;
+    border-right: 1px solid #e8ebf4;
+    box-shadow: 20px 0 20px -20px #d3d7e9;
+}
+
+			
+		</style>
+		{% endblock %}
+    </head>
+	
+    <body>
+			<nav id="header">
+					<a href="http://localhost:8000/accueil">Accueil</a>
+					<a href="http://localhost:8000/medecin">Medecins</a>
+					<a href="http://localhost:8000/service">Services</a>
+					<a href="http://localhost:8000/consultation">Consultations</a>
+				</nav>		
+	
+	  <aside class="sidebar">
+			 <section class="form-connection">
+                <h3 class="title">Se connecter</h3>
+                <form action="#" id="loginForm" method="POST">
+                    <div class="input-group">
+                        <label for="loginUsername">Nom d'utilisateur</label>
+                        <input type="text" id="loginUsername" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="loginPassword">Mot de passe</label>
+                        <input type="password" id="loginPassword">
+                    </div>
+                    <div class="g-recaptcha" data-sitekey="6LezP1gUAAAAAIt1yEYDERRZRR0vM8opL25qhbsd"></div>
+                    <div class="input-group">
+                        <button type="submit" form="loginForm">Se connecter</button>
+                    </div>
+                </form>
+            </section>
+			  </aside>
+	
+	
+        {% block body %}{% endblock %}
+		
+        {% block javascripts %}  <script src="js/modernizr-3.5.0.min.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/main.js"></script>{% endblock %}
+    </body>
+</html>
