@@ -3,7 +3,7 @@
 
 {% block body %}
 <section>
-<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/templates/medecin/index.css">
 <style>
 	#section{
 		margin-inline-start: 305 px;
@@ -17,7 +17,7 @@ Médecins de l'hopital: <br/>
 {%for medecin in medecins%}
 	<div class="contoursmaison">
 		<h2>{{medecin.nom}} {{medecin.prenom}}</h2>
-		<img src="https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/telephone.png?raw=true" alt="Photo du medecin" width="150" height="auto" >
+		<img src="{{medecin.photo}}" alt="Photo du medecin" width="150" height="auto" >
 		<p> {{medecin.getService().getLibelle()}}</p>
 		<!--{{medecin.nom}}-{{medecin.prenom}}-{{medecin.getService().getLibelle()}}-->
 	</div>
