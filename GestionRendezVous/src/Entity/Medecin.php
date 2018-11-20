@@ -52,6 +52,11 @@ class Medecin
      */
     private $Service;
 
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $photo;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -137,6 +142,18 @@ class Medecin
     public function setService(?Service $Service): self
     {
         $this->Service = $Service;
+
+        return $this;
+    }
+
+    public function getPhoto(): ?string
+    {
+        return $this->photo;
+    }
+
+    public function setPhoto(?string $photo): self
+    {
+        $this->photo = $photo;
 
         return $this;
     }

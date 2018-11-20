@@ -1,0 +1,293 @@
+@media only screen and (max-width: 321px) {
+	div.titre{
+		text-align:center;
+		padding: 5px;
+		margin: 10px;
+	}
+	
+	img{
+		image-display: none;
+	}  
+	
+	#menu, #menu ul     
+	{
+		display: inline;
+		list-style : none; 
+		line-height : 50px; 
+		text-align : center; 
+	}
+}
+
+.marge{
+        margin-left:1em;
+}
+
+.box{
+        display: flex;
+        flex-direction: column;
+}
+
+.recherche{
+        display: flex;
+        flex-direction: flex-start;
+}
+
+body{
+	background-color: CornflowerBlue;
+}
+
+p.prix{
+	display: table;
+	background-color: white;
+	border-radius: 5px;
+}
+
+p.titre{
+	text-align: center;
+}
+
+
+img.title{
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+div.titre{
+	text-align:center;
+	background-color:rgba(255,255,255,1) ;
+	padding: 5px;
+	margin: 10px;
+}
+
+div.contoursmaison{
+	background-color:rgba(255,255,255,0.3) ;
+	padding: 5px;
+	margin: 20px;
+	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.6);
+
+	vertical-align: top;
+	border-bottom: none;
+	border-radius: 5px;
+}
+
+
+nav{
+	align-items: center;
+}
+
+
+#menu, #menu ul     
+
+{
+        
+		padding : 0px; 
+        margin : auto; 
+        list-style : none; 
+        line-height : 50px; 
+        text-align : center; 
+		align-items: center;
+}
+
+
+#menu 
+{
+        font-weight : bold; 
+        font-family : Arial; 
+        font-size : 12px;
+		align-items: center;
+}
+
+
+#menu a 
+{
+
+        display : block;
+        padding : 0; 
+        background : #000;         
+        color : #fff; 
+        text-decoration : none; 
+}
+
+
+#menu>li   
+
+{ 
+
+        float : left;     
+        border-right : 1px solid #fff;
+        width: 33%; 
+}
+
+
+
+
+html>body #menu li
+
+{
+
+        border-right: 1px solid transparent ; 
+
+}
+
+
+#menu li ul 
+
+{ 
+        position: absolute; 
+		z-index: 2;
+        width: 100%;
+
+        left: -999em; 
+
+}
+
+
+
+#menu li ul li 
+{
+        /*float: none;*/
+        border-top : 1px solid #fff;
+        width: 32.7%; 
+}
+
+
+
+
+html>body #menu li ul li                
+
+{
+
+        border-top : 1px solid transparent; 
+		align-items: center;
+}
+
+
+#menu li ul ul 
+
+{
+
+        margin    : -22px 0 0 144px ; 
+        border-left     : 1px solid #fff ;   
+
+}
+
+
+
+
+html>body #menu li ul ul                
+
+{
+        border-left     : 1px solid transparent ; 
+}
+	
+#menu a:hover    
+
+{
+        color: #000; 
+        background: #fff; 
+
+}
+#menu li:hover ul ul, #menu li.sfhover ul ul 
+{
+
+        left: -999em; 
+
+}
+
+
+#menu li:hover ul, #menu li li:hover ul, #menu li.sfhover ul, #menu li li.sfhover ul  
+
+{
+
+        left: auto;
+        min-height:0; 
+}
+
+
+div.contoursmaison:hover{
+	box-shadow: 0px 0px 4px 4px rgba(100,20,20,0.6);
+}
+
+.slider{
+        width: 640px;
+        position: relative;
+        padding-top: 320px;
+        margin: 100px auto;
+        box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+.slider>img{
+        position: absolute;
+		z-index: 1;
+        left: 0;top: 0;
+        width: 100%; height: 100%;
+        transition: all 0.5s;
+}
+
+.slider input[name='slide_switch'] {
+        display: none;
+}
+
+.slider label {
+        margin: 18px 0 0 18px;
+        border: 3px solid #999;
+        float: left;
+        cursor: pointer;
+        transition: all 0.5s;
+        opacity: 0.6;
+}
+
+.slider label img{
+        display: block;
+}
+
+.slider input[name='slide_switch']:checked+label {
+        border-color: #666;
+        opacity: 1;
+}
+
+.slider input[name='slide_switch'] ~ img {
+        opacity: 0;
+        transform: scale(1.1);
+}
+
+.slider input[name='slide_switch']:checked+label+img {
+        opacity: 1;
+        transform: scale(1);
+}
+
+.connexion input,fieldset
+{
+    float : right;
+    border: none;
+    
+}
+
+.ajouterBien input{
+    float:right;
+    
+}
+
+.modifierBien input {
+    float: right;
+    
+    
+}
+
+.conteneur {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenu {
+    
+    border: 3px blue solid;
+    width: 500px;
+    margin-bottom: 10px
+}
+
+#ajouterImage {
+    
+    float: left; 
+}

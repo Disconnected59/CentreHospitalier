@@ -4,6 +4,8 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Doctrine;
+use App\Entity\Medecin;
 
 class MedecinController extends AbstractController
 {
@@ -12,8 +14,10 @@ class MedecinController extends AbstractController
      */
     public function index()
     {
-        return $this->render('medecin/index.html.twig', [
-            'controller_name' => 'MedecinController',
-        ]);
+        $repository=$this->getDoctrine()->getRepository(Medecin::class);
+		$lesMedecins=$repository->findAll();
+		return $this->render('medecin/index.html.twig',[
+			'medecins'=>$lesMedecins,
+		]);
     }
 }
