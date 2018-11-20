@@ -89,6 +89,7 @@
             this.cmbAnnee.Name = "cmbAnnee";
             this.cmbAnnee.Size = new System.Drawing.Size(121, 30);
             this.cmbAnnee.TabIndex = 18;
+            this.cmbAnnee.SelectedIndexChanged += new System.EventHandler(this.cmbAnnee_SelectedIndexChanged);
             // 
             // label2
             // 
