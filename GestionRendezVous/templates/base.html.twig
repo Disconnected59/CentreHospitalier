@@ -4,8 +4,11 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
+		
 		<script src='https://www.google.com/recaptcha/api.js'></script>
 		<style>
+		
+		
 		 	#header {
 		 		border-radius: 10px;
 				background: rgb(0,141,231);
@@ -69,14 +72,17 @@
 			}
 			
 			.sidebar {
-				border-radius: 5px;
-			    position: relative;
-			    top: 0;
-			    left: auto;
-			    bottom: auto;
-			    z-index: 90;
-			    width: 302px;
-			}
+				position: absolute;
+				top: 71px;
+				left: 0;
+				bottom: 0;
+				z-index: 90;
+				width: 250px;
+				background: #fff;
+				border-right: 1px solid #e8ebf4;
+				box-shadow: 20px 0 20px -20px #d3d7e9;
+					}	
+
 			.side {
 				border-radius: 5px;
 			    position: absolute;
@@ -91,9 +97,39 @@
 			}
 			.flex-line {
 			display: flex;
-			
 			}
 			
+			button {
+			padding: .5rem .75rem;
+			border: 2px solid #007ae1;
+			background: transparent;
+			color: #007ae1;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: all .1s ease-in;
+				 }
+
+			button:hover {
+			background: #006cc8;
+			color: white;
+						}
+
+			.input-group {
+			display: flex;
+			flex-direction: column;
+			margin: 1rem 0;
+			}
+
+
+			.input-group input {
+			border: 1px solid #e1e5f1;
+			padding: .5rem;
+			transition: all .1s ease-in;
+			}
+
+			.input-group input:focus {
+			border: 1px solid #006cc8;
+									 }
 		</style>
 		{% endblock %}
     </head>
@@ -107,6 +143,8 @@
 				<a href="http://localhost:8000/consultation">Consultations</a>
 			</nav>
 			<div class="flex-line">
+			
+			
 				<!--<aside class="side"></aside>-->
 			  	<aside class="sidebar">
 					<section class="form-connection">
@@ -125,8 +163,14 @@
 		                        <button type="submit" form="loginForm">Se connecter</button>
 		                    </div>
 		                </form>
+						
 		            </section>
+					
 				</aside>
 	    {% block body %}{% endblock %}		
+	    <!--{% block javascripts %}  <script src="js/modernizr-3.5.0.min.js"></script>
+	    <script src="js/jquery-3.2.1.min.js"></script>
+	    <script src="js/main.js"></script>
+	    {% endblock %}-->
     </body>
 </html>
