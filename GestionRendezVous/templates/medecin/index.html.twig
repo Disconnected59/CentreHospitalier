@@ -3,26 +3,52 @@
 
 {% block body %}
 <section>
-<link rel="stylesheet" type="text/css" href="https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/templates/medecin/index.css">
+<link rel="stylesheet" href="medecin.css">
 <style>
-	#section{
-		margin-inline-start: 305 px;
-		background-color: blue;
-	}
-   
+div.contourmedecin{
+	background-color:rgba(255,255,255,0.3) ;
+	padding: 5px;
+	margin: 20px;
+	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.6);
+	display:flex;
+	flex-direction:row;
+	vertical-align: top;
+	border-bottom: none;
+	border-radius: 5px;
+}
+
+div.ecriture{
+	display:flex;
+	flex-direction:column;
+}
+
+div.contourmedecin:hover{
+	box-shadow: 0px 0px 4px 4px rgba(100,20,20,0.6);
+}
+
+.contenu {
+    
+    border: 3px blue solid;
+    width: 500px;
+    margin-bottom: 10px
+}
 </style>
 
 Médecins de l'hopital: <br/>
 
 {%for medecin in medecins%}
-	<div class="contoursmaison">
-		<h2>{{medecin.nom}} {{medecin.prenom}}</h2>
-		<img src="{{medecin.photo}}" alt="Photo du medecin" width="150" height="auto" >
-		<p> {{medecin.getService().getLibelle()}}</p>
+	<div class="contourmedecin">
+		<img src="{{medecin.photo}}" alt="Photo du medecin
+		" width="150" height="auto" >
+		<div class="ecriture">
+			<h2>{{medecin.nom}} {{medecin.prenom}}</h2>
+		
+			<p> {{medecin.getService().getLibelle()}}</p>
+			</div>
 		<!--{{medecin.nom}}-{{medecin.prenom}}-{{medecin.getService().getLibelle()}}-->
 	</div>
 {%else%}
-	<div class="contoursmaison">
+	<div class="contourmaison">
 		Pas de medecins.
 	</div>
 {%endfor%}
