@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 04 déc. 2018 à 13:51
--- Version du serveur :  5.7.21
--- Version de PHP :  7.2.4
+-- Généré le :  mar. 11 déc. 2018 à 15:50
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `medecin` (
   `photo` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_1BDA53C6ED5CA9E6` (`service_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `medecin`
@@ -71,7 +71,10 @@ INSERT INTO `medecin` (`id`, `service_id`, `login`, `motdepasse`, `email`, `adre
 (1, 1, 'antoine.bearez', 'bearez', 'antoine.bearez@chu-lille.fr', 'cysoing', 'bearez', 'antoine', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/telephone.png?raw=true'),
 (2, 2, 'quentin.lecompte', 'lecompte', 'quentin.Lecompte@chu-lille.fr', 'leers', 'lecompte', 'quentin', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc1.jpg?raw=true'),
 (3, 3, 'aydogdu', 'bekir', 'bekir.aydogdu@chu-lille.fr', 'roubaix', 'aydogdu', 'bekir', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc4.jpg?raw=true'),
-(4, 4, 'tom.jablonski', 'jablonski', 'tom.jablonski@chu-lille.fr', 'mons', 'jablonski', 'tom', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc3.jpg?raw=true');
+(4, 4, 'tom.jablonski', 'jablonski', 'tom.jablonski@chu-lille.fr', 'mons', 'jablonski', 'tom', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc3.jpg?raw=true'),
+(5, 11, 'nucleardoctor', 'nucleardoctor', 'nucleardoctor@random.com', '25 rue Fukushima', 'Chin', 'Chan', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc1.jpg?raw=true'),
+(6, 6, 'Jesenspurien', 'Jesenspurien', 'Anesthesiehopital@random.com', '42 rue Pamal', 'Narcisse', 'Paul', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc1.jpg?raw=true'),
+(7, 6, 'Kevinlepape', 'flan', 'kevinlepape@random.com', '26 rue Gato', 'Lepape', 'Kevin', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc1.jpg?raw=true');
 
 -- --------------------------------------------------------
 
@@ -122,17 +125,28 @@ CREATE TABLE IF NOT EXISTS `service` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `libelle` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `service`
 --
 
 INSERT INTO `service` (`id`, `libelle`) VALUES
-(1, 'cardiologie'),
-(2, 'neurologie'),
-(3, 'orthodontie'),
-(4, 'pediatrie');
+(1, 'Cardiologie'),
+(2, 'Neurologie'),
+(3, 'Orthodontie'),
+(4, 'Pediatrie'),
+(5, 'Douleur'),
+(6, 'Anesthesie'),
+(7, 'Chirurgie cardiaque'),
+(8, 'Pneumologie'),
+(9, 'Gynécologie'),
+(10, 'Gérontologie'),
+(11, 'Medecine nucléaire'),
+(12, 'Clinique médicale'),
+(13, 'Rhumatologie'),
+(14, 'Réanimation'),
+(15, 'Odontologie');
 
 --
 -- Contraintes pour les tables déchargées
