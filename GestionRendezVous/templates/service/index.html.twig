@@ -1,6 +1,5 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
 <style>
@@ -8,13 +7,13 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
+Liste des services de l'hopital : 
+<br/>
+   {%for service in services %}
     <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/ServiceController.php'|file_link(0) }}">src/Controller/ServiceController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/service/index.html.twig'|file_link(0) }}">templates/service/index.html.twig</a></code></li>
+        <li> {{service.libelle}}
+		</li>
+	{%endfor%}
     </ul>
 </div>
 {% endblock %}

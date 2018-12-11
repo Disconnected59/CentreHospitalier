@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\Consultation;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,8 +13,9 @@ class ConsultationController extends AbstractController
      */
     public function index()
     {
-        return $this->render('consultation/index.html.twig', [
-            'controller_name' => 'ConsultationController',
-        ]);
+        $repository=$this->getDoctrine()->getRepository(Consultation::class);
+		$lesConsultations=$repository->findAll();
+		return $this->render('consultation/index.html.twig',[
+			'consultations'=>$lesConsultations,]);
     }
 }
