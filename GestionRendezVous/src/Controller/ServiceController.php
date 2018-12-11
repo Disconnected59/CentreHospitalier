@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use App\Entity\Service;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,8 +13,9 @@ class ServiceController extends AbstractController
      */
     public function index()
     {
-        return $this->render('service/index.html.twig', [
-            'controller_name' => 'ServiceController',
-        ]);
+             $repository=$this->getDoctrine()->getRepository(Service::class);
+		$lesServices=$repository->findAll();
+		return $this->render('service/index.html.twig',[
+			'services'=>$lesServices,]);
     }
 }
