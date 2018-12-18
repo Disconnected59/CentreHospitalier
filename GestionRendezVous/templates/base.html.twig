@@ -132,7 +132,34 @@
 			.input-group input:focus {
 			border: 1px solid #006cc8;
 									 }
-									 
+			
+			section.form-connection{
+			position: -webkit-sticky;
+			position: sticky;
+			top: 125px;
+			padding-left: 5%;
+			padding-right: 5%;
+			}	
+			
+			a.bouton-inscription{
+			padding: .5rem .75rem;
+			border: 2px solid #007ae1;
+			background: transparent;
+			color: #007ae1;
+			text-transform: uppercase;
+			cursor: pointer;
+			transition: all .1s ease-in;
+			text-align: center;
+
+			}
+			
+			a.bouton-inscription:hover{
+			background: #006cc8;
+			color: white;
+			text-decoration: none;
+			}
+			
+
 									
 		</style>
 		{% endblock %}
@@ -168,7 +195,7 @@
 		                    </div>
 							<div class="input-group">
 								<label for="inscription">Pas encore inscrit ?</label>
-								<a href="http://localhost:8000/inscription">Cliquer ici</a>
+								<a class="bouton-inscription" href="http://localhost:8000/inscription">Cliquez ici</a>
 							</div>
 											
 		                </form>
