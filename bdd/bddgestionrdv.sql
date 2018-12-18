@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 18 déc. 2018 à 14:40
+-- Généré le :  mar. 18 déc. 2018 à 15:30
 -- Version du serveur :  5.7.21
 -- Version de PHP :  7.2.4
 
@@ -162,7 +162,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
@@ -171,7 +171,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`id`, `username`, `roles`, `password`) VALUES
 (1, 'bekir', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$7pwzZ4aIdsrmKgGGa0Eqrev116T4lOfYfevfMai3sZzdFnf2IOtd.'),
 (2, 'antoine', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$Wd1l0PVJsr7P.MV7o11HmeUfuBN2ihY65YMVh6oUSrCvyXd3ImySS'),
-(3, 'quentin', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$z5mFEE.Oa87YC2Cc0eocAexViZxaTMHD0oK.sL.iCSBJGAOs2IzFK');
+(3, 'quentin', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$z5mFEE.Oa87YC2Cc0eocAexViZxaTMHD0oK.sL.iCSBJGAOs2IzFK'),
+(4, 'test', '[\"ROLE_USER\"]', '$2y$10$Vbjae/GIkTFe5v6XnF.4WOnJ6iqNxAmc5QTRfERiCoqWzHCoH8aRG');
 
 --
 -- Contraintes pour les tables déchargées
