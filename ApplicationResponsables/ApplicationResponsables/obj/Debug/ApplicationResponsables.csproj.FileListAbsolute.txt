@@ -24,3 +24,5 @@ F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\De
 F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.TauxOccuPeriodeService.resources
 C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.dureeMoyDiagramme.resources
 C:\Users\sio2018\Documents\GitHub\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.TauxOccuGlobalParAn.resources
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.dureeMoyDiagramme.resources
+F:\sio2\CentreHospitalier\ApplicationResponsables\ApplicationResponsables\obj\Debug\ApplicationResponsables.TauxOccuGlobalParAn.resources

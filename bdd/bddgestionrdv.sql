@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 11 déc. 2018 à 15:50
--- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
+-- Généré le :  mar. 18 déc. 2018 à 13:18
+-- Version du serveur :  5.7.21
+-- Version de PHP :  7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -147,6 +147,29 @@ INSERT INTO `service` (`id`, `libelle`) VALUES
 (13, 'Rhumatologie'),
 (14, 'Réanimation'),
 (15, 'Odontologie');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `roles` json NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `roles`, `password`) VALUES
+(1, 'bekir', '[\"ROLE_USER\"]', '$2y$10$7pwzZ4aIdsrmKgGGa0Eqrev116T4lOfYfevfMai3sZzdFnf2IOtd.');
 
 --
 -- Contraintes pour les tables déchargées
