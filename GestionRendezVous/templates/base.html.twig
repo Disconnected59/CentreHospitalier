@@ -73,91 +73,9 @@
 
 			}
 			
-			.sidebar {
-				position: relative;
-				top: 71px;
-				left: 0;
-				bottom: 0;
-				z-index: 90;
-				width: 250px;
-				background: #fff;
-				border-right: 1px solid #e8ebf4;
-				box-shadow: 20px 0 20px -20px #d3d7e9;
-					}	
-
-			.side {
-				border-radius: 5px;
-			    position: absolute;
-			    top: 5em;
-			    left: auto;
-			    bottom: 100%;
-			    z-index: 90;
-			    width: 302px;
-			    background: #fff;
-			    border-right: 1px solid #e8ebf4;
-			    box-shadow: 20px 0 20px -20px #d3d7e9;
-			}
-			.flex-line {
-			display: flex;
-			}
 			
-			button {
-			padding: .5rem .75rem;
-			border: 2px solid #007ae1;
-			background: transparent;
-			color: #007ae1;
-			text-transform: uppercase;
-			cursor: pointer;
-			transition: all .1s ease-in;
-				 }
-
-			button:hover {
-			background: #006cc8;
-			color: white;
-						}
-
-			.input-group {
-			display: flex;
-			flex-direction: column;
-			margin: 1rem 0;
-			}
-
-
-			.input-group input {
-			border: 1px solid #e1e5f1;
-			padding: .5rem;
-			transition: all .1s ease-in;
-			}
-
-			.input-group input:focus {
-			border: 1px solid #006cc8;
-									 }
 			
-			section.form-connection{
-			position: -webkit-sticky;
-			position: sticky;
-			top: 125px;
-			padding-left: 5%;
-			padding-right: 5%;
-			}	
 			
-			a.bouton-inscription{
-			padding: .5rem .75rem;
-			border: 2px solid #007ae1;
-			background: transparent;
-			color: #007ae1;
-			text-transform: uppercase;
-			cursor: pointer;
-			transition: all .1s ease-in;
-			text-align: center;
-
-			}
-			
-			a.bouton-inscription:hover{
-			background: #006cc8;
-			color: white;
-			text-decoration: none;
-			}
 			
 
 									
@@ -179,36 +97,9 @@
 				{%endif%}
 			</nav>
 			
-			<div class="flex-line">
 			
 			
-				<!--<aside class="side"></aside>-->
-			  	<aside class="sidebar">
-					<section class="form-connection">
-		                <h3 class="title">Se connecter</h3>
-		                <form action="#" id="loginForm" method="POST">
-		                    <div class="input-group">
-		                        <label for="loginUsername">Nom d'utilisateur</label>
-		                        <input type="text" id="loginUsername" required></input>
-		                    </div>
-		                    <div class="input-group">
-		                        <label for="loginPassword">Mot de passe</label>
-		                        <input type="password" id="loginPassword"></input>
-		                    </div>
-		                    <div class="g-recaptcha" data-sitekey="6LezP1gUAAAAAIt1yEYDERRZRR0vM8opL25qhbsd"style="transform:scale(0.77);-webkit-transform:scale(0.77);transform-origin:0 0;-webkit-transform-origin:0 0;"></div>
-		                    <div class="input-group">
-		                        <button type="submit" form="loginForm">Se connecter</button>
-		                    </div>
-							<div class="input-group">
-								<label for="inscription">Pas encore inscrit ?</label>
-								<a class="bouton-inscription" href="http://localhost:8000/inscription">Cliquez ici</a>
-							</div>
-											
-		                </form>
-						
-		            </section>
-					
-				</aside>
+			
 	    {% block body %}{% endblock %}		
 	    {% block javascripts %} 
 	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
