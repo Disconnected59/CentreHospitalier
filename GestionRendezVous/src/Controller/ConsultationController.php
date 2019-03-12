@@ -17,26 +17,30 @@ class ConsultationController extends AbstractController
           $role = $user->getRoles();
 
           $tailleRoles=sizeof($role);
-          if($tailleRoles=1)
-          {
-                //return $this->render('accueil');
-          }
-          else if($tailleRoles>1)
-          {
-            $textRole = $role[1];
-            if($textRole = "ROLE_MEDECIN")
+            $oui = "non";
+            $textRole="ROLE_USER";
+            if($tailleRoles==2)
             {
-
-                //return $this->render('accueil');
+                $textRole = $role[1];
             }
-            else if($textRole = "ROLE_ASSISTANT")
+            if($textRole == "ROLE_MEDECIN")
             {
-                //return $this->render('accueil');
+                $oui = "oui";
+                return $this->render('consultation/consultationMedecin.html.twig');
             }
-          }
-      /* $repository=$this->getDoctrine()->getRepository(Consultation::class);
+            else if($textRole == "ROLE_ASSISTANT")
+            {
+                return $this->render('consultation/consultationAssistant.html.twig');
+            }
+            else
+            {
+                $oui = "peut etre";
+            }
+          
+        
+        $repository=$this->getDoctrine()->getRepository(Consultation::class);
 		$lesConsultations=$repository->findAll();
 		return $this->render('consultation/index.html.twig',[
-			'consultations'=>$lesConsultations,'user'=>$user]);*/
+			'consultations'=>$lesConsultations,'role'=>$role, 'oui'=>$oui, 'taille'=>$tailleRoles]);
     }
 }
