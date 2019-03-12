@@ -13,6 +13,14 @@ class ConsultationController extends AbstractController
      */
     public function index()
     {
+          
+        if($this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY')!=null)
+        {
+          $user = $this->getUser();
+          $role = $user->getRoles();
+        }
+
+
         $repository=$this->getDoctrine()->getRepository(Consultation::class);
 		$lesConsultations=$repository->findAll();
 		return $this->render('consultation/index.html.twig',[
