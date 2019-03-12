@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 12 mars 2019 à 15:01
--- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
+-- Généré le :  mar. 12 mars 2019 à 15:19
+-- Version du serveur :  5.7.21
+-- Version de PHP :  7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -142,7 +142,8 @@ CREATE TABLE IF NOT EXISTS `migration_versions` (
 --
 
 INSERT INTO `migration_versions` (`version`) VALUES
-('20190312144757');
+('20190312144757'),
+('20190312151832');
 
 -- --------------------------------------------------------
 
@@ -221,19 +222,23 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `nom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `prenom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_medecin_id` int(11) DEFAULT NULL,
+  `id_assistant_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`)
+  UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`),
+  UNIQUE KEY `UNIQ_8D93D649A1799A53` (`id_medecin_id`),
+  UNIQUE KEY `UNIQ_8D93D649C392F29D` (`id_assistant_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `roles`, `password`, `nom`, `prenom`) VALUES
-(1, 'bekir', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$7pwzZ4aIdsrmKgGGa0Eqrev116T4lOfYfevfMai3sZzdFnf2IOtd.', 'Aydogdu', 'Bekir\r\n'),
-(2, 'antoine', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$Wd1l0PVJsr7P.MV7o11HmeUfuBN2ihY65YMVh6oUSrCvyXd3ImySS', 'Bearez', 'Antoine'),
-(3, 'quentin', '[\"ROLE_USER\", \"ROLE_ASSISTANT\"]', '$2y$10$z5mFEE.Oa87YC2Cc0eocAexViZxaTMHD0oK.sL.iCSBJGAOs2IzFK', 'Lecompte', 'Quentin'),
-(4, 'test', '[\"ROLE_USER\"]', '$2y$10$Vbjae/GIkTFe5v6XnF.4WOnJ6iqNxAmc5QTRfERiCoqWzHCoH8aRG', 'Test', 'Test\r\n');
+INSERT INTO `user` (`id`, `username`, `roles`, `password`, `nom`, `prenom`, `id_medecin_id`, `id_assistant_id`) VALUES
+(1, 'bekir', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$7pwzZ4aIdsrmKgGGa0Eqrev116T4lOfYfevfMai3sZzdFnf2IOtd.', 'Aydogdu', 'Bekir\r\n', NULL, NULL),
+(2, 'antoine', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$Wd1l0PVJsr7P.MV7o11HmeUfuBN2ihY65YMVh6oUSrCvyXd3ImySS', 'Bearez', 'Antoine', NULL, NULL),
+(3, 'quentin', '[\"ROLE_USER\", \"ROLE_ASSISTANT\"]', '$2y$10$z5mFEE.Oa87YC2Cc0eocAexViZxaTMHD0oK.sL.iCSBJGAOs2IzFK', 'Lecompte', 'Quentin', NULL, NULL),
+(4, 'test', '[\"ROLE_USER\"]', '$2y$10$Vbjae/GIkTFe5v6XnF.4WOnJ6iqNxAmc5QTRfERiCoqWzHCoH8aRG', 'Test', 'Test\r\n', NULL, NULL);
 
 --
 -- Contraintes pour les tables déchargées
@@ -257,6 +262,13 @@ ALTER TABLE `consultation`
 --
 ALTER TABLE `medecin`
   ADD CONSTRAINT `FK_1BDA53C6ED5CA9E6` FOREIGN KEY (`service_id`) REFERENCES `service` (`id`);
+
+--
+-- Contraintes pour la table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `FK_8D93D649A1799A53` FOREIGN KEY (`id_medecin_id`) REFERENCES `medecin` (`id`),
+  ADD CONSTRAINT `FK_8D93D649C392F29D` FOREIGN KEY (`id_assistant_id`) REFERENCES `assistant` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
