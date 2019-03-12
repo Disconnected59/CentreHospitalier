@@ -43,6 +43,16 @@ class User implements UserInterface
      */
     private $prenom;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Medecin", cascade={"persist", "remove"})
+     */
+    private $idMedecin;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Assistant", cascade={"persist", "remove"})
+     */
+    private $idAssistant;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +146,30 @@ class User implements UserInterface
     public function setPrenom(?string $prenom): self
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getIdMedecin(): ?Medecin
+    {
+        return $this->idMedecin;
+    }
+
+    public function setIdMedecin(?Medecin $idMedecin): self
+    {
+        $this->idMedecin = $idMedecin;
+
+        return $this;
+    }
+
+    public function getIdAssistant(): ?Assistant
+    {
+        return $this->idAssistant;
+    }
+
+    public function setIdAssistant(?Assistant $idAssistant): self
+    {
+        $this->idAssistant = $idAssistant;
 
         return $this;
     }
