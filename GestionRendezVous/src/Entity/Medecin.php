@@ -53,7 +53,7 @@ class Medecin
     private $Service;
 
     /**
-     * @ORM\Column(type="string", length=50, nullable=true)
+     * @ORM\Column(type="string", length=1000, nullable=true)
      */
     private $photo;
 

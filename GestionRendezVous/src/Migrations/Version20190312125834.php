@@ -8,14 +8,13 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20190311105835 extends AbstractMigration
+final class Version20190312125834 extends AbstractMigration
 {
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE medecin CHANGE photo photo VARCHAR(50) DEFAULT NULL');
         $this->addSql('ALTER TABLE user ADD nom VARCHAR(255) DEFAULT NULL, ADD prenom VARCHAR(255) DEFAULT NULL');
     }
 
@@ -24,7 +23,6 @@ final class Version20190311105835 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE medecin CHANGE photo photo VARCHAR(1000) DEFAULT NULL COLLATE utf8mb4_unicode_ci');
         $this->addSql('ALTER TABLE user DROP nom, DROP prenom');
     }
 }
