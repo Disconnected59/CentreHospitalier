@@ -6,15 +6,47 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    body{
+    	
+    }
+
+    div.contenu{
+    	background-color: white;
+    	margin-left: 5%;
+    	margin-right:50%;
+    	border-radius: 4px;
+    	padding:20px;
+
+    }
+    h1{
+    	margin-top: :2%;
+    	margin-left:5%;
+    	margin-right:5%;
+    	margin-bottom: 2%;
+    	text-align: center;
+    }
+
+    div.Accueil{
+    	background-color: #e6e6e6;
+    	margin-bottom: 0%;
+    	margin-top:5%;
+    	margin-left: 10%;
+    	margin-right:10%;
+    	padding-bottom:100%;
+    	padding-top: 2%;
+    	padding
+    }
 </style>
 
-<div class="example-wrapper">
-    <h1>log in toi pour consult</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'src/Controller/AccueilController.php'|file_link(0) }}">src/Controller/AccueilController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'templates/accueil/index.html.twig'|file_link(0) }}">templates/accueil/index.html.twig</a></code></li>
-    </ul>
+<div class="Accueil">
+    <h1>Centre Hospitalier Régionnal Universitaire de Bourbon en Besogne</h1>
+    <div class="contenu">
+    <p>Bienvenue sur le site du CHRU de Bourbon en Besogne. Ici, vous trouverez des informations sur la prise de rendez-vous ainsi que sur les différents médecins présents dans l'Hopital.</p>
+    <br/>
+    <p> Il n'y a pas de photos, l'hopital est trop pauvre</p>
+    <p>Faites un don pour sauver des vies (la mienne): mon paypal: jesuisriche.cpavrai@donnelathune.vite</p>
+</div>
+	<img src="images/photohopital.jpg" alt="Photo d'hopital" width="200px;">
 </div>
 {% endblock %}
