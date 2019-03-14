@@ -13,7 +13,7 @@ class InscriptionController extends AbstractController
     /**
      * @Route("/inscription", name="inscription")
      */
-    public function index()
+    public function index(Request $request)
     {
         $repository=$this->getDoctrine()->getRepository(User::class);
 		$em=$this->getDoctrine()->getManager();
@@ -25,7 +25,7 @@ class InscriptionController extends AbstractController
 						$em=$this->getDoctrine()->getManager();
 						$em->persist($user);
 						$em->flush(); 
-			return $this->redirectToRoute('inscription');
+			return $this->redirectToRoute('accueil');
 		}
 						return $this->render('inscription/index.html.twig',[
 		'form'=>$form->createView(),]);
