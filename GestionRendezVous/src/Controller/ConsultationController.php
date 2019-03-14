@@ -53,7 +53,7 @@ class ConsultationController extends AbstractController
                 $idUser=$user->getId();
 
                 $lesRdv = $this->getDoctrine()->getRepository('App:Consultation')->findAll();
-                $i=0
+                $i=0;
                 foreach($lesRdv as $unRdv)
                 {
                     $leId=$unRdv->getIdPatient();
@@ -62,7 +62,7 @@ class ConsultationController extends AbstractController
                         $lesRdvAffiches=array();
                         $lesRdvAffiches[0]=$unRdv;
                     }
-                    i++;
+                    $i++;
                 }
 
 
@@ -80,7 +80,7 @@ class ConsultationController extends AbstractController
                     $em -> persist($consultation);
                     $em -> flush();
                 }
-                return $this->render('consultation/consultationPatient.html.twig', ['form'=>$form->createView(),]);
+                return $this->render('consultation/consultationPatient.html.twig', ['form'=>$form->createView(),'rdv'=>$lesRdv]);
            
 
             }

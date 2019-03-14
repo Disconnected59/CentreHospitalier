@@ -94,12 +94,12 @@ class Consultation
         return $this;
     }
 
-    public function getIdPatient(): ?Patient
+    public function getIdPatient(): ?int
     {
         return $this->idPatient;
     }
 
-    public function setIdPatient(?Patient $idPatient): self
+    public function setIdPatient(?int $idPatient): self
     {
         $this->idPatient = $idPatient;
 
