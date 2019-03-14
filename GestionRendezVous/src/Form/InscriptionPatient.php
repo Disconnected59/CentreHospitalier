@@ -20,7 +20,7 @@ class InscriptionPatient extends AbstractType
 			->add('password',TextType::class)
 			->add('nom',TextType::class)
 			->add('prenom',TextType::class)
-			->add('save',SubmitType::class,array('label'=>'Enregistrer l\'Indication'))
+			->add('save',SubmitType::class,array('label'=>'Enregistrer'))
 			->getForm();
 			
 	
@@ -28,7 +28,7 @@ class InscriptionPatient extends AbstractType
 	
 	public function configureOptions(OptionsResolver $resolver)
 	{
-		$resolver->setDefaults(array('data_class'=>Indication::class));
+		$resolver->setDefaults(array('data_class'=>User::class));
 	}
 
 
