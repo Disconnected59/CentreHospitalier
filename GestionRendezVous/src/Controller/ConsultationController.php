@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 use App\Entity\Consultation;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -43,12 +42,30 @@ class ConsultationController extends AbstractController
             }
             else
             {
+
+
+
                 $oui = "peut etre";
                 $em = $this -> getDoctrine() -> getManager();
                 $consultation = new Consultation();
                 $nomUser=$user->getNom();
                 $prenomUser=$user->getPrenom();
                 $idUser=$user->getId();
+
+                $lesRdv = $this->getDoctrine()->getRepository('App:Consultation')->findAll();
+                $i=0
+                foreach($lesRdv as $unRdv)
+                {
+                    $leId=$unRdv->getIdPatient();
+                    if($leId==$idUser)
+                    {
+                        $lesRdvAffiches=array();
+                        $lesRdvAffiches[0]=$unRdv;
+                    }
+                    i++;
+                }
+
+
                 $consultation->setPrenom($prenomUser);
                 $consultation->setNom($nomUser);
                 $consultation->setIdPatient($idUser);

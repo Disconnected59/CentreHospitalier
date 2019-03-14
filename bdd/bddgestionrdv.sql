@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 12 mars 2019 à 15:19
--- Version du serveur :  5.7.21
--- Version de PHP :  7.2.4
+-- Généré le :  jeu. 14 mars 2019 à 15:59
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -71,25 +71,22 @@ DROP TABLE IF EXISTS `consultation`;
 CREATE TABLE IF NOT EXISTS `consultation` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_medecin_id` int(11) NOT NULL,
-  `id_patient_id` int(11) NOT NULL,
   `date` date NOT NULL,
-  `heure` time NOT NULL,
+  `heure` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `est_validee` tinyint(1) DEFAULT NULL,
+  `nom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `prenom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id_patient` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `IDX_964685A6A1799A53` (`id_medecin_id`),
-  KEY `IDX_964685A6CE0312AE` (`id_patient_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
--- --------------------------------------------------------
+  KEY `IDX_964685A6A1799A53` (`id_medecin_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Structure de la table `id_service`
+-- Déchargement des données de la table `consultation`
 --
 
-DROP TABLE IF EXISTS `id_service`;
-CREATE TABLE IF NOT EXISTS `id_service` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+INSERT INTO `consultation` (`id`, `id_medecin_id`, `date`, `heure`, `est_validee`, `nom`, `prenom`, `id_patient`) VALUES
+(1, 4, '2019-03-15', '12', 0, 'Test', 'Test\r\n', 4);
 
 -- --------------------------------------------------------
 
@@ -143,7 +140,10 @@ CREATE TABLE IF NOT EXISTS `migration_versions` (
 
 INSERT INTO `migration_versions` (`version`) VALUES
 ('20190312144757'),
-('20190312151832');
+('20190314130538'),
+('20190314142511'),
+('20190314152016'),
+('20190314154118');
 
 -- --------------------------------------------------------
 
@@ -254,8 +254,7 @@ ALTER TABLE `assistant`
 -- Contraintes pour la table `consultation`
 --
 ALTER TABLE `consultation`
-  ADD CONSTRAINT `FK_964685A6A1799A53` FOREIGN KEY (`id_medecin_id`) REFERENCES `medecin` (`id`),
-  ADD CONSTRAINT `FK_964685A6CE0312AE` FOREIGN KEY (`id_patient_id`) REFERENCES `patient` (`id`);
+  ADD CONSTRAINT `FK_964685A6A1799A53` FOREIGN KEY (`id_medecin_id`) REFERENCES `medecin` (`id`);
 
 --
 -- Contraintes pour la table `medecin`
