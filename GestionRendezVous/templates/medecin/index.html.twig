@@ -7,6 +7,8 @@
 <style>
 div.contourmedecin{
 	background-color:rgba(255,255,255,0.3) ;
+	height:auto;
+	width: 30%;
 	padding: 5px;
 	margin: 20px;
 	box-shadow: 0px 0px 4px 2px rgba(0,0,0,0.6);
@@ -35,13 +37,15 @@ div.contourmedecin:hover{
 
 
 </style>
-
+<br/>
+<br/>
+<br/>
 <h1>Médecins de l'hopital:</h1> <br/>
 
 {%for medecin in medecins%}
 	<div class="contourmedecin">
 		<img src="{{medecin.photo}}" alt="Photo du medecin
-		" width="15%" height="auto" >
+		" width="20%" height="auto" >
 		<div class="ecriture">
 			<h2>{{medecin.nom}} {{medecin.prenom}}</h2>
 		
@@ -50,7 +54,7 @@ div.contourmedecin:hover{
 		<!--{{medecin.nom}}-{{medecin.prenom}}-{{medecin.getService().getLibelle()}}-->
 	</div>
 {%else%}
-	<div class="contourmaison">
+	<div class="contouredecin">
 		Pas de medecins.
 	</div>
 {%endfor%}
