@@ -22,6 +22,8 @@ class InscriptionController extends AbstractController
 				   $form->handleRequest($request);
 					if($form->isSubmitted() && $form->isValid()) {
 						$user = $form->getData();
+						$options = ['cost' => 10 ];	
+						$user->setPassword(password_hash($user->getPassword(), PASSWORD_BCRYPT, $options));
 						$em=$this->getDoctrine()->getManager();
 						$em->persist($user);
 						$em->flush(); 
