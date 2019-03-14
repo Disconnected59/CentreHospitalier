@@ -22,7 +22,7 @@ class Consultation
     private $Date;
 
     /**
-     * @ORM\Column(type="time")
+     * @ORM\Column(type="string, length=255)
      */
     private $Heure;
 

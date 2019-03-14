@@ -35,6 +35,7 @@ class ConsultationController extends AbstractController
             else
             {
                 $oui = "peut etre";
+                return $this->render('consultation/consultationPatient.html.twig');
             }
           
         
