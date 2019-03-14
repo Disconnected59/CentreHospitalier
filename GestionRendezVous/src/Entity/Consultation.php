@@ -22,7 +22,7 @@ class Consultation
     private $Date;
 
     /**
-     * @ORM\Column(type="string, length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $Heure;
 
@@ -33,10 +33,25 @@ class Consultation
     private $idMedecin;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Patient")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="integer")
+     * @ORM\JoinColumn(nullable=true)
      */
     private $idPatient;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $estValidee;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $prenom;
 
     public function getId(): ?int
     {
@@ -55,12 +70,12 @@ class Consultation
         return $this;
     }
 
-    public function getHeure(): ?\DateTimeInterface
+    public function getHeure(): ?string
     {
         return $this->Heure;
     }
 
-    public function setHeure(\DateTimeInterface $Heure): self
+    public function setHeure(?string $Heure): self
     {
         $this->Heure = $Heure;
 
@@ -87,6 +102,42 @@ class Consultation
     public function setIdPatient(?Patient $idPatient): self
     {
         $this->idPatient = $idPatient;
+
+        return $this;
+    }
+
+    public function getEstValidee(): ?bool
+    {
+        return $this->estValidee;
+    }
+
+    public function setEstValidee(?bool $estValidee): self
+    {
+        $this->estValidee = $estValidee;
+
+        return $this;
+    }
+
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(?string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom(): ?string
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom(?string $prenom): self
+    {
+        $this->prenom = $prenom;
 
         return $this;
     }
