@@ -80,7 +80,7 @@ class ConsultationController extends AbstractController
                     $em -> persist($consultation);
                     $em -> flush();
                 }
-                return $this->render('consultation/consultationPatient.html.twig', ['form'=>$form->createView(),'rdv'=>$lesRdv]);
+                return $this->render('consultation/consultationPatient.html.twig', ['form'=>$form->createView(),'rdvs'=>$lesRdv]);
            
 
             }

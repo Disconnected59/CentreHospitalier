@@ -9,9 +9,15 @@
 <br/>
 Voici vos rendez-vous à venir : 
 <br/>
-Jeudi 25 Mars à 14h avec Dr.Adam Decheval
+{% for rdv in rdvs %}
+{{rdv.getIdMedecin().getNom()}} {{rdv.getIdMedecin().getPrenom()}}
+<br/>
+Le : {{rdv.getDate()|date("Y/m/d")}}
+<br/>
+A : {{rdv.getHeure()}} heure
+{%endfor%}
 
-
+<br/>
 <br/>
 Prendre rendez-vous avec : 
 
