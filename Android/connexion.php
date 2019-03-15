@@ -14,8 +14,8 @@ function afficherConsultations(){
 	$aujourdhui=date("Y-m-d");
 	$m = $pdo->prepare("Select consultation.nom AS 'nomPatient', consultation.prenom AS 'prenomPatient', date, heure, medecin.nom AS 'nomMedecin', medecin.prenom AS 'prenomMedecin' FROM consultation join medecin on medecin.id=consultation.id_medecin_id where date>='".$aujourdhui."'");
 	$execute = $m->execute();
-	$consultations = $m->fetch(PDO::FETCH_ASSOC);
-	var_dump($consultations);
+	$consultations = $m->fetchAll(PDO::FETCH_ASSOC);
+	//var_dump($consultations);
 	$m->closeCursor();
 	$consultationsJson = json_encode($consultations);
 	return $consultationsJson;
