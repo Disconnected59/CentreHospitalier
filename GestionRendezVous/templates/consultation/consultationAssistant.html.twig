@@ -1,17 +1,12 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-Rendez-vous à valider pour le service #DeterminationDuServiceIncoming : 
-<br/>
-<br/>
-Pour le médecin : Chin Chan
-Patate Jean-Pierre le 18/03/19 à 12 h 
-<br/>
-Accepter le rendez-vous? Oui | Non
-<br/>
-<br/>
-Pour le médecin : Narcisse Paul 
-Lapin Pierrot le 19/03/19 à 14h 
-Accepter le rendez-vous? Oui | Non
-
+<br/><br/><br/>
+{%for unConsult in consultation %}
+<li> RDV de {{unConsult.getIdPatient()}} {{unConsult.getIdPatient()}} avec Docteur {{unConsult.getIdMedecin().getNom()}}
+	
+</li>
+{%else%}
+Pas de consultation trouvé
+{%endfor%}
 
 {% endblock %}

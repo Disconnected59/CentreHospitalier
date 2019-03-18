@@ -38,7 +38,9 @@ class ConsultationController extends AbstractController
             }
             else if($textRole == "ROLE_ASSISTANT")
             {
-                return $this->render('consultation/consultationAssistant.html.twig');
+                $repository=$this->getDoctrine()->getRepository(Consultation::class);
+                $lesConsults=$repository->findAll();
+                return $this->render('consultation/consultationAssistant.html.twig',['consultation'=>$lesConsults,]);
             }
             else
             {
