@@ -48,7 +48,7 @@ class Consultation
     private $prenom;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Patient", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Patient")
      */
     private $Patient;
 

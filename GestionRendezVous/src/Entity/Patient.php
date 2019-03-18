@@ -17,16 +17,6 @@ class Patient
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=20)
-     */
-    private $login;
-
-    /**
-     * @ORM\Column(type="string", length=20)
-     */
-    private $motdepasse;
-
-    /**
      * @ORM\Column(type="string", length=150, nullable=true)
      */
     private $email;
@@ -51,29 +41,6 @@ class Patient
         return $this->id;
     }
 
-    public function getLogin(): ?string
-    {
-        return $this->login;
-    }
-
-    public function setLogin(string $login): self
-    {
-        $this->login = $login;
-
-        return $this;
-    }
-
-    public function getMotdepasse(): ?string
-    {
-        return $this->motdepasse;
-    }
-
-    public function setMotdepasse(string $motdepasse): self
-    {
-        $this->motdepasse = $motdepasse;
-
-        return $this;
-    }
 
     public function getEmail(): ?string
     {

@@ -50,16 +50,16 @@ class ConsultationController extends AbstractController
                 $oui = "peut etre";
                 $em = $this -> getDoctrine() -> getManager();
                 $consultation = new Consultation();
-                $nomUser=$user->getNom();
-                $prenomUser=$user->getPrenom();
-                $idUser=$user->getId();
+                $nomUser=$user->getPatient()->getNom();
+                $prenomUser=$user->getPatient()->getPrenom();
+                $idPatientUser=$user->getPatient()->getId();
 
                 $lesRdv = $this->getDoctrine()->getRepository('App:Consultation')->findAll();
                 $i=0;
                 foreach($lesRdv as $unRdv)
                 {
-                    $leId=$unRdv->getIdPatient();
-                    if($leId==$idUser)
+                    $leId=$unRdv->getPatient()->getId();
+                    if($leId==$idPatientUser)
                     {
                         $lesRdvAffiches=array();
                         $lesRdvAffiches[0]=$unRdv;
@@ -70,7 +70,7 @@ class ConsultationController extends AbstractController
 
                 $consultation->setPrenom($prenomUser);
                 $consultation->setNom($nomUser);
-                $consultation->setIdPatient($idUser);
+                $consultation->setPatient($user->getPatient());
                 $validee=false;
                 $consultation->setEstValidee($validee);
                 $form = $this -> createForm(RdvPatientType::class,$consultation);
