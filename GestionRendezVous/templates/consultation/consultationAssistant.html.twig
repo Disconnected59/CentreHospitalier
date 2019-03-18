@@ -1,12 +1,15 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <br/><br/><br/>
-{%for unConsult in consultation %}
-<li> RDV de {{unConsult.getIdPatient()}} {{unConsult.getIdPatient()}} avec Docteur {{unConsult.getIdMedecin().getNom()}}
+{% for unConsult in consultation %}
+<li> 
+	{% if unConsult.getEstValidee() == 0 %}
+	RDV de {{unConsult.getPatient().getNom()}} {{unConsult.getPatient().getPrenom()}} avec Docteur {{unConsult.getIdMedecin().getNom()}}
 	
+	{% endif %}
 </li>
-{%else%}
+{% else %}
 Pas de consultation trouvé
-{%endfor%}
+{% endfor %}
 
 {% endblock %}

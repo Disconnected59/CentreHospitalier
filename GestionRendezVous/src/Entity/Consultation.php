@@ -33,12 +33,6 @@ class Consultation
     private $idMedecin;
 
     /**
-     * @ORM\Column(type="integer")
-     * @ORM\JoinColumn(nullable=true)
-     */
-    private $idPatient;
-
-    /**
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $estValidee;
@@ -52,6 +46,11 @@ class Consultation
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $prenom;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Patient", cascade={"persist", "remove"})
+     */
+    private $Patient;
 
     public function getId(): ?int
     {
@@ -94,18 +93,6 @@ class Consultation
         return $this;
     }
 
-    public function getIdPatient(): ?int
-    {
-        return $this->idPatient;
-    }
-
-    public function setIdPatient(?int $idPatient): self
-    {
-        $this->idPatient = $idPatient;
-
-        return $this;
-    }
-
     public function getEstValidee(): ?bool
     {
         return $this->estValidee;
@@ -138,6 +125,18 @@ class Consultation
     public function setPrenom(?string $prenom): self
     {
         $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getPatient(): ?Patient
+    {
+        return $this->Patient;
+    }
+
+    public function setPatient(?Patient $Patient): self
+    {
+        $this->Patient = $Patient;
 
         return $this;
     }
