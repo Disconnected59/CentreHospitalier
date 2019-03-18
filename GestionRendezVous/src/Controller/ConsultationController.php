@@ -2,6 +2,10 @@
 
 namespace App\Controller;
 use App\Entity\Consultation;
+use App\Entity\User;
+use App\Entity\Assistant;
+use App\Entity\Service;
+use App\Entity\Medecin;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -38,9 +42,10 @@ class ConsultationController extends AbstractController
             }
             else if($textRole == "ROLE_ASSISTANT")
             {
+                $serviceUser=$user->getIdAssistant()->getIdService();
                 $repository=$this->getDoctrine()->getRepository(Consultation::class);
                 $lesConsults=$repository->findAll();
-                return $this->render('consultation/consultationAssistant.html.twig',['consultation'=>$lesConsults,]);
+                return $this->render('consultation/consultationAssistant.html.twig',['consultation'=>$lesConsults,'assistant'=>$serviceUser]);
             }
             else
             {
@@ -108,5 +113,18 @@ class ConsultationController extends AbstractController
     return $this->redirectToRoute('consultation');
 
     
+    }
+
+
+    /**
+    *@route("/Consultation/accepter/{id}", name="accepter")
+    */
+    public function accepterConsultation($id, Request $request){
+        $repository=$this->getDoctrine()->getRepository(Consultation::class);
+        $em=$this->getDoctrine()->getManager();
+        $uneConsultation = $repository->find($id);
+        $uneConsultation->setEstValidee("1");
+        $em -> flush();
+        return $this->redirectToRoute('consultation');
     }
 }
