@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <br/><br/><br/>
-{% for unConsult in consultation %}
+{% for uneConsult in consultation %}
 <li> 
-	{% if unConsult.getEstValidee() == 0 %}
-	RDV de {{unConsult.getPatient().getNom()}} {{unConsult.getPatient().getPrenom()}} avec Docteur {{unConsult.getIdMedecin().getNom()}}
-	<a href="{{path('accepter',{id:rdv.getId()})}}">supprimer</a>
+	{% if uneConsult.getEstValidee() == 0 %}
+	{% if uneConsult.getIdMedecin().getService() == assistant%}
+	RDV de {{uneConsult.getPatient().getNom()}} {{uneConsult.getPatient().getPrenom()}} avec Docteur {{uneConsult.getIdMedecin().getNom()}}
+	<a href="{{path('accepter',{id:uneConsult.getId()})}}">Accepter</a>
+	{%endif%}
 	{% endif %}
 </li>
 {% else %}
