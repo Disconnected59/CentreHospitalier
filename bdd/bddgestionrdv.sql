@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 15 mars 2019 à 08:17
--- Version du serveur :  5.7.19
--- Version de PHP :  5.6.31
+-- Généré le :  lun. 18 mars 2019 à 09:34
+-- Version du serveur :  5.7.21
+-- Version de PHP :  7.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -76,8 +76,9 @@ CREATE TABLE IF NOT EXISTS `consultation` (
   `est_validee` tinyint(1) DEFAULT NULL,
   `nom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `prenom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `id_patient` int(11) NOT NULL,
+  `patient_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_964685A66B899279` (`patient_id`),
   KEY `IDX_964685A6A1799A53` (`id_medecin_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -85,8 +86,8 @@ CREATE TABLE IF NOT EXISTS `consultation` (
 -- Déchargement des données de la table `consultation`
 --
 
-INSERT INTO `consultation` (`id`, `id_medecin_id`, `date`, `heure`, `est_validee`, `nom`, `prenom`, `id_patient`) VALUES
-(1, 4, '2019-03-15', '12', 0, 'Test', 'Test\r\n', 4);
+INSERT INTO `consultation` (`id`, `id_medecin_id`, `date`, `heure`, `est_validee`, `nom`, `prenom`, `patient_id`) VALUES
+(1, 4, '2019-03-15', '12', 0, 'Test', 'Test\r\n', 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +144,8 @@ INSERT INTO `migration_versions` (`version`) VALUES
 ('20190314130538'),
 ('20190314142511'),
 ('20190314152016'),
-('20190314154118');
+('20190314154118'),
+('20190318083455');
 
 -- --------------------------------------------------------
 
@@ -254,6 +256,7 @@ ALTER TABLE `assistant`
 -- Contraintes pour la table `consultation`
 --
 ALTER TABLE `consultation`
+  ADD CONSTRAINT `FK_964685A66B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`),
   ADD CONSTRAINT `FK_964685A6A1799A53` FOREIGN KEY (`id_medecin_id`) REFERENCES `medecin` (`id`);
 
 --
