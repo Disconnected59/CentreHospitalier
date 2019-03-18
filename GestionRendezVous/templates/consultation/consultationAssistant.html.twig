@@ -2,8 +2,8 @@
 {% block body %}
 <br/><br/><br/>
 {%for unConsult in consultation %}
-<li> RDV de {{unConsult.getIdPatient()}} {{unConsult.getIdPatient()}} avec Docteur {{unConsult.getIdMedecin().getNom()}}
-	
+<li> 
+	RDV de {{unConsult.getPatient().getNom()}} {{unConsult.getPatient().getPrenom()}} avec Docteur {{unConsult.getIdMedecin().getNom()}}
 </li>
 {%else%}
 Pas de consultation trouvé
