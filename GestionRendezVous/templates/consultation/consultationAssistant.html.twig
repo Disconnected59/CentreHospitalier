@@ -7,6 +7,8 @@
 	{% if uneConsult.getIdMedecin().getService() == assistant%}
 	RDV de {{uneConsult.getPatient().getNom()}} {{uneConsult.getPatient().getPrenom()}} avec Docteur {{uneConsult.getIdMedecin().getNom()}}
 	<a href="{{path('accepter',{id:uneConsult.getId()})}}">Accepter</a>
+	<br/>
+	<a href="{{path('supprimerConsult',{id:uneConsult.getId()})}}">Supprimer</a>
 	{%endif%}
 	{% endif %}
 </li>
