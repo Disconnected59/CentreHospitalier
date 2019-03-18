@@ -11,6 +11,7 @@ Voici vos rendez-vous à venir :
 <br/>
 {% for rdv in rdvs %}
 
+{% if rdv.getEstValidee() == 1 %}
 Dr. {{rdv.getIdMedecin().getNom()}} {{rdv.getIdMedecin().getPrenom()}}
 <br/>
 Le : {{rdv.getDate()|date("Y/m/d")}}
@@ -21,6 +22,7 @@ A : {{rdv.getHeure()}} heure
 <a href="{{path('supprimer',{id:rdv.getId()})}}">supprimer</a>
 <br/>
 
+{% endif %}
 
 {%endfor%}
 

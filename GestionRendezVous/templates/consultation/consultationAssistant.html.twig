@@ -5,7 +5,7 @@
 <li> 
 	{% if unConsult.getEstValidee() == 0 %}
 	RDV de {{unConsult.getPatient().getNom()}} {{unConsult.getPatient().getPrenom()}} avec Docteur {{unConsult.getIdMedecin().getNom()}}
-	
+	<a href="{{path('accepter',{id:rdv.getId()})}}">supprimer</a>
 	{% endif %}
 </li>
 {% else %}
