@@ -10,11 +10,18 @@
 Voici vos rendez-vous à venir : 
 <br/>
 {% for rdv in rdvs %}
-{{rdv.getIdMedecin().getNom()}} {{rdv.getIdMedecin().getPrenom()}}
+
+Dr. {{rdv.getIdMedecin().getNom()}} {{rdv.getIdMedecin().getPrenom()}}
 <br/>
 Le : {{rdv.getDate()|date("Y/m/d")}}
 <br/>
 A : {{rdv.getHeure()}} heure
+
+<br/>
+<a href="{{path('supprimer',{id:rdv.getId()})}}">supprimer</a>
+<br/>
+
+
 {%endfor%}
 
 <br/>
