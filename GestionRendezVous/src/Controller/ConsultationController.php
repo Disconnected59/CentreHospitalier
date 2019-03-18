@@ -93,4 +93,18 @@ class ConsultationController extends AbstractController
     }
 
 
+     /**
+    *@route("/Consultation/supprimer/{id}", name="supprimer")
+    */
+    public function supprimerConsultation($id, Request $request)
+    {
+    $repository=$this->getDoctrine()->getRepository(Consultation::class);
+    $em=$this->getDoctrine()->getManager();
+    $uneConsultation = $repository->find($id);    
+    $em->remove($uneConsultation);
+    $em->flush();
+    return $this->redirectToRoute('consultation');
+
+    
+    }
 }
