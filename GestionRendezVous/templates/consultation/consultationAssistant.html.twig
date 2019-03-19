@@ -1,6 +1,7 @@
 {% extends 'base.html.twig' %}
 {% block body %}
 <br/><br/><br/>
+<p>Inscrire un nouveau patient <a href="{{path('inscription')}}">ici.</a></p>
 {% for uneConsult in consultation %}
 <li> 
 	{% if uneConsult.getEstValidee() == 0 %}
