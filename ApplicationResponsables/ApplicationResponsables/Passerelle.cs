@@ -178,6 +178,20 @@ namespace ApplicationResponsables
             seDeconnecter();
             return test;
         }
+        public static bool WebRequestTest()
+        {
+            string url = "http://www.google.com";
+            try
+            {
+                System.Net.WebRequest myRequest = System.Net.WebRequest.Create(url);
+                System.Net.WebResponse myResponse = myRequest.GetResponse();
+            }
+            catch (System.Net.WebException)
+            {
+                return false;
+            }
+            return true;
+        }
         public static Double tauxOccuMoisService(int pMois, int pService) //Lecompte 16/10/18
         {
             int nbOccuMois = Passerelle.nbOcuppantsServiceParMois(pMois, pService);

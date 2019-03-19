@@ -26,18 +26,26 @@ namespace ApplicationResponsables
         {
             string id = txtBoxLabel.Text;
             string mdp = txtBoxMdp.Text;
-            if (Passerelle.connexionIhm(id ,mdp))
+            if (Passerelle.WebRequestTest())
             {
-             
-                Form1 f1 = new Form1();
-                this.Hide();
-                f1.ShowDialog();
-                this.Close();
+                if (Passerelle.connexionIhm(id, mdp))
+                {
+
+                    Form1 f1 = new Form1();
+                    this.Hide();
+                    f1.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    lblerror.Text = "Le nom de compte ou mot de passe saisi est incorrect.";
+                }
             }
             else
             {
-                lblerror.Text = "Le nom de compte ou mot de passe saisi est incorrect.";
+                lblerror.Text = "Veuillez vous connecter à un réseau internet et relancez l'application.";
             }
+            
         }
     }
 }
