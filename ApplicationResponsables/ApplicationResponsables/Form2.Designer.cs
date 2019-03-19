@@ -38,12 +38,16 @@
             this.cbboxService = new System.Windows.Forms.ComboBox();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
+            this.cbboxAnnee = new System.Windows.Forms.ComboBox();
+            this.lblAnnee = new System.Windows.Forms.Label();
             this.dureemoy.SuspendLayout();
             this.SuspendLayout();
             // 
             // dureemoy
             // 
             this.dureemoy.BackColor = System.Drawing.Color.White;
+            this.dureemoy.Controls.Add(this.lblAnnee);
+            this.dureemoy.Controls.Add(this.cbboxAnnee);
             this.dureemoy.Controls.Add(this.cbbfinperiode);
             this.dureemoy.Controls.Add(this.cbbdebutperiode);
             this.dureemoy.Controls.Add(this.btnBascule2);
@@ -149,6 +153,25 @@
             this.lblService.Text = "Service";
             this.lblService.Click += new System.EventHandler(this.label1_Click);
             // 
+            // cbboxAnnee
+            // 
+            this.cbboxAnnee.FormattingEnabled = true;
+            this.cbboxAnnee.Location = new System.Drawing.Point(171, 292);
+            this.cbboxAnnee.Name = "cbboxAnnee";
+            this.cbboxAnnee.Size = new System.Drawing.Size(121, 30);
+            this.cbboxAnnee.TabIndex = 16;
+            // 
+            // lblAnnee
+            // 
+            this.lblAnnee.AutoSize = true;
+            this.lblAnnee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAnnee.Location = new System.Drawing.Point(56, 300);
+            this.lblAnnee.Name = "lblAnnee";
+            this.lblAnnee.Size = new System.Drawing.Size(55, 24);
+            this.lblAnnee.TabIndex = 17;
+            this.lblAnnee.Text = "Année";
+            this.lblAnnee.Click += new System.EventHandler(this.label1_Click_1);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,5 +201,7 @@
         private System.Windows.Forms.Button btnBascule2;
         private System.Windows.Forms.ComboBox cbbfinperiode;
         private System.Windows.Forms.ComboBox cbbdebutperiode;
+        private System.Windows.Forms.Label lblAnnee;
+        private System.Windows.Forms.ComboBox cbboxAnnee;
     }
 }

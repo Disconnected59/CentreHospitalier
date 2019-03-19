@@ -208,7 +208,6 @@ namespace ApplicationResponsables
         {
             Double taux = 0;
             seConnecter();
-            SqlCommand maCommande;
             int capaMax = Passerelle.capaciteMaxHopital();
             taux = Passerelle.getOccupantsHopitalParMois(pMois, pAnnee)*100 / capaMax;
             return taux;

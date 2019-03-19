@@ -17,6 +17,7 @@ namespace ApplicationResponsables
         public dureeMoyDiagramme(ArrayList pSejour, int pMoisDebut, int pMoisFin)
         {
             InitializeComponent();
+            
             Sejour unSejour = (Sejour)pSejour[1];
 
            int serviceChoisi = unSejour.getIdService();

@@ -18,6 +18,7 @@ namespace ApplicationResponsables
             InitializeComponent();
             ArrayList lesMois = new ArrayList(); // Liste des mois pour la listBox des mois de l'IHM  //Lecompte 18/09/2018
             ArrayList lesMois2 = new ArrayList();
+            ArrayList lesAnnees = Passerelle.getAnnees();
             String leMois = "Janvier";
             lesMois.Add(leMois);
             lesMois2.Add(leMois);
@@ -58,6 +59,7 @@ namespace ApplicationResponsables
             cbbdebutperiode.DataSource = lesMois;
             cbbfinperiode.DataSource = lesMois2;
 
+            cbboxAnnee.DataSource = lesAnnees;
             ArrayList lesServices = Passerelle.getServices();
             cbboxService.DataSource = lesServices;
 
@@ -91,8 +93,9 @@ namespace ApplicationResponsables
             int serviceChoisi = (int)cbboxService.SelectedIndex + 1;
             int moisDebut = (int)cbbdebutperiode.SelectedIndex + 1;
             int moisFin = (int)cbbfinperiode.SelectedIndex + 1;
+            int anneeChoisie = (int)cbboxAnnee.SelectedValue;
 
-            if (moisDebut > moisFin)
+            if (moisDebut >= moisFin)
             {
                 MessageBox.Show("La période selectionnée est incorrecte, veuillez resélectionner");
             }
@@ -100,7 +103,7 @@ namespace ApplicationResponsables
             {
 
                 int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
-               // lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
+                lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi, anneeChoisie);
                 dureeMoyDiagramme T1 = new dureeMoyDiagramme(lesSejours, moisDebut, moisFin);
                 T1.ShowDialog();
             }
@@ -122,6 +125,11 @@ namespace ApplicationResponsables
         }
 
         private void lblPeriode_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
         {
 
         }
