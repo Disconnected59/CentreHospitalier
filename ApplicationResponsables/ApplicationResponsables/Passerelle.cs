@@ -99,13 +99,13 @@ namespace ApplicationResponsables
         }
 
 
-      public static ArrayList SejoursServiceParPeriode(int pMoisDebut, int pMoisFin, int pService) //Lecompte 09/10/18
+      public static ArrayList SejoursServiceParPeriode(int pMoisDebut, int pMoisFin, int pService, int pAnnee) //Lecompte 09/10/18
       {
           ArrayList lesSejours = new ArrayList();
           int id; String moisSejour; int annee; int nbPatient; int idService; int dureeMoy;
           seConnecter();
           SqlCommand maCommande;
-          String requete = "SELECT * FROM Sejours WHERE idService = "+pService+" AND id BETWEEN "+pMoisDebut+"AND "+pMoisFin;
+          String requete = "SELECT * FROM Sejours WHERE idService = "+pService+" AND id BETWEEN "+pMoisDebut+"AND "+pMoisFin+" AND AnnéeSejour="+pAnnee;
           maCommande = new SqlCommand(requete,laConnection);
             SqlDataReader unJeuResultat = maCommande.ExecuteReader();
             while (unJeuResultat.Read())

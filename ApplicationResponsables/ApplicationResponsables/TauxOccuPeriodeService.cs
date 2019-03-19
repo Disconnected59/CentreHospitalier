@@ -14,7 +14,7 @@ namespace ApplicationResponsables
 {
     public partial class TauxOccuPeriodeService : Form
     {
-        public TauxOccuPeriodeService(int pCapaMax, ArrayList pSejour, int pMoisDebut, int pMoisFin)
+        public TauxOccuPeriodeService(int pCapaMax, ArrayList pSejour, int pMoisDebut, int pMoisFin, int anneeChoisie)
         {
            
             InitializeComponent();
@@ -38,7 +38,7 @@ namespace ApplicationResponsables
             {
                 intituService = "Reeducation";
             }
-            chartTauxOccuPeriodeService.Titles["Title1"].Text = "Taux d'occupation en pourcents du service : " + intituService + " de " + getIntituleMois(pMoisDebut) + " 2018 à " + getIntituleMois(pMoisFin) + " 2018 ";           
+            chartTauxOccuPeriodeService.Titles["Title1"].Text = "Taux d'occupation en pourcents du service : " + intituService + " de " + getIntituleMois(pMoisDebut) + " à " + getIntituleMois(pMoisFin) + " " + anneeChoisie;           
             chartTauxOccuPeriodeService.ChartAreas[0].AxisY.Maximum = 100;
             chartTauxOccuPeriodeService.ChartAreas[0].AxisY.Minimum = 0;
 

@@ -41,8 +41,6 @@
             this.btnValidChangerDebut = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cmbMois3 = new System.Windows.Forms.ComboBox();
-            this.lbldate2 = new System.Windows.Forms.Label();
-            this.lbldate1 = new System.Windows.Forms.Label();
             this.cmbMois2 = new System.Windows.Forms.ComboBox();
             this.cmbServices = new System.Windows.Forms.ComboBox();
             this.btnValidPeriodeService = new System.Windows.Forms.Button();
@@ -56,6 +54,9 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
+            this.cmbAnnee2 = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -170,9 +171,10 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.cmbAnnee2);
             this.groupBox3.Controls.Add(this.cmbMois3);
-            this.groupBox3.Controls.Add(this.lbldate2);
-            this.groupBox3.Controls.Add(this.lbldate1);
             this.groupBox3.Controls.Add(this.cmbMois2);
             this.groupBox3.Controls.Add(this.cmbServices);
             this.groupBox3.Controls.Add(this.btnValidPeriodeService);
@@ -196,26 +198,6 @@
             this.cmbMois3.Size = new System.Drawing.Size(143, 30);
             this.cmbMois3.TabIndex = 14;
             this.cmbMois3.SelectedIndexChanged += new System.EventHandler(this.cmbMois3_SelectedIndexChanged);
-            // 
-            // lbldate2
-            // 
-            this.lbldate2.AutoSize = true;
-            this.lbldate2.BackColor = System.Drawing.Color.White;
-            this.lbldate2.Location = new System.Drawing.Point(295, 319);
-            this.lbldate2.Name = "lbldate2";
-            this.lbldate2.Size = new System.Drawing.Size(42, 22);
-            this.lbldate2.TabIndex = 13;
-            this.lbldate2.Text = "2018";
-            // 
-            // lbldate1
-            // 
-            this.lbldate1.AutoSize = true;
-            this.lbldate1.BackColor = System.Drawing.Color.White;
-            this.lbldate1.Location = new System.Drawing.Point(295, 223);
-            this.lbldate1.Name = "lbldate1";
-            this.lbldate1.Size = new System.Drawing.Size(42, 22);
-            this.lbldate1.TabIndex = 12;
-            this.lbldate1.Text = "2018";
             // 
             // cmbMois2
             // 
@@ -341,6 +323,35 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
+            // cmbAnnee2
+            // 
+            this.cmbAnnee2.FormattingEnabled = true;
+            this.cmbAnnee2.Location = new System.Drawing.Point(368, 250);
+            this.cmbAnnee2.Name = "cmbAnnee2";
+            this.cmbAnnee2.Size = new System.Drawing.Size(121, 30);
+            this.cmbAnnee2.TabIndex = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(293, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 22);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Année : ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(107, 195);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 22);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Mois";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,8 +394,6 @@
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnValiderConnexion;
         private System.Windows.Forms.Button btnBascule1;
-        private System.Windows.Forms.Label lbldate2;
-        private System.Windows.Forms.Label lbldate1;
         private System.Windows.Forms.ComboBox cmbMois2;
         private System.Windows.Forms.Label lbl5;
         private System.Windows.Forms.ComboBox cmbMois3;
@@ -394,6 +403,9 @@
         private System.Windows.Forms.ComboBox cmbAnnee;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbAnnee2;
+        private System.Windows.Forms.Label label4;
     }
 }
 

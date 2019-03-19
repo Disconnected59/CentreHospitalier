@@ -89,8 +89,6 @@ namespace ApplicationResponsables
         {
             ArrayList lesSejours = new ArrayList();
             int serviceChoisi = (int)cbboxService.SelectedIndex + 1;
-
-
             int moisDebut = (int)cbbdebutperiode.SelectedIndex + 1;
             int moisFin = (int)cbbfinperiode.SelectedIndex + 1;
 
@@ -100,8 +98,9 @@ namespace ApplicationResponsables
             }
             else
             {
+
                 int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
-                lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
+               // lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
                 dureeMoyDiagramme T1 = new dureeMoyDiagramme(lesSejours, moisDebut, moisFin);
                 T1.ShowDialog();
             }

@@ -92,6 +92,7 @@ namespace ApplicationResponsables
             ArrayList lesServices = Passerelle.getServices();
             cmbServices.DataSource = lesServices;
             cmbAnnee.DataSource = lesAnnees;
+            cmbAnnee2.DataSource = lesAnnees;
 
 
            
@@ -130,15 +131,17 @@ namespace ApplicationResponsables
             int serviceChoisi = (int)cmbServices.SelectedIndex + 1;
             int moisDebut = (int)cmbMois2.SelectedIndex+1;
             int moisFin = (int)cmbMois3.SelectedIndex+1;
+            int anneeChoisie = (int)cmbAnnee2.SelectedValue;
             if (moisDebut > moisFin)
+
             {
                 MessageBox.Show("La période selectionnée est incorrecte, veuillez resélectionner");
             }
             else
             {
                 int capaMax = Passerelle.recupCapacitéMax(serviceChoisi);
-                lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi);
-                TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours, moisDebut, moisFin);
+                lesSejours = Passerelle.SejoursServiceParPeriode(moisDebut, moisFin, serviceChoisi, anneeChoisie);
+                TauxOccuPeriodeService T1 = new TauxOccuPeriodeService(capaMax, lesSejours, moisDebut, moisFin, anneeChoisie);
                 T1.ShowDialog();
             }
         }
@@ -197,6 +200,11 @@ namespace ApplicationResponsables
         }
 
         private void cmbAnnee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
