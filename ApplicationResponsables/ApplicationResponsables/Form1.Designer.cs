@@ -40,6 +40,9 @@
             this.btnBascule1 = new System.Windows.Forms.Button();
             this.btnValidChangerDebut = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cmbAnnee2 = new System.Windows.Forms.ComboBox();
             this.cmbMois3 = new System.Windows.Forms.ComboBox();
             this.cmbMois2 = new System.Windows.Forms.ComboBox();
             this.cmbServices = new System.Windows.Forms.ComboBox();
@@ -54,9 +57,6 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
-            this.cmbAnnee2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -189,6 +189,35 @@
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Taux d\'occupation des lits par période et service choisi";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(107, 195);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 22);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "Mois";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(293, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 22);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Année : ";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // cmbAnnee2
+            // 
+            this.cmbAnnee2.FormattingEnabled = true;
+            this.cmbAnnee2.Location = new System.Drawing.Point(368, 250);
+            this.cmbAnnee2.Name = "cmbAnnee2";
+            this.cmbAnnee2.Size = new System.Drawing.Size(121, 30);
+            this.cmbAnnee2.TabIndex = 19;
             // 
             // cmbMois3
             // 
@@ -323,35 +352,6 @@
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
             // 
-            // cmbAnnee2
-            // 
-            this.cmbAnnee2.FormattingEnabled = true;
-            this.cmbAnnee2.Location = new System.Drawing.Point(368, 250);
-            this.cmbAnnee2.Name = "cmbAnnee2";
-            this.cmbAnnee2.Size = new System.Drawing.Size(121, 30);
-            this.cmbAnnee2.TabIndex = 19;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(293, 253);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 22);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Année : ";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(107, 195);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 22);
-            this.label4.TabIndex = 22;
-            this.label4.Text = "Mois";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,7 +361,10 @@
             this.ClientSize = new System.Drawing.Size(1009, 438);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Tableau de bord";
             this.Load += new System.EventHandler(this.Form1_Load);
