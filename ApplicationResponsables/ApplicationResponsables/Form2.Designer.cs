@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.dureemoy = new System.Windows.Forms.GroupBox();
+            this.lblAnnee = new System.Windows.Forms.Label();
+            this.cbboxAnnee = new System.Windows.Forms.ComboBox();
             this.cbbfinperiode = new System.Windows.Forms.ComboBox();
             this.cbbdebutperiode = new System.Windows.Forms.ComboBox();
             this.btnBascule2 = new System.Windows.Forms.Button();
@@ -38,8 +40,6 @@
             this.cbboxService = new System.Windows.Forms.ComboBox();
             this.lblPeriode = new System.Windows.Forms.Label();
             this.lblService = new System.Windows.Forms.Label();
-            this.cbboxAnnee = new System.Windows.Forms.ComboBox();
-            this.lblAnnee = new System.Windows.Forms.Label();
             this.dureemoy.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,25 @@
             this.dureemoy.TabStop = false;
             this.dureemoy.Text = "Durée moyenne de séjour";
             this.dureemoy.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblAnnee
+            // 
+            this.lblAnnee.AutoSize = true;
+            this.lblAnnee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAnnee.Location = new System.Drawing.Point(56, 300);
+            this.lblAnnee.Name = "lblAnnee";
+            this.lblAnnee.Size = new System.Drawing.Size(55, 24);
+            this.lblAnnee.TabIndex = 17;
+            this.lblAnnee.Text = "Année";
+            this.lblAnnee.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // cbboxAnnee
+            // 
+            this.cbboxAnnee.FormattingEnabled = true;
+            this.cbboxAnnee.Location = new System.Drawing.Point(171, 292);
+            this.cbboxAnnee.Name = "cbboxAnnee";
+            this.cbboxAnnee.Size = new System.Drawing.Size(121, 30);
+            this.cbboxAnnee.TabIndex = 16;
             // 
             // cbbfinperiode
             // 
@@ -153,25 +172,6 @@
             this.lblService.Text = "Service";
             this.lblService.Click += new System.EventHandler(this.label1_Click);
             // 
-            // cbboxAnnee
-            // 
-            this.cbboxAnnee.FormattingEnabled = true;
-            this.cbboxAnnee.Location = new System.Drawing.Point(171, 292);
-            this.cbboxAnnee.Name = "cbboxAnnee";
-            this.cbboxAnnee.Size = new System.Drawing.Size(121, 30);
-            this.cbboxAnnee.TabIndex = 16;
-            // 
-            // lblAnnee
-            // 
-            this.lblAnnee.AutoSize = true;
-            this.lblAnnee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAnnee.Location = new System.Drawing.Point(56, 300);
-            this.lblAnnee.Name = "lblAnnee";
-            this.lblAnnee.Size = new System.Drawing.Size(55, 24);
-            this.lblAnnee.TabIndex = 17;
-            this.lblAnnee.Text = "Année";
-            this.lblAnnee.Click += new System.EventHandler(this.label1_Click_1);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,7 +180,10 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 470);
             this.Controls.Add(this.dureemoy);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form2";
             this.Text = "Tableau de bord 2";
             this.Load += new System.EventHandler(this.Form2_Load);

@@ -30,12 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Connexion));
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblerror = new System.Windows.Forms.Label();
             this.btnValiderConnexion = new System.Windows.Forms.Button();
             this.lblMdp = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.txtBoxMdp = new System.Windows.Forms.TextBox();
             this.txtBoxLabel = new System.Windows.Forms.TextBox();
-            this.lblerror = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,16 @@
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Vous êtes administrateur? Connectez vous !";
+            // 
+            // lblerror
+            // 
+            this.lblerror.AutoSize = true;
+            this.lblerror.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblerror.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblerror.Location = new System.Drawing.Point(264, 83);
+            this.lblerror.Name = "lblerror";
+            this.lblerror.Size = new System.Drawing.Size(0, 13);
+            this.lblerror.TabIndex = 11;
             // 
             // btnValiderConnexion
             // 
@@ -90,6 +100,7 @@
             // 
             this.txtBoxMdp.Location = new System.Drawing.Point(155, 65);
             this.txtBoxMdp.Name = "txtBoxMdp";
+            this.txtBoxMdp.PasswordChar = '*';
             this.txtBoxMdp.Size = new System.Drawing.Size(100, 23);
             this.txtBoxMdp.TabIndex = 1;
             // 
@@ -99,16 +110,6 @@
             this.txtBoxLabel.Name = "txtBoxLabel";
             this.txtBoxLabel.Size = new System.Drawing.Size(100, 23);
             this.txtBoxLabel.TabIndex = 0;
-            // 
-            // lblerror
-            // 
-            this.lblerror.AutoSize = true;
-            this.lblerror.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblerror.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblerror.Location = new System.Drawing.Point(264, 83);
-            this.lblerror.Name = "lblerror";
-            this.lblerror.Size = new System.Drawing.Size(0, 13);
-            this.lblerror.TabIndex = 11;
             // 
             // Connexion
             // 
