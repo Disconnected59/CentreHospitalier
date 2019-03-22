@@ -27,6 +27,7 @@ class ConsultationController extends AbstractController
     {   
           $user = $this->getUser();
           $role = $user->getRoles();
+          $aujourdhui = date("Y/m/d");
 
           $tailleRoles=sizeof($role);
             $oui = "non";
@@ -38,7 +39,23 @@ class ConsultationController extends AbstractController
             if($textRole == "ROLE_MEDECIN")
             {
                 $oui = "oui";
-                return $this->render('consultation/consultationMedecin.html.twig');
+                $lesRdvs = $this->getDOctrine()->getRepository('App:Consultation')->findAll();
+                $lesRdvsAffiches=array();
+                $i=0;
+                foreach($lesRdvs as $unRdv)
+                {
+                    $idUser = $user->getIdMedecin()->getId();
+                    if($idUser == $unRdv->getIdMedecin()->getId())
+                    {
+                        $lesRdvsAffiches[$i]=$unRdv;
+
+                    }
+                    $i++;
+
+
+                }
+
+                return $this->render('consultation/consultationMedecin.html.twig',['rdvs'=>$lesRdvsAffiches]);
             }
             else if($textRole == "ROLE_ASSISTANT")
             {
@@ -58,16 +75,16 @@ class ConsultationController extends AbstractController
                 $nomUser=$user->getPatient()->getNom();
                 $prenomUser=$user->getPatient()->getPrenom();
                 $idPatientUser=$user->getPatient()->getId();
-
                 $lesRdv = $this->getDoctrine()->getRepository('App:Consultation')->findAll();
                 $i=0;
+                $lesRdvAffiches=array();
                 foreach($lesRdv as $unRdv)
                 {
                     $leId=$unRdv->getPatient()->getId();
                     if($leId==$idPatientUser)
                     {
-                        $lesRdvAffiches=array();
-                        $lesRdvAffiches[0]=$unRdv;
+                        
+                        $lesRdvAffiches[$i]=$unRdv;
                     }
                     $i++;
                 }
@@ -87,7 +104,7 @@ class ConsultationController extends AbstractController
                     $em -> persist($consultation);
                     $em -> flush();
                 }
-                return $this->render('consultation/consultationPatient.html.twig', ['form'=>$form->createView(),'rdvs'=>$lesRdv]);
+                return $this->render('consultation/consultationPatient.html.twig', ['form'=>$form->createView(),'rdvs'=>$lesRdvAffiches,'idUser'=>$idPatientUser]);
            
 
             }

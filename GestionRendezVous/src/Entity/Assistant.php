@@ -27,7 +27,7 @@ class Assistant
     private $prenom;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Service", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Service", cascade={"persist", "remove"})
      */
     private $idService;
 
