@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 22 mars 2019 à 09:00
--- Version du serveur :  5.7.21
--- Version de PHP :  7.2.4
+-- Généré le :  ven. 22 mars 2019 à 10:14
+-- Version du serveur :  5.7.19
+-- Version de PHP :  5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `assistant` (
   `nom` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `prenom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_C2997CD148D62931` (`id_service_id`)
+  KEY `IDX_C2997CD148D62931` (`id_service_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -49,7 +49,7 @@ INSERT INTO `assistant` (`id`, `id_service_id`, `nom`, `prenom`) VALUES
 (2, 2, 'Casse', 'Laure'),
 (3, 3, 'Decheval', 'Adam'),
 (4, 4, 'Douminos', 'Zineb'),
-(5, 5, 'Bearez', 'Antoine'),
+(5, 1, 'Lecompte', 'Quentin'),
 (6, 6, 'Lendore', 'Theophile'),
 (7, 7, 'Enair', 'Jessie'),
 (8, 8, 'Lavale', 'Pierre'),
@@ -80,7 +80,7 @@ CREATE TABLE IF NOT EXISTS `consultation` (
   PRIMARY KEY (`id`),
   KEY `IDX_964685A6A1799A53` (`id_medecin_id`),
   KEY `IDX_964685A66B899279` (`patient_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `consultation`
@@ -89,8 +89,11 @@ CREATE TABLE IF NOT EXISTS `consultation` (
 INSERT INTO `consultation` (`id`, `id_medecin_id`, `date`, `heure`, `est_validee`, `nom`, `prenom`, `patient_id`) VALUES
 (1, 4, '2019-03-15', '12', 1, 'Test', 'Test\r\n', 5),
 (2, 1, '2019-03-20', '10', 1, 'fg', 'f', 3),
-(3, 6, '2019-02-04', '11', 0, 'Jean', 'Patate', 2),
-(4, 8, '2019-03-21', '12', 1, 'dggd', 'grdgd', 4);
+(3, 6, '2019-02-04', '11', 1, 'Jean', 'Patate', 2),
+(4, 8, '2019-03-21', '12', 1, 'dggd', 'grdgd', 4),
+(5, 1, '2019-03-22', '14', 1, 'Poudlard', 'Harry', 2),
+(6, 6, '2019-03-31', '15', 1, 'Poudlard', 'Harry', 2),
+(7, 1, '2019-08-16', '10', 1, 'Poudlard', 'Harry', 2);
 
 -- --------------------------------------------------------
 
@@ -152,7 +155,8 @@ INSERT INTO `migration_versions` (`version`) VALUES
 ('20190318093139'),
 ('20190318094314'),
 ('20190318094448'),
-('20190318095926');
+('20190318095926'),
+('20190322101040');
 
 -- --------------------------------------------------------
 
@@ -244,10 +248,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `roles`, `password`, `nom`, `prenom`, `id_medecin_id`, `id_assistant_id`, `patient_id`) VALUES
-(1, 'bekir', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$7pwzZ4aIdsrmKgGGa0Eqrev116T4lOfYfevfMai3sZzdFnf2IOtd.', 'Aydogdu', 'Bekir\r\n', NULL, NULL, NULL),
-(2, 'antoine', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$Wd1l0PVJsr7P.MV7o11HmeUfuBN2ihY65YMVh6oUSrCvyXd3ImySS', 'Bearez', 'Antoine', NULL, NULL, NULL),
+(1, 'bekir', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$7pwzZ4aIdsrmKgGGa0Eqrev116T4lOfYfevfMai3sZzdFnf2IOtd.', 'Aydogdu', 'Bekir\r\n', 3, NULL, NULL),
+(2, 'antoine', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$Wd1l0PVJsr7P.MV7o11HmeUfuBN2ihY65YMVh6oUSrCvyXd3ImySS', 'Bearez', 'Antoine', 1, NULL, NULL),
 (3, 'quentin', '[\"ROLE_USER\", \"ROLE_ASSISTANT\"]', '$2y$10$z5mFEE.Oa87YC2Cc0eocAexViZxaTMHD0oK.sL.iCSBJGAOs2IzFK', 'Lecompte', 'Quentin', NULL, 5, NULL),
-(4, 'test', '[\"ROLE_USER\"]', '$2y$10$Vbjae/GIkTFe5v6XnF.4WOnJ6iqNxAmc5QTRfERiCoqWzHCoH8aRG', 'Test', 'Test\r\n', NULL, NULL, NULL);
+(4, 'test', '[\"ROLE_USER\"]', '$2y$10$Vbjae/GIkTFe5v6XnF.4WOnJ6iqNxAmc5QTRfERiCoqWzHCoH8aRG', 'Test', 'Test\r\n', NULL, NULL, 2);
 
 --
 -- Contraintes pour les tables déchargées

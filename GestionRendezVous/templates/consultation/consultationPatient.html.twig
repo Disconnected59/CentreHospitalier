@@ -12,6 +12,8 @@ Voici vos rendez-vous à venir :
 {% for rdv in rdvs %}
 
 {% if rdv.getEstValidee() == 1 %}
+{% if idUser==rdv.getPatient().getId() %}
+{% if "now" | date("Y/m/d") <= rdv.getDate()|date("Y/m/d")  %}
 Dr. {{rdv.getIdMedecin().getNom()}} {{rdv.getIdMedecin().getPrenom()}}
 <br/>
 Le : {{rdv.getDate()|date("Y/m/d")}}
@@ -23,7 +25,8 @@ A : {{rdv.getHeure()}} heure
 <br/>
 
 {% endif %}
-
+{% endif %}
+{% endif %}
 {%endfor%}
 
 <br/>
