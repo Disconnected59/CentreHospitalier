@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 18 mars 2019 à 09:34
+-- Généré le :  ven. 22 mars 2019 à 09:00
 -- Version du serveur :  5.7.21
 -- Version de PHP :  7.2.4
 
@@ -78,16 +78,19 @@ CREATE TABLE IF NOT EXISTS `consultation` (
   `prenom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `patient_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `UNIQ_964685A66B899279` (`patient_id`),
-  KEY `IDX_964685A6A1799A53` (`id_medecin_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `IDX_964685A6A1799A53` (`id_medecin_id`),
+  KEY `IDX_964685A66B899279` (`patient_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `consultation`
 --
 
 INSERT INTO `consultation` (`id`, `id_medecin_id`, `date`, `heure`, `est_validee`, `nom`, `prenom`, `patient_id`) VALUES
-(1, 4, '2019-03-15', '12', 0, 'Test', 'Test\r\n', 1);
+(1, 4, '2019-03-15', '12', 1, 'Test', 'Test\r\n', 5),
+(2, 1, '2019-03-20', '10', 1, 'fg', 'f', 3),
+(3, 6, '2019-02-04', '11', 0, 'Jean', 'Patate', 2),
+(4, 8, '2019-03-21', '12', 1, 'dggd', 'grdgd', 4);
 
 -- --------------------------------------------------------
 
@@ -108,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `medecin` (
   `photo` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `IDX_1BDA53C6ED5CA9E6` (`service_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `medecin`
@@ -121,7 +124,8 @@ INSERT INTO `medecin` (`id`, `service_id`, `login`, `motdepasse`, `email`, `adre
 (4, 4, 'tom.jablonski', 'jablonski', 'tom.jablonski@chu-lille.fr', 'mons', 'jablonski', 'tom', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc3.jpg?raw=true'),
 (5, 11, 'nucleardoctor', 'nucleardoctor', 'nucleardoctor@random.com', '25 rue Fukushima', 'Chin', 'Chan', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc1.jpg?raw=true'),
 (6, 6, 'Jesenspurien', 'Jesenspurien', 'Anesthesiehopital@random.com', '42 rue Pamal', 'Narcisse', 'Paul', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc1.jpg?raw=true'),
-(7, 6, 'Kevinlepape', 'flan', 'kevinlepape@random.com', '26 rue Gato', 'Lepape', 'Kevin', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc1.jpg?raw=true');
+(7, 6, 'Kevinlepape', 'flan', 'kevinlepape@random.com', '26 rue Gato', 'Lepape', 'Kevin', 'https://github.com/Disconnected59/CentreHospitalier/blob/master/GestionRendezVous/images/doc1.jpg?raw=true'),
+(8, 5, 'antoinetest', 'antoinetest', 'dfgrgdr', 'rfd', 'antoinetest', 'antoinetest', NULL);
 
 -- --------------------------------------------------------
 
@@ -145,7 +149,10 @@ INSERT INTO `migration_versions` (`version`) VALUES
 ('20190314142511'),
 ('20190314152016'),
 ('20190314154118'),
-('20190318083455');
+('20190318093139'),
+('20190318094314'),
+('20190318094448'),
+('20190318095926');
 
 -- --------------------------------------------------------
 
@@ -156,8 +163,6 @@ INSERT INTO `migration_versions` (`version`) VALUES
 DROP TABLE IF EXISTS `patient`;
 CREATE TABLE IF NOT EXISTS `patient` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `motdepasse` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(150) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `adresse` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `nom` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -169,12 +174,12 @@ CREATE TABLE IF NOT EXISTS `patient` (
 -- Déchargement des données de la table `patient`
 --
 
-INSERT INTO `patient` (`id`, `login`, `motdepasse`, `email`, `adresse`, `nom`, `prenom`) VALUES
-(1, 'oui', 'oui', 'oui', 'oui', 'Bernard', 'Patate'),
-(2, 'non', 'non', 'non', 'non', 'Poudlard', 'Harry'),
-(3, 'Peutetre', 'Peutetre', 'Peutetre', 'Peutetre', 'Lolita', 'Jessica'),
-(4, 'Ouio', 'Ouio', 'Ouio', 'Ouio', 'Kadjiski', 'Bertrand'),
-(5, 'Nonoui', 'Nonoui', 'Nonoui', 'Nonoui', 'Bliatsuki', 'Jacob');
+INSERT INTO `patient` (`id`, `email`, `adresse`, `nom`, `prenom`) VALUES
+(1, 'oui', 'oui', 'Bernard', 'Patate'),
+(2, 'non', 'non', 'Poudlard', 'Harry'),
+(3, 'Peutetre', 'Peutetre', 'Lolita', 'Jessica'),
+(4, 'Ouio', 'Ouio', 'Kadjiski', 'Bertrand'),
+(5, 'Nonoui', 'Nonoui', 'Bliatsuki', 'Jacob');
 
 -- --------------------------------------------------------
 
@@ -226,21 +231,23 @@ CREATE TABLE IF NOT EXISTS `user` (
   `prenom` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `id_medecin_id` int(11) DEFAULT NULL,
   `id_assistant_id` int(11) DEFAULT NULL,
+  `patient_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`),
   UNIQUE KEY `UNIQ_8D93D649A1799A53` (`id_medecin_id`),
-  UNIQUE KEY `UNIQ_8D93D649C392F29D` (`id_assistant_id`)
+  UNIQUE KEY `UNIQ_8D93D649C392F29D` (`id_assistant_id`),
+  UNIQUE KEY `UNIQ_8D93D6496B899279` (`patient_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `roles`, `password`, `nom`, `prenom`, `id_medecin_id`, `id_assistant_id`) VALUES
-(1, 'bekir', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$7pwzZ4aIdsrmKgGGa0Eqrev116T4lOfYfevfMai3sZzdFnf2IOtd.', 'Aydogdu', 'Bekir\r\n', NULL, NULL),
-(2, 'antoine', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$Wd1l0PVJsr7P.MV7o11HmeUfuBN2ihY65YMVh6oUSrCvyXd3ImySS', 'Bearez', 'Antoine', NULL, NULL),
-(3, 'quentin', '[\"ROLE_USER\", \"ROLE_ASSISTANT\"]', '$2y$10$z5mFEE.Oa87YC2Cc0eocAexViZxaTMHD0oK.sL.iCSBJGAOs2IzFK', 'Lecompte', 'Quentin', NULL, NULL),
-(4, 'test', '[\"ROLE_USER\"]', '$2y$10$Vbjae/GIkTFe5v6XnF.4WOnJ6iqNxAmc5QTRfERiCoqWzHCoH8aRG', 'Test', 'Test\r\n', NULL, NULL);
+INSERT INTO `user` (`id`, `username`, `roles`, `password`, `nom`, `prenom`, `id_medecin_id`, `id_assistant_id`, `patient_id`) VALUES
+(1, 'bekir', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$7pwzZ4aIdsrmKgGGa0Eqrev116T4lOfYfevfMai3sZzdFnf2IOtd.', 'Aydogdu', 'Bekir\r\n', NULL, NULL, NULL),
+(2, 'antoine', '[\"ROLE_USER\", \"ROLE_MEDECIN\"]', '$2y$10$Wd1l0PVJsr7P.MV7o11HmeUfuBN2ihY65YMVh6oUSrCvyXd3ImySS', 'Bearez', 'Antoine', NULL, NULL, NULL),
+(3, 'quentin', '[\"ROLE_USER\", \"ROLE_ASSISTANT\"]', '$2y$10$z5mFEE.Oa87YC2Cc0eocAexViZxaTMHD0oK.sL.iCSBJGAOs2IzFK', 'Lecompte', 'Quentin', NULL, 5, NULL),
+(4, 'test', '[\"ROLE_USER\"]', '$2y$10$Vbjae/GIkTFe5v6XnF.4WOnJ6iqNxAmc5QTRfERiCoqWzHCoH8aRG', 'Test', 'Test\r\n', NULL, NULL, NULL);
 
 --
 -- Contraintes pour les tables déchargées
@@ -269,6 +276,7 @@ ALTER TABLE `medecin`
 -- Contraintes pour la table `user`
 --
 ALTER TABLE `user`
+  ADD CONSTRAINT `FK_8D93D6496B899279` FOREIGN KEY (`patient_id`) REFERENCES `patient` (`id`),
   ADD CONSTRAINT `FK_8D93D649A1799A53` FOREIGN KEY (`id_medecin_id`) REFERENCES `medecin` (`id`),
   ADD CONSTRAINT `FK_8D93D649C392F29D` FOREIGN KEY (`id_assistant_id`) REFERENCES `assistant` (`id`);
 COMMIT;
