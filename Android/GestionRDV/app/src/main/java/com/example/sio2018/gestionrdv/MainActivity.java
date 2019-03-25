@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             URL url;
             StringBuffer leBuffer = new StringBuffer(aRetourner);
             try{
-                url = new URL("http://192.168.1.17/connexion.php");
+                url = new URL("http://192.168.1.17/script.php");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
 
