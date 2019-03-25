@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 for (int i=0; i<lesConsult.length(); i++)
                 {
                     consult = lesConsult.getJSONObject(i);
-                    lesConsultation += consult.getString("id")+" "+consult.getString("mdp");
+                    lesConsultation += consult.getString("id")+" "+consult.getString("medecin")+" "+consult.getString("nom")+" "+consult.getString("prenom")+"\n";
                     //lesConsultation += consult.getString("nomPatient")+consult.getString("prenomPatient")+consult.getString("date")+consult.getString("heure")+consult.getString("nomMedecin")+" "+consult.getString("prenomMedecin")+"\n";
                 }
             }
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             URL url;
             StringBuffer leBuffer = new StringBuffer(aRetourner);
             try{
-                url = new URL("http://192.168.1.17/script.php");
+                url = new URL("http://192.168.1.17/script.php?");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestMethod("GET");
 
