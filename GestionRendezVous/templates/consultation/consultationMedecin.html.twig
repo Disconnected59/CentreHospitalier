@@ -1,8 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block body %}
-Voici vos rendez-vous à venir : 
 
-Antoine Bearez car on l'aime pas et qu'il faut l'interner
+
+{% block body %}
+<br/>
+<br/>
+<br/>
+
+Voici vos rendez-vous à venir : 
+<br/>
+{% for rdv in rdvs %}
+{% if "now" | date("Y/m/d") <= rdv.getDate()|date("Y/m/d")  %}
+
+M. {{rdv.getPrenom()}} {{rdv.getNom()}}
+<br/>
+
+Le : {{rdv.getDate() | date("d/m/Y")}}
+<br/>
+A : {{rdv.getHeure()}} heure
+
+<br/>
+<br/>
+
+
+{%endif%}
+{% endfor %}
 
 {% endblock %}

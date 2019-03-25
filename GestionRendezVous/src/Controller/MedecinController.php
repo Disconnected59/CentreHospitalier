@@ -21,3 +21,5 @@ class MedecinController extends AbstractController
 		]);
     }
 }
+
+
