@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Spinner;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
