@@ -20,8 +20,8 @@
 
     <TextView
         android:id="@+id/lblAff"
-        android:layout_width="234dp"
-        android:layout_height="336dp"
+        android:layout_width="273dp"
+        android:layout_height="91dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="60dp"
         android:layout_marginEnd="80dp"
@@ -39,28 +39,82 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="1dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnRdv"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnRdv" />
-
     <Spinner
         android:id="@+id/spinner1"
-        android:layout_width="307dp"
-        android:layout_height="100dp"
+        android:layout_width="304dp"
+        android:layout_height="61dp"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginBottom="9dp"
-        app:layout_constraintBottom_toTopOf="@+id/ratingBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lblAff" />
+
+    <EditText
+        android:id="@+id/txtId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="46dp"
+        android:ems="10"
+        android:hint="Id"
+        android:inputType="number|textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
+
+    <EditText
+        android:id="@+id/txtDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:hint="Date"
+        android:inputType="date"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtId" />
+
+    <EditText
+        android:id="@+id/txtHeure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="14dp"
+        android:ems="10"
+        android:hint="Heure"
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDate" />
+
+    <Button
+        android:id="@+id/btnAjout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="Ajouter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeure" />
+
+    <Button
+        android:id="@+id/btnModif"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="32dp"
+        android:text="Modifier"
+        app:layout_constraintStart_toEndOf="@+id/btnAjout"
+        app:layout_constraintTop_toBottomOf="@+id/txtHeure" />
+
+    <Button
+        android:id="@+id/btnDel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="34dp"
+        android:layout_marginTop="250dp"
+        android:text="Supprimer"
+        app:layout_constraintStart_toEndOf="@+id/btnModif"
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
 </android.support.constraint.ConstraintLayout>
