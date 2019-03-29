@@ -45,7 +45,11 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Consultation uneConsult=(Consultation) leSpinner.getSelectedItem();
                 EditText txtId = (EditText) findViewById(R.id.txtId);
-                txtId.setText(uneConsult.getId());
+                EditText txtDate = (EditText) findViewById(R.id.txtDate);
+                EditText txtHeure = (EditText) findViewById(R.id.txtHeure);
+                txtId.setText(uneConsult.getId()+"");
+                txtDate.setText(uneConsult.getDate()+"");
+                txtHeure.setText(uneConsult.getHeure()+"");
             }
 
             @Override
@@ -67,14 +71,14 @@ public class MainActivity extends AppCompatActivity {
             try{
                 url = new URL("http://192.168.1.17/script.php");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestMethod("GET");
+                //conn.setRequestMethod("GET");
 
 
                conn.setDoInput(true);
                conn.setDoOutput(true);
 
                 InputStream leFluxEntree = new BufferedInputStream(conn.getInputStream());
-/*                BufferedReader leLecteur = new BufferedReader(new InputStreamReader(leFluxEntree));
+                BufferedReader leLecteur = new BufferedReader(new InputStreamReader(leFluxEntree));
                 String laLigne = leLecteur.readLine();
                 while (laLigne != null){
                     leBuffer.append(laLigne);
@@ -82,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                     laLigne = leLecteur.readLine();
                 }
                 aRetourner = leBuffer.toString();
-                */
+
             }catch (Exception e){
                 e.printStackTrace();
                 aRetourner = e.getMessage();
@@ -113,8 +117,6 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(String pResult){
             super.onPostExecute(pResult);
             TextView txtVw = (TextView) findViewById(R.id.lblAff);
-            txtVw.setText("onpostexecute");
-            /*
             String lesConsultations = "la liste\n";
             List<Consultation> listConsult = new ArrayList<Consultation>();
             try{
@@ -140,7 +142,6 @@ public class MainActivity extends AppCompatActivity {
             final Spinner leSpinner =(Spinner) findViewById(R.id.spinner1);
             ArrayAdapter<Consultation> dataAdapter=new ArrayAdapter<Consultation>(MainActivity.this, android.R.layout.simple_list_item_single_choice, listConsult);
             leSpinner.setAdapter(dataAdapter);
-            */
         }
 
     }
